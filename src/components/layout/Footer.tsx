@@ -22,12 +22,21 @@ export function Footer() {
             <h3 className="font-heading text-xl text-stone-50 mb-4">
               St Katharine Rural Connect
             </h3>
-            <p className="text-stone-300 text-sm leading-relaxed mb-4">
+            <p className="text-stone-300 text-sm leading-relaxed">
               {SITE_CONFIG.tagline}
             </p>
-            <p className="text-stone-400 text-sm">
-              Scottish Charity No. {SITE_CONFIG.charityNumber}
-            </p>
+
+            <div className="flex items-center gap-3 mt-6 p-3 rounded-md bg-primary-900 border border-primary-800 shadow-sm">
+              <div className="h-10 w-10 rounded bg-accent-500/10 border border-accent-500/20 flex items-center justify-center flex-shrink-0">
+                <span className="text-accent-500 font-heading font-bold text-xl">S</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-stone-200 text-xs font-semibold uppercase tracking-wider mb-0.5">Registered Charity</span>
+                <span className="text-stone-400 text-sm font-medium">
+                  No. {SITE_CONFIG.charityNumber}
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}

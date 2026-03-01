@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import SelfIdCards from "@/components/home/SelfIdCards";
+import FoundingPrayer from "@/components/home/FoundingPrayer";
 import ServicePillars from "@/components/home/ServicePillars";
 import ImpactStats from "@/components/home/ImpactStats";
 import FeaturedTestimonial from "@/components/home/FeaturedTestimonial";
@@ -20,6 +21,7 @@ export default function HomePage() {
     <>
       <Hero />
       <SelfIdCards />
+      <FoundingPrayer />
       <ServicePillars />
       <ImpactStats />
       <FeaturedTestimonial />

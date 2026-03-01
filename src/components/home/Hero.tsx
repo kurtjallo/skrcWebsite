@@ -74,7 +74,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <m.p
-            className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-stone-200"
+            className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-stone-100"
             {...motionProps(0.55)}
             animate={shouldReduceMotion ? { opacity: 1, y: 0 } : fadeUp(0.55).animate}
           >

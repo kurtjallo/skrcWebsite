@@ -174,30 +174,26 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    letter-spacing: var(--text-base--letter-spacing);
+    color: var(--color-text-body);
+    background-color: var(--color-stone-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-/* Base typography */
-body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--text-base--line-height);
-  letter-spacing: var(--text-base--letter-spacing);
-  color: var(--color-text-body);
-  background-color: var(--color-stone-50);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Heading defaults */
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+  }
 
-/* Heading defaults */
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  color: var(--color-text-primary);
-}
-
-h4, h5, h6 {
-  font-family: var(--font-body);
-  color: var(--color-text-primary);
+  h4, h5, h6 {
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+  }
 }
 
 /* Focus visible - gold ring for accessibility */

@@ -1,0 +1,59 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/about/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/contact/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/events/[slug]/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/events/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/get-involved/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/partnerships/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/services/[slug]/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/services/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/team/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/testimonials/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/src/app/who-we-serve/page": [
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
