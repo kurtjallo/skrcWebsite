@@ -222,3 +222,12 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **Button** (`src/components/ui/button.tsx`): gold and gold-outline variants with sweep-from-left hover
 - **template.tsx** (`src/app/template.tsx`): page transition (fade-up 8px, 400ms, ease-premium)
 - **layout.tsx** (`src/app/layout.tsx`): SkipLink -> UtilityBar -> Header -> main#main-content -> Footer
+
+### Phase 5: Events Calendar (05-01, 05-02)
+- **Event types** (`src/types/event.ts`): Event interface, EventAudience/EventType/EventFormat union types, AUDIENCE_LABELS/TYPE_LABELS/FORMAT_LABELS display maps
+- **Event data** (`src/data/events.ts`): 10 sample events covering all audiences, types, and formats; sorted by date ascending (April-June 2026); 3 featured
+- **EventCard** (`src/components/events/EventCard.tsx`): Client component, semantic `<article>` wrapping `<Link>`, date badge with `<time>` element, type/format/audience tag pills, premium hover (gold top-border scaleX, shadow-lg, motion-safe:-translate-y-1), responsive flex-col/flex-row
+- **EventFilters** (`src/components/events/EventFilters.tsx`): Client component, 3 filter groups (audience, type, format) with toggle buttons, `aria-pressed` state, gold focus rings, "Clear all filters" with active count badge, generic FilterGroup helper for DRY
+- **EventGrid** (`src/components/events/EventGrid.tsx`): Responsive 2-column grid of EventCards, empty state with CalendarX icon and "No events match your filters" message with clear action
+- **Events page** (`src/app/events/page.tsx`): Client component with useState for 3 filter dimensions, useMemo filtering (OR within dimension, AND across), results count display, page header with overline
+- **Event detail page** (`src/app/events/[slug]/page.tsx`): Server component, generateStaticParams for all 10 slugs, generateMetadata with async params (Next.js 15), metadata grid with icons (Calendar, Clock, MapPin, format), audience badges, description, "Register Your Interest" CTA linking to /contact, back navigation top and bottom, notFound() for unknown slugs
