@@ -19,6 +19,9 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        gold: "relative overflow-hidden bg-primary-900 text-stone-50 font-body font-medium before:content-[''] before:absolute before:inset-0 before:bg-accent-500 before:translate-x-[-100%] before:transition-transform before:duration-400 before:ease-premium hover:before:translate-x-0 hover:text-primary-950 before:z-0 [&>*]:relative [&>*]:z-10",
+        "gold-outline":
+          "relative overflow-hidden border-2 border-accent-500 text-accent-600 bg-transparent font-body font-medium before:content-[''] before:absolute before:inset-0 before:bg-accent-500 before:translate-x-[-100%] before:transition-transform before:duration-400 before:ease-premium hover:before:translate-x-0 hover:text-primary-950 before:z-0 [&>*]:relative [&>*]:z-10",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -43,12 +46,14 @@ function Button({
   variant = "default",
   size = "default",
   asChild = false,
+  children,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
   }) {
   const Comp = asChild ? Slot.Root : "button"
+  const isGoldVariant = variant === "gold" || variant === "gold-outline"
 
   return (
     <Comp
@@ -57,7 +62,9 @@ function Button({
       data-size={size}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {isGoldVariant ? <span>{children}</span> : children}
+    </Comp>
   )
 }
 
