@@ -1,0 +1,224 @@
+# St Katharine Rural Connect - Website Project
+
+## Design Guidelines
+
+- Premium, elevated feel -- no clutter
+- Hover effects with gold accent lines on interactive elements
+- Two-column layouts for problem/solution sections
+- Alternating section backgrounds for visual rhythm
+- Subtle architectural line graphics throughout
+- Clean, powerful, minimal aesthetic
+
+## Rules
+
+- For every front-end change, use the front-end skill
+- Never include "Co-Authored-By: Claude" in any git commits, pushes, or PRs. No Claude attribution in the repo.
+- After every git commit, update this CLAUDE.md file to reflect the current state of the project (new files, components, decisions, etc.).
+
+## Plan Mode Rules
+
+When entering plan mode, follow this protocol:
+
+**Before starting:** Ask if I want one of two modes:
+
+1. **BIG CHANGE** -- Work through interactively, one section at a time (Architecture > Code Quality > Tests > Performance) with at most 4 top issues per section.
+2. **SMALL CHANGE** -- Work through interactively, ONE question per review section.
+
+**My engineering preferences (use these to guide recommendations):**
+
+- DRY is important -- flag repetition aggressively.
+- Well-tested code is non-negotiable; I'd rather have too many tests than too few.
+- Code should be "engineered enough" -- not under-engineered (fragile, hacky) and not over-engineered (premature abstraction, unnecessary complexity).
+- Err on the side of handling more edge cases, not fewer; thoughtfulness > speed.
+- Bias toward explicit over clever.
+
+**Review sections (run in order):**
+
+1. **Architecture review** -- Evaluate: system design and component boundaries, dependency graph and coupling, data flow patterns and bottlenecks, scaling characteristics and single points of failure, security architecture (auth, data access, API boundaries).
+
+2. **Code quality review** -- Evaluate: code organization and module structure, DRY violations (be aggressive), error handling patterns and missing edge cases (call out explicitly), technical debt hotspots, areas that are over/under-engineered relative to my preferences.
+
+3. **Test review** -- Evaluate: test coverage gaps (unit, integration, e2e), test quality and assertion strength, missing edge case coverage (be thorough), untested failure modes and error paths.
+
+4. **Performance review** -- Evaluate: N+1 queries and database access patterns, memory-usage concerns, caching opportunities, slow or high-complexity code paths.
+
+**For each issue found:**
+
+- Describe the problem concretely, with file and line references.
+- Present 2-3 options, including "do nothing" where reasonable.
+- For each option: specify implementation effort, risk, impact on other code, and maintenance burden.
+- Give an opinionated recommended option and why, mapped to my preferences above.
+- Explicitly ask whether I agree or want a different direction before proceeding.
+
+**Formatting rules for AskUserQuestion:**
+
+- NUMBER issues (1, 2, 3...) and give LETTERS for options (A, B, C...).
+- Each AskUserQuestion option must clearly label the issue NUMBER and option LETTER so I don't get confused.
+- The recommended option is always the 1st option.
+
+**Workflow:**
+
+- Do not assume my priorities on timeline or scale.
+- After each review section, pause and ask for feedback before moving on.
+
+## Project Overview
+
+St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening social, emotional, and practical support systems for rural people and places. The website serves as the primary digital presence for the organization.
+
+## Organization Identity
+
+- **Name**: St Katharine Rural Connect
+- **Tagline concept**: Support, connection, and care for rural communities
+- **Audience**: Farmers, offshore/rotational workers, rural families, community members
+- **Tone**: Warm, compassionate, professional, welcoming, grounded, dignified
+- **Heritage**: Carries forward the spirit and values of St Katharine — service, learning, dignity, community care
+
+### Why the Name Matters
+- "St Katharine" = foundation of service, care, values-based community work
+- "Rural Connect" = mission of connecting people to services, neighbours, support, opportunities, and resources
+
+## Mission & Vision
+
+**Mission**: Support and strengthen rural communities by providing accessible, compassionate, and practical services that foster wellbeing, resilience, and connection.
+
+**Vision**: Thriving rural communities where every person has access to support, relationships, and opportunities to flourish.
+
+## Core Values
+1. Compassion
+2. Connection
+3. Respect
+4. Integrity
+5. Accessibility
+6. Collaboration
+7. Resilience
+
+## Four Service Pillars
+
+### 1. Community Wellness and Mental Health
+- Individual support and referrals
+- Mental health and emotional wellness resources
+- Peer support, workshops (stress, burnout, grief, resilience)
+- Programs addressing rural isolation
+
+### 2. Agricultural Support and Resources
+- Farm wellbeing and sustainability sessions
+- Financial, operational, and social support referrals
+- Farm-focused mental wellness
+- Access to grants, programs, assistance
+
+### 3. Offshore Worker Engagement and Support
+- Remote-access support and check-ins
+- Peer connection for isolated workers
+- Family support during separation
+- Reintegration support
+
+### 4. Community Connection and Development
+- Local events and gatherings
+- Volunteer engagement
+- Workshops and skill-sharing
+- Intergenerational programs
+- Partnerships with local groups
+
+## Who We Serve
+- Farmers and agricultural workers
+- Farm families and multigenerational rural households
+- Offshore, rotational, and remote workers
+- Spouses, children, and loved ones affected by work-related separation
+- Rural residents seeking support, connection, or resources
+- Community members wanting to engage through events, volunteering, partnerships
+
+## Website Page Structure
+
+1. **Home** - Mission-driven message, key CTAs
+2. **About Us** - Founding Intention, Mission/Vision/Values, Why the Name Matters
+3. **Services** - Four pillars (Wellness, Agricultural, Offshore, Community)
+4. **Who We Serve** - Audience segments with access info
+5. **Events Calendar** - Filterable by audience, type, format
+6. **Get Involved** - Volunteer, Attend Events, Donate, Partner, Share
+7. **Partnerships** - Approach, partner logos, "Become a Partner" CTA
+8. **Board & Staff** - Board of Directors, Staff team bios
+9. **Testimonials** - Farmer, Offshore Worker, Community Member, Family Member
+10. **Contact** - Phone, Email, Office Hours, Location, Online Form
+
+## CTAs (Calls to Action)
+- Access Support
+- View Our Services
+- See Upcoming Events
+- Get Involved
+- Volunteer With Us
+- Become a Partner
+- Contact Our Team
+- Donate Today
+
+## Homepage Message
+"St Katharine Rural Connect exists to strengthen rural communities through support, connection, and care. We serve farmers, offshore workers, families, and community members by creating accessible pathways to wellness, practical resources, and meaningful belonging. Rooted in the spirit of St Katharine, we are committed to helping rural people and places thrive."
+
+## Sample Testimonials
+
+**Farmer**: "Running a farm can be overwhelming, especially when everything feels like it depends on you. St Katharine Rural Connect gave us more than information — they gave us support we could actually use, and people who understood the pressures we were under. It made us feel less alone."
+
+**Offshore Worker**: "When you work away for long periods, it can feel like you're disconnected from everything at home. Having access to support that understood our lifestyle made a real difference for me and my family. It reminded us that we still had a community behind us."
+
+**Community Member**: "The events and programs have created a stronger sense of connection in our area. People are meeting, talking, and supporting one another in ways that weren't happening before. It feels like something positive and lasting is being built."
+
+**Family Member**: "As the spouse of a rotational worker, I often felt like I was carrying things on my own. Through St Katharine Rural Connect, I found resources, encouragement, and people who truly understood the strain that comes with this kind of life."
+
+## Governance
+
+### Board of Directors
+- Provides strategic leadership, governance, stewardship
+- Listing format: Name, Role, Short bio, Rural/community connection
+
+### Staff Team
+- Executive Director, Program Manager, Community Outreach Coordinator
+- Listing format: Name, Position, Short bio, Area of responsibility
+
+## Access Points by Audience
+
+**Farmers**: Phone/email, online forms, referrals from partners, farm-focused workshops
+**Offshore Workers**: Remote/virtual contact, flexible scheduling, support before/during/after deployment
+**Community Members**: Events, programs, direct contact, volunteer initiatives, partner organizations
+
+## Events Calendar Features
+- Filter by audience: farmers / offshore workers / families / all community
+- Filter by type: workshop / social / volunteer / support
+- Filter by format: in-person / virtual / hybrid
+
+## Contact Information (Placeholders)
+- Phone: [TBD]
+- Email: [TBD]
+- Office Hours: [TBD]
+- Location: [TBD]
+- Online Contact Form: [TBD]
+
+## Partnership Approach
+- Community organizations, agricultural networks, mental health providers
+- Local service agencies, municipalities, faith communities
+- Education/training partners, businesses committed to rural wellbeing
+- Include partner logos, descriptions, "Become a Partner" CTA
+
+## Completed Phases
+
+### Phase 1: Foundation (01-01)
+- Next.js 15 project scaffolded with Tailwind v4
+- Custom fonts configured: Cormorant Garamond (heading) + DM Sans (body)
+- shadcn/ui initialized with SKRC theme tokens
+- Design tokens in globals.css: colors (primary, accent, stone, text), typography scale, ease-premium
+
+### Phase 2: Layout & Design System (02-01, 02-02, 02-03)
+- **Constants** (`src/lib/constants.ts`): NAV_ITEMS (10 pages), SITE_CONFIG (phone, email, charity), SOCIAL_LINKS
+- **SkipLink** (`src/components/layout/SkipLink.tsx`): sr-only, visible on focus, links to #main-content
+- **UtilityBar** (`src/components/layout/UtilityBar.tsx`): phone tel: link + "Need Support?" on primary-950 background
+- **Header** (`src/components/layout/Header.tsx`): sticky nav, gold underline hover (scaleX, 400ms, ease-premium), mobile hamburger
+- **Footer** (`src/components/layout/Footer.tsx`): 4-column grid (about, quick links, more links, contact), social icons, charity number
+- **MobileNav** (`src/components/layout/MobileNav.tsx`): slide-out drawer, AnimatePresence, backdrop blur, staggered links, Escape/route close, body scroll lock, reduced-motion bypass
+- **AnimatedSection** (`src/components/shared/AnimatedSection.tsx`): LazyMotion whileInView (fade-up 30px, 600ms, stagger 120ms), reduced-motion bypass
+- **SectionWrapper** (`src/components/layout/SectionWrapper.tsx`): alternating backgrounds (stone-50, stone-100, stone-50, primary-900, stone-100), AnimatedSection wrapper
+- **GoldAccentLine** (`src/components/shared/GoldAccentLine.tsx`): 2px gold line, horizontal/vertical, optional scaleX hover
+- **DiamondDivider** (`src/components/shared/DiamondDivider.tsx`): gold gradient lines with centered diamond outline
+- **CornerBrackets** (`src/components/shared/CornerBrackets.tsx`): L-shaped gold corner lines, configurable size/opacity
+- **TwoColumnLayout** (`src/components/shared/TwoColumnLayout.tsx`): responsive 2-column grid, reversible order
+- **Card** (`src/components/ui/card.tsx`): hoverable prop adds 4px lift + gold top-border scaleX animation
+- **Button** (`src/components/ui/button.tsx`): gold and gold-outline variants with sweep-from-left hover
+- **template.tsx** (`src/app/template.tsx`): page transition (fade-up 8px, 400ms, ease-premium)
+- **layout.tsx** (`src/app/layout.tsx`): SkipLink -> UtilityBar -> Header -> main#main-content -> Footer
