@@ -234,3 +234,12 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **Newsletter** (`src/components/home/Newsletter.tsx`): stone-50 bg, "Stay in the Loop" h2, email form (flex-col mobile / flex-row desktop with rounded-l/r), sr-only label, honeypot hidden field for spam, client-side validation (regex), success/error states with aria-live="polite", TODO placeholder for email service
 - **PartnerLogos** (`src/components/home/PartnerLogos.tsx`): stone-100 bg, thin gold separator (1px, opacity-20), "Supported By" heading, flex-wrap row of partner names (text only for MVP), opacity-50 hover:opacity-100 transition, imports from @/data/partners
 - **page.tsx** (`src/app/page.tsx`): Server Component, assembles all 9 sections in order with metadata export, uses fragment (not <main> since layout provides it), section background rhythm: gradient > stone-100 > stone-50 > primary-900 > stone-100 > stone-50 > stone-100 > stone-50 > stone-100
+
+### Phase 4: Services & Audience (04-01, 04-02, 04-03)
+- **PillarCard** (`src/components/services/PillarCard.tsx`): Service pillar card with gold accent line hover (scaleX), icon mapping (Heart/Wheat/Anchor/Users), 4px lift, links to /services/[slug]
+- **WhatHappensWhenYouCall** (`src/components/services/WhatHappensWhenYouCall.tsx`): 4-step reassurance section, numbered circles with connecting lines (horizontal desktop/vertical mobile), "Get in Touch" CTA
+- **Services overview** (`src/app/services/page.tsx`): Hero + 2x2 pillar grid + WhatHappensWhenYouCall + dark CTA section
+- **PillarDetail** (`src/components/services/PillarDetail.tsx`): Full pillar detail layout -- hero (orgName overline), two-column who/what, services list with gold left borders, dark testimonial section, get-started CTA, WhatHappensWhenYouCall, back link
+- **Service pillar pages** (`src/app/services/[slug]/page.tsx`): Dynamic route with generateStaticParams (4 slugs), generateMetadata, notFound() for invalid slugs, params awaited (Next.js 15)
+- **AudienceCard** (`src/components/services/AudienceCard.tsx`): Full-width audience section with two-column layout (reversible), service pillar links, access points with CheckCircle icons, testimonial with gold left border
+- **Who We Serve** (`src/app/who-we-serve/page.tsx`): Hero + 4 audience segments (alternating backgrounds/direction) + dark "Not sure where you fit?" CTA with dual actions
