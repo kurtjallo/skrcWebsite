@@ -243,3 +243,12 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **Service pillar pages** (`src/app/services/[slug]/page.tsx`): Dynamic route with generateStaticParams (4 slugs), generateMetadata, notFound() for invalid slugs, params awaited (Next.js 15)
 - **AudienceCard** (`src/components/services/AudienceCard.tsx`): Full-width audience section with two-column layout (reversible), service pillar links, access points with CheckCircle icons, testimonial with gold left border
 - **Who We Serve** (`src/app/who-we-serve/page.tsx`): Hero + 4 audience segments (alternating backgrounds/direction) + dark "Not sure where you fit?" CTA with dual actions
+
+### Phase 5: Events Calendar (05-01, 05-02)
+- **Event types** (`src/types/event.ts`): Event interface, EventAudience/EventType/EventFormat union types, AUDIENCE_LABELS/TYPE_LABELS/FORMAT_LABELS display maps
+- **Event data** (`src/data/events.ts`): 10 sample events covering all audiences, types, and formats; sorted by date ascending (April-June 2026); 3 featured
+- **EventCard** (`src/components/events/EventCard.tsx`): Client component, semantic `<article>` wrapping `<Link>`, date badge with `<time>` element, type/format/audience tag pills, premium hover (gold top-border scaleX, shadow-lg, motion-safe:-translate-y-1), responsive flex-col/flex-row
+- **EventFilters** (`src/components/events/EventFilters.tsx`): Client component, 3 filter groups (audience, type, format) with toggle buttons, `aria-pressed` state, gold focus rings, "Clear all filters" with active count badge, generic FilterGroup helper for DRY
+- **EventGrid** (`src/components/events/EventGrid.tsx`): Responsive 2-column grid of EventCards, empty state with CalendarX icon and "No events match your filters" message with clear action
+- **Events page** (`src/app/events/page.tsx`): Client component with useState for 3 filter dimensions, useMemo filtering (OR within dimension, AND across), results count display, page header with overline
+- **Event detail page** (`src/app/events/[slug]/page.tsx`): Server component, generateStaticParams for all 10 slugs, generateMetadata with async params (Next.js 15), metadata grid with icons (Calendar, Clock, MapPin, format), audience badges, description, "Register Your Interest" CTA linking to /contact, back navigation top and bottom, notFound() for unknown slugs
