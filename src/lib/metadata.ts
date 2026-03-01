@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { siteConfig } from "./constants";
+import { SITE_CONFIG } from "./constants";
 
 export function createMetadata({
   title,
@@ -10,16 +10,16 @@ export function createMetadata({
   description: string;
   path?: string;
 }): Metadata {
-  const fullTitle = `${title} | ${siteConfig.name}`;
+  const fullTitle = `${title} | ${SITE_CONFIG.name}`;
   return {
     title: fullTitle,
     description,
     openGraph: {
       title: fullTitle,
       description,
-      url: `${siteConfig.url}${path}`,
-      siteName: siteConfig.name,
-      locale: siteConfig.locale,
+      url: `${SITE_CONFIG.url}${path}`,
+      siteName: SITE_CONFIG.name,
+      locale: SITE_CONFIG.locale,
       type: "website",
     },
   };
