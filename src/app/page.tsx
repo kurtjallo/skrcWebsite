@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-stone-50 p-8">
@@ -63,6 +65,20 @@ export default function Home() {
           </button>
           <div className="ml-4 inline-block rounded-md border-2 border-accent-500 bg-accent-100 px-6 py-3 text-sm font-medium text-accent-600 transition-all duration-300 ease-premium hover:bg-accent-200">
             Accent Element
+          </div>
+        </section>
+
+        {/* shadcn/ui test */}
+        <section className="space-y-4">
+          <h2 className="font-heading text-4xl font-semibold text-text-primary">
+            shadcn/ui Components
+          </h2>
+          <div className="flex flex-wrap gap-4">
+            <Button>Primary Action</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="destructive">Destructive</Button>
+            <Button variant="ghost">Ghost</Button>
           </div>
         </section>
       </div>

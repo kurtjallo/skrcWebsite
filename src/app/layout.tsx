@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cormorantGaramond, dmSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );
