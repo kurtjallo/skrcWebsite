@@ -222,3 +222,12 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **Button** (`src/components/ui/button.tsx`): gold and gold-outline variants with sweep-from-left hover
 - **template.tsx** (`src/app/template.tsx`): page transition (fade-up 8px, 400ms, ease-premium)
 - **layout.tsx** (`src/app/layout.tsx`): SkipLink -> UtilityBar -> Header -> main#main-content -> Footer
+
+### Phase 4: Services & Audience (04-01, 04-02, 04-03)
+- **PillarCard** (`src/components/services/PillarCard.tsx`): Service pillar card with gold accent line hover (scaleX), icon mapping (Heart/Wheat/Anchor/Users), 4px lift, links to /services/[slug]
+- **WhatHappensWhenYouCall** (`src/components/services/WhatHappensWhenYouCall.tsx`): 4-step reassurance section, numbered circles with connecting lines (horizontal desktop/vertical mobile), "Get in Touch" CTA
+- **Services overview** (`src/app/services/page.tsx`): Hero + 2x2 pillar grid + WhatHappensWhenYouCall + dark CTA section
+- **PillarDetail** (`src/components/services/PillarDetail.tsx`): Full pillar detail layout -- hero (orgName overline), two-column who/what, services list with gold left borders, dark testimonial section, get-started CTA, WhatHappensWhenYouCall, back link
+- **Service pillar pages** (`src/app/services/[slug]/page.tsx`): Dynamic route with generateStaticParams (4 slugs), generateMetadata, notFound() for invalid slugs, params awaited (Next.js 15)
+- **AudienceCard** (`src/components/services/AudienceCard.tsx`): Full-width audience section with two-column layout (reversible), service pillar links, access points with CheckCircle icons, testimonial with gold left border
+- **Who We Serve** (`src/app/who-we-serve/page.tsx`): Hero + 4 audience segments (alternating backgrounds/direction) + dark "Not sure where you fit?" CTA with dual actions
