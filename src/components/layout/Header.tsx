@@ -1,13 +1,24 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { MobileNav } from "./MobileNav";
 
 export function Header() {
   const pathname = usePathname();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const handleOpenMobileNav = useCallback(() => {
+    setIsMobileNavOpen(true);
+  }, []);
+
+  const handleCloseMobileNav = useCallback(() => {
+    setIsMobileNavOpen(false);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-stone-50 border-b border-stone-200">
@@ -45,10 +56,14 @@ export function Header() {
         <button
           className="lg:hidden p-2 text-text-body hover:text-primary-900 transition-colors"
           aria-label="Open menu"
+          onClick={handleOpenMobileNav}
         >
           <Menu size={24} />
         </button>
       </div>
+
+      {/* Mobile navigation drawer */}
+      <MobileNav isOpen={isMobileNavOpen} onClose={handleCloseMobileNav} />
     </header>
   );
 }
