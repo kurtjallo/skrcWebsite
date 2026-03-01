@@ -252,3 +252,51 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **EventGrid** (`src/components/events/EventGrid.tsx`): Responsive 2-column grid of EventCards, empty state with CalendarX icon and "No events match your filters" message with clear action
 - **Events page** (`src/app/events/page.tsx`): Client component with useState for 3 filter dimensions, useMemo filtering (OR within dimension, AND across), results count display, page header with overline
 - **Event detail page** (`src/app/events/[slug]/page.tsx`): Server component, generateStaticParams for all 10 slugs, generateMetadata with async params (Next.js 15), metadata grid with icons (Calendar, Clock, MapPin, format), audience badges, description, "Register Your Interest" CTA linking to /contact, back navigation top and bottom, notFound() for unknown slugs
+
+### Phase 6: Community Pages (06-01, 06-02, 06-03, 06-04)
+- **Types** (`src/types/index.ts`): TeamMember (with board/staff group discriminator), Testimonial (reuses AudienceSegment), Partner, InvolvementOption interfaces
+- **Team data** (`src/data/team-members.ts`): boardMembers (4: Campbell/Chair, Fraser/Vice Chair, MacLeod/Treasurer, Ross/Director) and staffMembers (3: Morrison/Executive Director, Henderson/Programme Manager, MacDonald/Community Outreach Coordinator)
+- **Testimonials data** (`src/data/testimonials.ts`): 4 testimonials covering farmer (James), offshore-worker (Craig), community (Helen), family (Laura) segments
+- **Partners data** (`src/data/partners.ts`): 6 placeholder partners (RSABI, FCN, NHS Grampian, Aberdeenshire Council, SAMH, Rural Support NI) + partnershipApproach (3 categories)
+- **About page** (`src/app/about/page.tsx`): Founding Intention (two-column), Mission/Vision (gold left-border blocks), 7 Values (card grid with hover), "Why the Name Matters" (dark primary-900 bg, two-column gold-accented explanation)
+- **TeamMemberCard** (`src/components/team/TeamMemberCard.tsx`): Server component, `<article>` semantics, initials avatar placeholder, gold top-border hover (scaleX), role in accent-600, connection/responsibility footer with conditional label
+- **TeamGrid** (`src/components/team/TeamGrid.tsx`): Server component, responsive grid with configurable columns (2/3/4), maps TeamMemberCard
+- **Team page** (`src/app/team/page.tsx`): Board of Directors (4-column grid) + Staff (3-column grid), overline + intro paragraph, createMetadata
+- **Testimonials page** (`src/app/testimonials/page.tsx`): Segment-colored styles (green/farmer, blue/offshore, purple/community, gold/family), `<blockquote>` with decorative gold quote mark (aria-hidden), `<cite>` in `<footer>`, segment badges, dark CTA section
+- **Get Involved page** (`src/app/get-involved/page.tsx`): 5 involvement options (Volunteer, Attend Events, Donate, Partner, Share) with Lucide icons (Heart, Calendar, Gift, Handshake, Share2), two-column card layout, CTAs routing to /contact, /events, /partnerships, /about, dark "Not Sure Where to Start?" banner
+- **Partnerships page** (`src/app/partnerships/page.tsx`): Partnership approach narrative + gold diamond-bullet list, partner grid with initial placeholders and grayscale treatment, external links with target="_blank" rel="noopener noreferrer", "Become a Partner" CTA on dark bg with tel: link
+
+### Phase 7: Contact (07-01, 07-02)
+- **Zod schema** (`src/lib/schemas/contact.ts`): contactSchema with name (required), email (required), phone (optional), audience (5-option enum, optional), message (required), honeypot (max 0); empathetic error messages ("We'd like to know what to call you"); exports ContactFormData, ContactFormState, AUDIENCE_OPTIONS
+- **Server action** (`src/app/contact/_actions/submit-contact.ts`): "use server" directive, honeypot check first (returns fake success to bots), zod server-side validation, field-level error mapping, console logging for MVP (email service deferred)
+- **ContactInfo** (`src/components/contact/ContactInfo.tsx`): Server component, phone (tel: link), email (mailto: link), office hours, location with gold-tinted icon circles, "Your information is confidential" reassurance card with ShieldCheck icon
+- **ContactForm** (`src/components/contact/ContactForm.tsx`): "use client", react-hook-form + zodResolver for client validation, useActionState for server action, honeypot field (absolute left-[-9999px], aria-hidden, tabIndex -1), error summary (role="alert", aria-live="polite"), success state with "Send another message" option, "Send Message" button (not "Submit"), "Sending..." pending state, autoComplete attributes on all inputs
+- **Contact page** (`src/app/contact/page.tsx`): "Get in Touch" heading with overline, gold accent line divider (2px), two-column layout (form left, contact info right on desktop), stacks on mobile, createMetadata
+
+### Phase 8: Cross-Cutting Quality (08-01, 08-02, 08-03)
+- **Accessibility (A11Y-01 through A11Y-10)**:
+  - `<html lang="en-GB">` verified on root layout
+  - Unique descriptive titles on all 12 pages following "Page | St Katharine Rural Connect" pattern
+  - Semantic landmarks: `<header>` with `<nav aria-label="Main navigation">`, `<main id="main-content">` (single instance via layout), `<footer>`
+  - Strict heading hierarchy audited and fixed (sr-only h2 added to services page, duplicate `<main>` removed from about/events pages)
+  - `aria-hidden="true"` added to all decorative Lucide icons (ContactInfo, ContactForm, event detail back arrows)
+  - Global `*:focus-visible` gold ring rule (outline: 2px solid accent-500, offset 2px)
+  - Touch target minimum 44x44px for coarse pointers via `@media (pointer: coarse)` in globals.css
+  - `prefers-reduced-motion: reduce` media query zeroes all animation/transition durations; Motion components use useReducedMotion hook
+  - All phone numbers are tel: links via SITE_CONFIG.phoneHref (UtilityBar, Footer, Hero, MobileNav, ContactInfo, Partnerships)
+  - No viewport restrictions (no maximum-scale or user-scalable=no)
+- **SEO (SEO-01 through SEO-05)**:
+  - **sitemap.ts** (`src/app/sitemap.ts`): Auto-generated sitemap with 10 static pages + 4 service pillar pages + 10 event pages, dynamic imports from data files, base URL https://skrc.org.uk
+  - **robots.ts** (`src/app/robots.ts`): Allows all user agents, references sitemap.xml
+  - **JsonLd** (`src/components/shared/JsonLd.tsx`): Generic JSON-LD script injector, ngoSchema() for NGO structured data (on every page via layout), communityEventSchema() for event detail pages with attendance mode mapping
+  - NGO JSON-LD added to root layout.tsx (renders on every page)
+  - CommunityEvent JSON-LD added to event detail pages with ISO datetime and format-to-attendance-mode mapping
+  - Charity registration number displayed in footer via SITE_CONFIG.charityNumber
+- **Performance (PERF-01 through PERF-04)**:
+  - **LazyMotionProvider** (`src/components/shared/LazyMotionProvider.tsx`): "use client", wraps LazyMotion with domAnimation feature set (~45KB savings vs full Motion bundle)
+  - LazyMotionProvider added to root layout.tsx wrapping all content
+  - 10 redundant LazyMotion wrappers removed from individual components (Hero, MobileNav, PartnerLogos, SelfIdCards, ServicePillars, GetInvolved, Newsletter, EventsPreview, ImpactStats, FeaturedTestimonial)
+  - All Motion components migrated from `motion.*` to `m.*` for optimal tree-shaking
+  - template.tsx and AnimatedSection.tsx updated to use `m` imports and removed local LazyMotion wrappers
+  - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
+  - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
