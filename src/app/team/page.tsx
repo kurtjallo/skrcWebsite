@@ -3,7 +3,7 @@ import { boardMembers, staffMembers } from "@/data/team-members";
 import { TeamGrid } from "@/components/team/TeamGrid";
 
 export const metadata = createMetadata({
-  title: "Our Team",
+  title: "Board & Staff",
   description:
     "Meet the Board of Directors and staff team behind St Katharine Rural Connect. Our team brings rural experience, community commitment, and professional expertise to supporting rural Scotland.",
   path: "/team",

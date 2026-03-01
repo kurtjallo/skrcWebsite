@@ -34,10 +34,13 @@ export default function ServicesPage() {
 
       {/* Pillar cards grid */}
       <section className="bg-stone-100 px-6 py-16 md:py-20">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
-          {servicePillars.map((pillar) => (
-            <PillarCard key={pillar.id} pillar={pillar} />
-          ))}
+        <div className="mx-auto max-w-5xl">
+          <h2 className="sr-only">Our Four Pillars</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {servicePillars.map((pillar) => (
+              <PillarCard key={pillar.id} pillar={pillar} />
+            ))}
+          </div>
         </div>
       </section>
 

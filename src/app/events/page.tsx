@@ -1,7 +1,5 @@
 "use client";
 
-// TODO: Move metadata to layout.tsx or use generateMetadata in a server parent (Phase 8)
-
 import { useState, useMemo } from "react";
 import { events } from "@/data/events";
 import { EventFilters } from "@/components/events/EventFilters";
@@ -45,7 +43,7 @@ export default function EventsPage() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-stone-50">
+    <div className="min-h-screen bg-stone-50">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         {/* Page header */}
         <div className="mb-10">
@@ -82,6 +80,6 @@ export default function EventsPage() {
         {/* Event grid */}
         <EventGrid events={filteredEvents} onClearFilters={handleClearAll} />
       </div>
-    </main>
+    </div>
   );
 }

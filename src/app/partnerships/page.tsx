@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createMetadata } from "@/lib/metadata";
+import { SITE_CONFIG } from "@/lib/constants";
 import { partners, partnershipApproach } from "@/data/partners";
 
 export const metadata = createMetadata({
@@ -139,10 +140,10 @@ export default function PartnershipsPage() {
             Get in Touch About Partnership
           </Link>
           <a
-            href="tel:01234567890"
+            href={SITE_CONFIG.phoneHref}
             className="mt-4 block text-sm text-stone-400 transition-colors duration-300 hover:text-stone-300"
           >
-            Or call us on 01234 567890
+            Or call us on {SITE_CONFIG.phone}
           </a>
         </div>
       </section>

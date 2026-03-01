@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useReducedMotion,
-} from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { HandHelping, Handshake, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { GoldAccentLine } from "@/components/shared/GoldAccentLine";
@@ -81,8 +76,7 @@ export default function GetInvolved() {
           </p>
         </div>
 
-        <LazyMotion features={domAnimation}>
-          <m.div
+        <m.div
             className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8"
             initial="hidden"
             whileInView="visible"
@@ -137,8 +131,7 @@ export default function GetInvolved() {
                 </m.div>
               );
             })}
-          </m.div>
-        </LazyMotion>
+        </m.div>
       </div>
     </section>
   );

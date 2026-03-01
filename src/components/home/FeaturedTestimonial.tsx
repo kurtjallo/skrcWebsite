@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useReducedMotion,
-} from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { testimonials } from "@/data/testimonials";
 
 const PREMIUM_EASE = [0.25, 0.1, 0.25, 1] as const;
@@ -25,8 +20,7 @@ export default function FeaturedTestimonial({
   const noMotion = { opacity: 1, y: 0, scale: 1 };
 
   return (
-    <LazyMotion features={domAnimation}>
-      <section
+    <section
         className="bg-stone-100 py-16 md:py-24"
         aria-label="Testimonial"
       >
@@ -98,6 +92,5 @@ export default function FeaturedTestimonial({
           </blockquote>
         </m.div>
       </section>
-    </LazyMotion>
   );
 }

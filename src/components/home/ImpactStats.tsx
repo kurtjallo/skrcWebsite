@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import {
-  LazyMotion,
-  domAnimation,
   m,
   useInView,
   useMotionValue,
@@ -67,8 +65,7 @@ export default function ImpactStats() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <LazyMotion features={domAnimation}>
-      <section
+    <section
         className="bg-primary-900 py-16 md:py-24"
         aria-label="Our impact in numbers"
       >
@@ -117,6 +114,5 @@ export default function ImpactStats() {
           </div>
         </div>
       </section>
-    </LazyMotion>
   );
 }

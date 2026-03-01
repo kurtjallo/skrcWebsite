@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { LazyMotion, domAnimation, m, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedSectionProps {
@@ -55,17 +55,15 @@ export function AnimatedSection({
   const MotionTag = m[as];
 
   return (
-    <LazyMotion features={domAnimation}>
-      <MotionTag
-        className={className}
-        variants={containerVariants}
-        custom={{ delay, staggerChildren }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {children}
-      </MotionTag>
-    </LazyMotion>
+    <MotionTag
+      className={className}
+      variants={containerVariants}
+      custom={{ delay, staggerChildren }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {children}
+    </MotionTag>
   );
 }

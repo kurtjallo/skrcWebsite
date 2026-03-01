@@ -4,6 +4,8 @@ import { SkipLink } from "@/components/layout/SkipLink";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd, ngoSchema } from "@/components/shared/JsonLd";
+import { LazyMotionProvider } from "@/components/shared/LazyMotionProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,13 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
       <body className="font-body text-base text-text-body bg-stone-50 antialiased">
-        <SkipLink />
-        <UtilityBar />
-        <Header />
-        <main id="main-content" className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <JsonLd data={ngoSchema()} />
+        <LazyMotionProvider>
+          <SkipLink />
+          <UtilityBar />
+          <Header />
+          <main id="main-content" className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </LazyMotionProvider>
       </body>
     </html>
   );

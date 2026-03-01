@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useReducedMotion,
-} from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { Heart, Wheat, Anchor, Users, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { servicePillars } from "@/data/homepage";
@@ -50,8 +45,7 @@ export default function ServicePillars() {
           </p>
         </div>
 
-        <LazyMotion features={domAnimation}>
-          <m.div
+        <m.div
             className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8"
             initial="hidden"
             whileInView="visible"
@@ -108,8 +102,7 @@ export default function ServicePillars() {
                 </m.div>
               );
             })}
-          </m.div>
-        </LazyMotion>
+        </m.div>
       </div>
     </section>
   );

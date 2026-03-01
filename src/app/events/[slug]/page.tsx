@@ -14,8 +14,10 @@ import {
   TYPE_LABELS,
   FORMAT_LABELS,
 } from "@/types/event";
-import type { Event } from "@/types/event";
+import type { Event, EventFormat } from "@/types/event";
 import type { Metadata } from "next";
+import { JsonLd, communityEventSchema } from "@/components/shared/JsonLd";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function generateStaticParams() {
   return events.map((event) => ({ slug: event.slug }));
@@ -30,7 +32,7 @@ export async function generateMetadata({
   const event = events.find((e) => e.slug === slug);
   if (!event) return { title: "Event Not Found" };
   return {
-    title: `${event.title} | Events | St Katharine Rural Connect`,
+    title: `${event.title} | St Katharine Rural Connect`,
     description: event.description,
   };
 }
@@ -42,6 +44,12 @@ const FORMAT_ICONS: Record<
   virtual: Monitor,
   "in-person": MapPin,
   hybrid: Wifi,
+};
+
+const FORMAT_ATTENDANCE_MODE: Record<EventFormat, "online" | "offline" | "mixed"> = {
+  virtual: "online",
+  "in-person": "offline",
+  hybrid: "mixed",
 };
 
 export default async function EventDetailPage({
@@ -65,15 +73,45 @@ export default async function EventDetailPage({
     : event.time;
   const FormatIcon = FORMAT_ICONS[event.format];
 
+  // Build ISO datetime for JSON-LD structured data
+  const eventUrl = `${SITE_CONFIG.url}/events/${event.slug}`;
+  const startDateISO = `${event.date}T${event.time.replace(/(\d+):(\d+)\s*(AM|PM)/i, (_m, h, min, ap) => {
+    let hour = parseInt(h, 10);
+    if (ap.toUpperCase() === "PM" && hour !== 12) hour += 12;
+    if (ap.toUpperCase() === "AM" && hour === 12) hour = 0;
+    return `${hour.toString().padStart(2, "0")}:${min}:00`;
+  })}`;
+  let endDateISO: string | undefined;
+  if (event.endTime) {
+    endDateISO = `${event.date}T${event.endTime.replace(/(\d+):(\d+)\s*(AM|PM)/i, (_m, h, min, ap) => {
+      let hour = parseInt(h, 10);
+      if (ap.toUpperCase() === "PM" && hour !== 12) hour += 12;
+      if (ap.toUpperCase() === "AM" && hour === 12) hour = 0;
+      return `${hour.toString().padStart(2, "0")}:${min}:00`;
+    })}`;
+  }
+
   return (
-    <main id="main-content" className="min-h-screen bg-stone-50">
+    <>
+      <JsonLd
+        data={communityEventSchema({
+          name: event.title,
+          description: event.description,
+          startDate: startDateISO,
+          endDate: endDateISO,
+          location: event.location,
+          eventAttendanceMode: FORMAT_ATTENDANCE_MODE[event.format],
+          url: eventUrl,
+        })}
+      />
+      <div className="min-h-screen bg-stone-50">
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         {/* Back link */}
         <Link
           href="/events"
           className="group mb-8 inline-flex items-center gap-2 font-body font-medium text-accent-600 hover:text-accent-500"
         >
-          <ArrowLeft className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-x-1" />
+          <ArrowLeft className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-x-1" aria-hidden="true" />
           Back to Events
         </Link>
 
@@ -172,11 +210,13 @@ export default async function EventDetailPage({
             href="/events"
             className="group inline-flex items-center gap-2 font-body font-medium text-accent-600 hover:text-accent-500"
           >
-            <ArrowLeft className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-x-1" />
+            <ArrowLeft className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-x-1" aria-hidden="true" />
             Back to Events
           </Link>
         </div>
       </div>
-    </main>
+    </div>
+    </>
+
   );
 }

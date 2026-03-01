@@ -1,12 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useReducedMotion,
-} from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -39,8 +34,7 @@ export default function Newsletter() {
   }
 
   return (
-    <LazyMotion features={domAnimation}>
-      <section className="bg-stone-50 py-16 md:py-24" aria-label="Newsletter signup">
+    <section className="bg-stone-50 py-16 md:py-24" aria-label="Newsletter signup">
         <m.div
           className="mx-auto max-w-2xl px-4 text-center"
           initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -114,6 +108,5 @@ export default function Newsletter() {
           </form>
         </m.div>
       </section>
-    </LazyMotion>
   );
 }

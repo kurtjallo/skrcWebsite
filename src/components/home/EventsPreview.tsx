@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useReducedMotion,
-} from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { Clock, MapPin, ArrowRight } from "lucide-react";
 import { events } from "@/data/events";
 import type { EventFormat } from "@/types/event";
@@ -68,8 +63,7 @@ export default function EventsPreview() {
           </p>
         </div>
 
-        <LazyMotion features={domAnimation}>
-          <m.div
+        <m.div
             className="grid grid-cols-1 gap-6 md:grid-cols-3"
             initial="hidden"
             whileInView="visible"
@@ -134,8 +128,7 @@ export default function EventsPreview() {
                 </m.div>
               );
             })}
-          </m.div>
-        </LazyMotion>
+        </m.div>
 
         {/* View All Events link */}
         <div className="mt-10 text-center">

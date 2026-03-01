@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useReducedMotion,
-} from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { Tractor, Ship, Home, HandHeart, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { selfIdCards } from "@/data/homepage";
@@ -46,8 +41,7 @@ export default function SelfIdCards() {
           </h2>
         </div>
 
-        <LazyMotion features={domAnimation}>
-          <m.div
+        <m.div
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
             initial="hidden"
             whileInView="visible"
@@ -101,8 +95,7 @@ export default function SelfIdCards() {
                 </m.div>
               );
             })}
-          </m.div>
-        </LazyMotion>
+        </m.div>
       </div>
     </section>
   );

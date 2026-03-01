@@ -10,8 +10,7 @@ import Newsletter from "@/components/home/Newsletter";
 import PartnerLogos from "@/components/home/PartnerLogos";
 
 export const metadata: Metadata = {
-  title:
-    "St Katharine Rural Connect | Support, Connection & Care for Rural Communities",
+  title: "St Katharine Rural Connect | Support for Rural Communities",
   description:
     "St Katharine Rural Connect strengthens rural communities through accessible support, practical resources, and meaningful belonging for farmers, offshore workers, families, and community members.",
 };

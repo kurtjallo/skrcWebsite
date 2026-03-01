@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { LazyMotion, domAnimation, m, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const PREMIUM_EASE = [0.25, 0.1, 0.25, 1] as const;
@@ -23,7 +23,7 @@ export default function Hero() {
       : fadeUp(delay);
 
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       {/* TODO: Replace gradient with actual landscape image using next/image */}
       <section
         className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800"
@@ -119,6 +119,6 @@ export default function Hero() {
           </m.p>
         </div>
       </section>
-    </LazyMotion>
+    </>
   );
 }

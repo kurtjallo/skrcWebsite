@@ -40,7 +40,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <main id="main-content">
+    <>
       {/* Section 1: Page Header */}
       <section className="bg-stone-50 px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
@@ -201,6 +201,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-    </main>
+    </>
   );
 }

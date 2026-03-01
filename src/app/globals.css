@@ -206,6 +206,14 @@ h4, h5, h6 {
   outline-offset: 2px;
 }
 
+/* Minimum touch target size for coarse pointers (WCAG 2.5.8) */
+@media (pointer: coarse) {
+  a, button, [role="button"], input, select, textarea, summary {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
