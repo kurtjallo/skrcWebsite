@@ -35,6 +35,14 @@
   /* Dividers */
   --color-divider: #e0e2ea;
 
+  /* Surface (semantic aliases -- values updated by token migration) */
+  --color-surface-page: #FAFAF7;
+  --color-surface-card: #ffffff;
+  --color-surface-dark: #0F1A2E;
+
+  /* Divider */
+  --color-divider: #EDE8DF;
+
   /* Text */
   --color-text-primary: #1a1a5e;
   --color-text-body: #4a4a5a;
