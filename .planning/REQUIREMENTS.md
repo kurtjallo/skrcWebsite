@@ -173,13 +173,76 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| — | — | Pending |
+| DS-01 | Phase 9 | Pending |
+| DS-02 | Phase 9 | Pending |
+| DS-03 | Phase 9 | Pending |
+| DS-04 | Phase 9 | Pending |
+| DS-05 | Phase 9 | Pending |
+| DS-06 | Phase 9 | Pending |
+| LAYOUT-01 | Phase 9 | Pending |
+| LAYOUT-02 | Phase 9 | Pending |
+| LAYOUT-03 | Phase 9 | Pending |
+| LAYOUT-04 | Phase 9 | Pending |
+| HOME-01 | Phase 10 | Pending |
+| HOME-02 | Phase 10 | Pending |
+| HOME-03 | Phase 10 | Pending |
+| HOME-04 | Phase 10 | Pending |
+| HOME-05 | Phase 10 | Pending |
+| HOME-06 | Phase 10 | Pending |
+| HOME-07 | Phase 10 | Pending |
+| SERV-01 | Phase 11 | Pending |
+| SERV-02 | Phase 11 | Pending |
+| SERV-03 | Phase 11 | Pending |
+| SERV-04 | Phase 11 | Pending |
+| ABOUT-01 | Phase 11 | Pending |
+| ABOUT-02 | Phase 11 | Pending |
+| ABOUT-03 | Phase 11 | Pending |
+| ABOUT-04 | Phase 11 | Pending |
+| ABOUT-05 | Phase 11 | Pending |
+| CONTACT-01 | Phase 11 | Pending |
+| CONTACT-02 | Phase 11 | Pending |
+| CONTACT-03 | Phase 11 | Pending |
+| EVENT-01 | Phase 12 | Pending |
+| EVENT-02 | Phase 12 | Pending |
+| EVENT-03 | Phase 12 | Pending |
+| SERVE-01 | Phase 12 | Pending |
+| SERVE-02 | Phase 12 | Pending |
+| SERVE-03 | Phase 12 | Pending |
+| INVOLVE-01 | Phase 12 | Pending |
+| INVOLVE-02 | Phase 12 | Pending |
+| INVOLVE-03 | Phase 12 | Pending |
+| PARTNER-01 | Phase 12 | Pending |
+| PARTNER-02 | Phase 12 | Pending |
+| PARTNER-03 | Phase 12 | Pending |
+| TEAM-01 | Phase 12 | Pending |
+| TEAM-02 | Phase 12 | Pending |
+| TEAM-03 | Phase 12 | Pending |
+| TESTI-01 | Phase 12 | Pending |
+| TESTI-02 | Phase 12 | Pending |
+| TESTI-03 | Phase 12 | Pending |
+| FAQ-01 | Phase 13 | Pending |
+| FAQ-02 | Phase 13 | Pending |
+| FAQ-03 | Phase 13 | Pending |
+| FAQ-04 | Phase 13 | Pending |
+| LINKS-01 | Phase 13 | Pending |
+| LINKS-02 | Phase 13 | Pending |
+| LINKS-03 | Phase 13 | Pending |
+| LINKS-04 | Phase 13 | Pending |
+| 404-01 | Phase 13 | Pending |
+| 404-02 | Phase 13 | Pending |
+| 404-03 | Phase 13 | Pending |
+| THANKS-01 | Phase 13 | Pending |
+| THANKS-02 | Phase 13 | Pending |
+| THANKS-03 | Phase 13 | Pending |
+| QUALITY-01 | Phase 14 | Pending |
+| QUALITY-02 | Phase 14 | Pending |
+| QUALITY-03 | Phase 14 | Pending |
 
 **Coverage:**
-- v1 requirements: 55 total
-- Mapped to phases: 0
-- Unmapped: 55 ⚠️
+- v1 requirements: 64 total
+- Mapped to phases: 64
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after initial definition*
+*Last updated: 2026-03-09 after roadmap creation*
