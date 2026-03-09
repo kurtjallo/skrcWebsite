@@ -300,3 +300,8 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - template.tsx and AnimatedSection.tsx updated to use `m` imports and removed local LazyMotion wrappers
   - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
   - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
+
+### Phase 9: Design System & Layout (09-05 -- in progress)
+- **EmphasisHeading** (`src/components/shared/EmphasisHeading.tsx`): Parses `*italic*` markers in heading text via regex split, renders `<em>` with `font-heading italic` class, supports h1-h4 via `as` prop, optional `accentItalic` prop for accent-colored italic words, server component
+- **CircleArrowCTA** (`src/components/shared/CircleArrowCTA.tsx`): Text label + filled circle with ArrowUpRight icon, dark (navy circle/white arrow) and light (white circle/navy arrow) variants, renders as Link when `href` provided or button when `onClick`, `group-hover:scale-110` on circle, `aria-hidden` on icon, server component
+- **PreFooterCTA** (`src/components/shared/PreFooterCTA.tsx`): Large image card with curved clip-path (`ellipse(55% 100% at 50% 0%)`) creating arch transition from page bg into image, `bg-background` curved shape at top (80px), dark gradient overlay from bottom, content positioned at bottom-left (EmphasisHeading + body text + CircleArrowCTA light variant), inset from page edges (`px-4 pb-8`), `rounded-[20px]`, min-height 500px, server component using next/image
