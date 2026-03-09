@@ -2,24 +2,24 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-28)
+See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** People in rural crisis can find and contact support within 2 clicks on any device, any connection speed.
-**Current focus:** Phase 1 — Foundation
+**Current focus:** Milestone v2.0 — Visual Revamp (defining requirements)
 
 ## Current Position
 
-Phase: 1 of 8 (Foundation)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-02-28 — Project initialized, roadmap created
+Phase: Not started (run /gsd:create-roadmap)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-08 — Milestone v2.0 started
 
 Progress: ░░░░░░░░░░ 0%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
+- Total plans completed: 0 (v2.0)
 - Average duration: —
 - Total execution time: 0 hours
 
@@ -40,8 +40,12 @@ Progress: ░░░░░░░░░░ 0%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- Phases 3-7 are parallelizable (all depend only on Phase 2)
-- A11Y/SEO/PERF grouped into final Phase 8 audit pass
+- Drop gold accent entirely, adopt Stratwell navy blue palette
+- Adopt italic-emphasis heading pattern across all pages
+- Full-screen dark hero for contact page
+- Add 4 new pages: FAQ, Links, 404, Thank You
+- Dark navy footer variant as default
+- Design spec at mockups/homepage-reference.md is source of truth
 
 ### Pending Todos
 
@@ -49,10 +53,12 @@ None yet.
 
 ### Blockers/Concerns
 
-None yet.
+- Need to preserve charity warmth while adopting corporate template patterns
+- Video play buttons on testimonial cards are cosmetic only (no video functionality)
+- Frosted glass team cards need real photos or good placeholder strategy
 
 ## Session Continuity
 
-Last session: 2026-02-28
-Stopped at: Roadmap created (8 phases, 81 requirements)
+Last session: 2026-03-08
+Stopped at: Milestone v2.0 initialized, ready for roadmap creation
 Resume file: None
