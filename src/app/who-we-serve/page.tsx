@@ -67,7 +67,7 @@ export default function WhoWeServePage() {
             from there.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button variant="gold" size="lg" asChild>
+            <Button variant="default" size="lg" asChild>
               <Link href="/contact">Get in Touch</Link>
             </Button>
             <Link

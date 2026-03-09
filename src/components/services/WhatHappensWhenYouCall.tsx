@@ -59,7 +59,7 @@ export function WhatHappensWhenYouCall() {
 
         {/* CTA */}
         <div className="mt-14 text-center">
-          <Button variant="gold" size="lg" asChild>
+          <Button variant="default" size="lg" asChild>
             <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>
