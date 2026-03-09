@@ -12,8 +12,9 @@ interface HeaderProps {
   variant?: "solid" | "transparent";
 }
 
-export function Header({ variant = "solid" }: HeaderProps) {
+export function Header({ variant }: HeaderProps) {
   const pathname = usePathname();
+  const resolvedVariant = variant ?? (pathname === "/" ? "transparent" : "solid");
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,7 +28,7 @@ export function Header({ variant = "solid" }: HeaderProps) {
 
   // Scroll detection for transparent -> solid transition
   useEffect(() => {
-    if (variant !== "transparent") return;
+    if (resolvedVariant !== "transparent") return;
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
@@ -35,14 +36,14 @@ export function Header({ variant = "solid" }: HeaderProps) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [variant]);
+  }, [resolvedVariant]);
 
-  const isTransparent = variant === "transparent" && !scrolled;
+  const isTransparent = resolvedVariant === "transparent" && !scrolled;
 
   return (
     <header
       className={cn(
-        variant === "transparent" ? "fixed" : "sticky",
+        resolvedVariant === "transparent" ? "fixed" : "sticky",
         "top-0 z-50 w-full transition-colors duration-300",
         isTransparent
           ? "bg-transparent"
@@ -101,7 +102,7 @@ export function Header({ variant = "solid" }: HeaderProps) {
           aria-label="Open menu"
           onClick={handleOpenMobileNav}
         >
-          <Menu size={24} />
+          <Menu size={24} aria-hidden="true" />
         </button>
       </div>
 

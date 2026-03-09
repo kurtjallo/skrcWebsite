@@ -30,7 +30,7 @@
 **Milestone Goal:** Full visual redesign to match modern navy blue design language — new color palette, italic-emphasis headings, circle-arrow CTAs, white card surfaces — plus 4 new pages (FAQ, Links, 404, Thank You).
 
 - [x] **Phase 9: Design System & Layout** - New color tokens, typography, shared components (heroes, footer, CTAs, cards)
-- [ ] **Phase 10: Homepage Redesign** - Complete homepage in new visual language
+- [x] **Phase 10: Homepage Redesign** - Complete homepage in new visual language
 - [ ] **Phase 11: Core Page Redesigns** - Services, About, and Contact pages
 - [ ] **Phase 12: Community Page Redesigns** - Events, Who We Serve, Get Involved, Partnerships, Team, Testimonials
 - [ ] **Phase 13: New Pages** - FAQ, Links, 404, Thank You
@@ -145,7 +145,7 @@ Phases 9-10 sequential, then 11-13 in parallel, then 14.
 | 7. Contact | v1.0 | Complete | Complete | ✅ |
 | 8. Cross-Cutting Quality | v1.0 | Complete | Complete | ✅ |
 | 9. Design System & Layout | v2.0 | 5/5 | Complete | ✅ |
-| 10. Homepage Redesign | v2.0 | 0/TBD | Not started | - |
+| 10. Homepage Redesign | v2.0 | 1/1 | Complete | ✅ |
 | 11. Core Page Redesigns | v2.0 | 0/TBD | Not started | - |
 | 12. Community Page Redesigns | v2.0 | 0/TBD | Not started | - |
 | 13. New Pages | v2.0 | 0/TBD | Not started | - |

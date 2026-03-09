@@ -5,33 +5,30 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** People in rural crisis can find and contact support within 2 clicks on any device, any connection speed.
-**Current focus:** Phase 10 — Homepage Redesign (next up)
+**Current focus:** Phase 11-13 — Core Pages, Community Pages, New Pages (parallel)
 
 ## Current Position
 
-Phase: 9 of 14 (Design System & Layout) — COMPLETE
-Plan: 5 of 5
-Status: Phase complete, verified
-Last activity: 2026-03-09 — Phase 9 executed (5 plans in parallel), verified, gaps fixed
+Phase: 10 of 14 (Homepage Redesign) — COMPLETE
+Plan: 1 of 1
+Status: Phase complete
+Last activity: 2026-03-09 — Phase 10 executed (all 7 homepage sections + layout changes)
 
-Progress: ████████████████████░░░░░░░░░░ 64% (v2.0: Phase 9 complete)
+Progress: ██████████████████████████░░░░ 79% (v2.0: Phases 9-10 complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5 (v2.0)
+- Total plans completed: 6 (v2.0)
 - Average duration: ~7 min
-- Total execution time: ~15 min wall clock (parallel worktree execution)
+- Total execution time: ~22 min wall clock
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 09 | 5/5 | ~15 min | ~7 min |
-
-**Recent Trend:**
-- Last 5 plans: 09-01 (6m), 09-02 (12m), 09-03 (8m), 09-04 (7m), 09-05 (5m)
-- Trend: Parallel execution via worktrees — 5 plans in ~15 min wall clock
+| 10 | 1/1 | ~7 min | ~7 min |
 
 ## Accumulated Context
 
@@ -54,6 +51,11 @@ Recent decisions affecting current work:
 - 09-04: Header supports transparent/solid modes with scroll transition at 100px
 - 09-04: InsetHero (70vh default) and InteriorHero (45vh) with rounded-[20px] corners
 - 09-05: PreFooterCTA uses ellipse() clip-path for broad browser support
+- 10-01: Header auto-detects homepage (pathname === "/") for transparent variant
+- 10-01: UtilityBar hidden on homepage (hero has crisis line, header is fixed)
+- 10-01: Homepage sections all use bg-surface-page with white cards (no alternating backgrounds)
+- 10-01: Impact stories, approach steps, testimonial cards are all new homepage patterns
+- 10-01: Old v1 homepage components (SelfIdCards, FoundingPrayer, ImpactStats, etc.) still exist but unused
 
 ### Pending Todos
 
@@ -64,10 +66,12 @@ None.
 - Need to preserve charity warmth while adopting corporate template patterns
 - Video play buttons on testimonial cards are cosmetic only (no video functionality)
 - Frosted glass team cards need real photos or good placeholder strategy
-- DS-06 stats cards deferred to page redesign phases (10-13) — use className pattern on Card
+- DS-06 stats cards deferred to page redesign phases (10-13) — now implemented in WhoWeAre
+- All homepage image placeholders use CSS gradients — replace with real photos when available
+- Old v1 homepage components are dead code and should be cleaned up in Phase 14
 
 ## Session Continuity
 
 Last session: 2026-03-09
-Stopped at: Phase 9 complete, ready for Phase 10
+Stopped at: Phase 10 complete, ready for Phases 11-13 (parallel)
 Resume file: None

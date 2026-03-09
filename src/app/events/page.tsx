@@ -76,7 +76,7 @@ export default function EventsPage() {
           />
 
           {/* Results count */}
-          <p className="mb-4 font-body text-sm text-text-muted">
+          <p className="mb-4 font-body text-sm text-text-muted" aria-live="polite">
             Showing {filteredEvents.length} of {events.length} events
           </p>
 

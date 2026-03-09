@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { servicePillars, getServiceBySlug } from "@/data/services";
 import { PillarDetail } from "@/components/services/PillarDetail";
+import { SITE_CONFIG } from "@/lib/constants";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -23,9 +24,20 @@ export async function generateMetadata({
     return { title: "Service Not Found | St Katharine Rural Connect" };
   }
 
+  const title = `${pillar.name} | St Katharine Rural Connect`;
+  const description = pillar.whatHappens;
+
   return {
-    title: `${pillar.name} | St Katharine Rural Connect`,
-    description: pillar.whatHappens,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_CONFIG.url}/services/${slug}`,
+      siteName: SITE_CONFIG.name,
+      locale: SITE_CONFIG.locale,
+      type: "website",
+    },
   };
 }
 

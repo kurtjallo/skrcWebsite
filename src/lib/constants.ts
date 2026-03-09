@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
   officeHours: "Monday - Friday, 9am - 5pm",
   location: "Rural Scotland",
   tagline: "Support, connection, and care for rural communities",
-  url: "https://stkatharine-ruralconnect.org",
+  url: "https://skrc.org.uk",
   locale: "en-GB",
 } as const;
 

@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { createMetadata } from "@/lib/metadata";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: `Links | ${SITE_CONFIG.name}`,
+export const metadata = createMetadata({
+  title: "Links",
   description: SITE_CONFIG.tagline,
-};
+  path: "/links",
+});
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   facebook: Facebook,

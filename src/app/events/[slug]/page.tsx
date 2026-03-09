@@ -31,10 +31,22 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const event = events.find((e) => e.slug === slug);
-  if (!event) return { title: "Event Not Found" };
+  if (!event) return { title: "Event Not Found | St Katharine Rural Connect" };
+
+  const title = `${event.title} | St Katharine Rural Connect`;
+  const description = event.description;
+
   return {
-    title: `${event.title} | St Katharine Rural Connect`,
-    description: event.description,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_CONFIG.url}/events/${slug}`,
+      siteName: SITE_CONFIG.name,
+      locale: SITE_CONFIG.locale,
+      type: "website",
+    },
   };
 }
 

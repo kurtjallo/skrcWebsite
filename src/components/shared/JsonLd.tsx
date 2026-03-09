@@ -25,7 +25,7 @@ export function ngoSchema(): Record<string, unknown> {
     name: "St Katharine Rural Connect",
     alternateName: "SKRC",
     description: SITE_CONFIG.tagline,
-    url: "https://skrc.org.uk",
+    url: SITE_CONFIG.url,
     telephone: SITE_CONFIG.phoneHref.replace("tel:", ""),
     email: SITE_CONFIG.email,
     areaServed: {
@@ -85,7 +85,7 @@ export function communityEventSchema({
     organizer: {
       "@type": "NGO",
       name: "St Katharine Rural Connect",
-      url: "https://skrc.org.uk",
+      url: SITE_CONFIG.url,
     },
     url,
   };

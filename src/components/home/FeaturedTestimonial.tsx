@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { m, useReducedMotion } from "motion/react";
 import { testimonials } from "@/data/testimonials";
 
@@ -81,11 +82,12 @@ export default function FeaturedTestimonial({
           >
             {/* Profile Image Placeholder */}
             <div className="relative h-20 w-20 overflow-hidden rounded-full border border-stone-300 shadow-sm">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=256&auto=format&fit=crop"
                 alt={`Photo of ${testimonial.firstName}`}
-                className="h-full w-full object-cover"
-                loading="lazy"
+                fill
+                className="object-cover"
+                sizes="80px"
               />
             </div>
             <cite className="not-italic text-base text-text-muted text-center">

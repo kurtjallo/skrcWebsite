@@ -4,6 +4,8 @@ import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 
 export const metadata = {
   title: "Page Not Found | St Katharine Rural Connect",
+  description:
+    "The page you're looking for doesn't exist or has been moved. Return to the St Katharine Rural Connect homepage to find what you need.",
 };
 
 export default function NotFound() {

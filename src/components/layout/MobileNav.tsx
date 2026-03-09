@@ -86,7 +86,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               aria-label="Close menu"
               className="p-2 text-text-body hover:text-primary-900 transition-colors"
             >
-              <X size={24} />
+              <X size={24} aria-hidden="true" />
             </button>
           </div>
 
@@ -157,7 +157,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 aria-label="Close menu"
                 className="p-2 text-text-body hover:text-primary-900 transition-colors"
               >
-                <X size={24} />
+                <X size={24} aria-hidden="true" />
               </button>
             </div>
 

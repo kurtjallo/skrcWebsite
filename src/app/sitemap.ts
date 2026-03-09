@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { servicePillars } from "@/data/services";
 import { events } from "@/data/events";
+import { SITE_CONFIG } from "@/lib/constants";
 
-const BASE_URL = "https://skrc.org.uk";
+const BASE_URL = SITE_CONFIG.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

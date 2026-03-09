@@ -1,7 +1,15 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export function UtilityBar() {
+  const pathname = usePathname();
+
+  // Hide on homepage — hero has its own crisis line, and header is transparent/fixed
+  if (pathname === "/") return null;
+
   return (
     <div className="bg-primary-950 text-stone-100 py-2">
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">

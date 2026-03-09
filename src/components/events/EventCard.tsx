@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Clock, MapPin, Monitor, Wifi, ArrowUpRight } from "lucide-react";
 import type { Event } from "@/types/event";
