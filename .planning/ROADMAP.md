@@ -29,7 +29,7 @@
 
 **Milestone Goal:** Full visual redesign to match modern navy blue design language — new color palette, italic-emphasis headings, circle-arrow CTAs, white card surfaces — plus 4 new pages (FAQ, Links, 404, Thank You).
 
-- [ ] **Phase 9: Design System & Layout** - New color tokens, typography, shared components (heroes, footer, CTAs, cards)
+- [x] **Phase 9: Design System & Layout** - New color tokens, typography, shared components (heroes, footer, CTAs, cards)
 - [ ] **Phase 10: Homepage Redesign** - Complete homepage in new visual language
 - [ ] **Phase 11: Core Page Redesigns** - Services, About, and Contact pages
 - [ ] **Phase 12: Community Page Redesigns** - Events, Who We Serve, Get Involved, Partnerships, Team, Testimonials
@@ -127,7 +127,7 @@ Phases 11-13 have zero cross-dependencies and can execute in parallel.
   1. All v1.0 accessibility standards pass — WCAG AA, skip links, keyboard nav, reduced motion, 44px touch targets, semantic landmarks, heading hierarchy, focus indicators, tel: links
   2. All v1.0 SEO standards pass — unique metadata per page, sitemap updated with new pages, robots, JSON-LD structured data, charity number in footer
   3. All v1.0 performance standards pass — <500KB per page, lazy loading, LazyMotion with domAnimation
-**Plans**: TBD
+**Plans**: 5 (all complete)
 
 ## Progress
 
@@ -144,7 +144,7 @@ Phases 9-10 sequential, then 11-13 in parallel, then 14.
 | 6. Community Pages | v1.0 | Complete | Complete | ✅ |
 | 7. Contact | v1.0 | Complete | Complete | ✅ |
 | 8. Cross-Cutting Quality | v1.0 | Complete | Complete | ✅ |
-| 9. Design System & Layout | v2.0 | 0/TBD | Not started | - |
+| 9. Design System & Layout | v2.0 | 5/5 | Complete | ✅ |
 | 10. Homepage Redesign | v2.0 | 0/TBD | Not started | - |
 | 11. Core Page Redesigns | v2.0 | 0/TBD | Not started | - |
 | 12. Community Page Redesigns | v2.0 | 0/TBD | Not started | - |
