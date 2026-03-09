@@ -3,11 +3,10 @@
 ## Design Guidelines
 
 - Premium, elevated feel -- no clutter
-- Deep navy primary (#1a1a5e) + royal blue accent (#3b3bff) -- no gold
-- Light blue-grey page background (#f0f1f8) with white card surfaces
-- Italic-emphasis headings as defining typographic feature
+- Hover effects with gold accent lines on interactive elements
 - Two-column layouts for problem/solution sections
-- Flat page background with white cards (no alternating section bands)
+- Alternating section backgrounds for visual rhythm
+- Subtle architectural line graphics throughout
 - Clean, powerful, minimal aesthetic
 
 ## Rules
@@ -302,9 +301,7 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
   - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
 
-### Phase 9: Design System & Layout (09-01 -- in progress)
-- **globals.css v2.0 tokens** (`src/app/globals.css`): Complete palette overhaul -- deep navy primary (#121240-#3535c0), royal blue accent (#3030e0-#e8e8ff), blue-grey stone backgrounds (#f0f1f8-#a0a2b0), surface tokens (surface-page, surface-card, surface-dark), divider token, updated text tokens (navy/charcoal), all shadcn :root variables updated, radius increased to 0.75rem, focus ring now blue
-- **Font italic loading** (`src/lib/fonts.ts`): Cormorant Garamond now explicitly loads style: ["normal", "italic"] for true italic glyphs
-- **Layout body class** (`src/app/layout.tsx`): bg-stone-50 replaced with bg-surface-page
-- **SectionWrapper v2.0** (`src/components/layout/SectionWrapper.tsx`): Flat surface-page background pattern (no alternating bands), light-b variant uses surface-card (white), dark variant uses surface-dark
-- **CornerBrackets** (`src/components/shared/CornerBrackets.tsx`): GOLD_COLOR replaced with ACCENT_COLOR (#3b3bff) -- last hardcoded gold hex eliminated
+### Phase 9: Design System & Layout (09-02)
+- **EmphasisHeading** (`src/components/shared/EmphasisHeading.tsx`): Server component, parses `*italic*` markers via regex split `(/(\*[^*]+\*)/g)`, renders `<em>` with `font-heading` (Cormorant Garamond italic), supports h1-h4 via `as` prop (default h2), optional `accentItalic` prop for text-accent-500 on italic words, handles edge cases (no asterisks, multiple/adjacent groups)
+- **SectionLabel** (`src/components/shared/SectionLabel.tsx`): Server component, pill badge with blue dot (`bg-accent-500`, `aria-hidden`) + uppercase text (`text-xs`, `tracking-[0.15em]`, `font-body`), `rounded-full` with `border-divider`, left/center alignment (center wraps in `flex justify-center` container)
+- **CircleArrowCTA** (`src/components/shared/CircleArrowCTA.tsx`): Server component, text + filled circle with ArrowUpRight icon (`h-10 w-10`), Link mode (with href) or button mode (with onClick/type), dark variant (navy circle, white arrow) or light variant (white circle, navy arrow), `group-hover:scale-110` on circle, `aria-hidden` on icon
