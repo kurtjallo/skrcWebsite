@@ -1,6 +1,9 @@
-import Link from "next/link";
 import { Heart, Calendar, Gift, Handshake, Share2 } from "lucide-react";
 import { createMetadata } from "@/lib/metadata";
+import { InteriorHero } from "@/components/layout/InteriorHero";
+import { SectionLabel } from "@/components/shared/SectionLabel";
+import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
+import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 import type { LucideIcon } from "lucide-react";
 
 export const metadata = createMetadata({
@@ -64,15 +67,20 @@ const involvementOptions: InvolvementOption[] = [
 export default function GetInvolvedPage() {
   return (
     <>
-      {/* Section 1: Page Header */}
-      <section className="bg-stone-50 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-body text-overline font-bold uppercase tracking-widest text-accent-600">
-            Get Involved
-          </p>
-          <h1 className="mt-4 font-heading text-5xl font-semibold text-text-primary">
-            Be Part of Something Meaningful
-          </h1>
+      <InteriorHero
+        heading="Get *Involved*"
+        backgroundImage="/images/placeholder-hero.svg"
+      />
+
+      {/* Intro */}
+      <section className="bg-surface-page py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <SectionLabel text="MAKE A DIFFERENCE" />
+          <EmphasisHeading
+            text="Be Part of Something *Meaningful*"
+            as="h2"
+            className="mt-6 max-w-2xl text-3xl md:text-4xl text-text-primary"
+          />
           <p className="mt-6 max-w-prose text-lg text-text-body">
             There are many ways to support rural communities through St
             Katharine Rural Connect. Whether you have time, resources,
@@ -82,21 +90,21 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      {/* Section 2: Involvement Options */}
-      <section className="bg-stone-100 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl space-y-8">
+      {/* Involvement Options */}
+      <section className="bg-surface-page px-4 pb-20 md:pb-28 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl space-y-6">
           {involvementOptions.map((option) => {
             const Icon = option.icon;
             return (
               <div
                 key={option.title}
-                className="grid grid-cols-1 items-start gap-8 rounded-lg border border-stone-200 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md md:grid-cols-[auto_1fr]"
+                className="grid grid-cols-1 items-start gap-6 rounded-2xl bg-surface-card p-8 transition-shadow duration-300 hover:shadow-lg md:grid-cols-[auto_1fr_auto]"
               >
                 {/* Icon */}
                 <div className="flex-shrink-0">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent-100">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent-100">
                     <Icon
-                      size={28}
+                      size={24}
                       className="text-accent-600"
                       aria-hidden="true"
                     />
@@ -105,18 +113,21 @@ export default function GetInvolvedPage() {
 
                 {/* Content */}
                 <div>
-                  <h2 className="font-heading text-3xl font-semibold text-primary-900">
+                  <h3 className="font-heading text-2xl font-semibold text-primary-900">
                     {option.title}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-base leading-relaxed text-text-body">
                     {option.description}
                   </p>
-                  <Link
+                </div>
+
+                {/* CTA */}
+                <div className="flex items-center md:self-center">
+                  <CircleArrowCTA
+                    label={option.ctaText}
                     href={option.ctaHref}
-                    className="mt-6 inline-block rounded-md bg-primary-900 px-6 py-3 font-body font-medium text-text-on-dark transition-colors duration-300 hover:bg-primary-700"
-                  >
-                    {option.ctaText}
-                  </Link>
+                    variant="dark"
+                  />
                 </div>
               </div>
             );
@@ -124,23 +135,26 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      {/* Section 3: CTA Banner */}
-      <section className="bg-primary-900 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="font-heading text-4xl font-semibold text-text-on-dark">
-            Not Sure Where to Start?
-          </h2>
-          <p className="mx-auto mt-6 max-w-prose text-lg text-stone-300">
+      {/* CTA Banner */}
+      <section className="bg-primary-900 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <EmphasisHeading
+            text="Not Sure Where to *Start*?"
+            as="h2"
+            className="text-3xl text-white md:text-4xl"
+          />
+          <p className="mx-auto mt-6 max-w-prose text-lg text-white/80">
             That&rsquo;s perfectly fine. Get in touch and we&rsquo;ll help you
             find the right way to get involved. No commitment, no pressure
             &mdash; just a conversation.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-md bg-accent-500 px-8 py-4 font-body font-semibold text-primary-950 transition-colors duration-300 hover:bg-accent-400"
-          >
-            Contact Our Team
-          </Link>
+          <div className="mt-8 flex justify-center">
+            <CircleArrowCTA
+              label="Contact Our Team"
+              href="/contact"
+              variant="light"
+            />
+          </div>
         </div>
       </section>
     </>

@@ -1,9 +1,11 @@
-import Link from "next/link";
 import { createMetadata } from "@/lib/metadata";
 import { audienceSegments } from "@/data/audiences";
 import { servicePillars } from "@/data/services";
 import { AudienceCard } from "@/components/services/AudienceCard";
-import { Button } from "@/components/ui/button";
+import { InteriorHero } from "@/components/layout/InteriorHero";
+import { SectionLabel } from "@/components/shared/SectionLabel";
+import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
+import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 
 export const metadata = createMetadata({
   title: "Who We Serve",
@@ -15,15 +17,20 @@ export const metadata = createMetadata({
 export default function WhoWeServePage() {
   return (
     <>
-      {/* Hero section */}
-      <section className="bg-stone-50 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl text-center">
-          <p className="font-body text-overline font-bold uppercase tracking-widest text-accent-600">
-            Who We Serve
-          </p>
-          <h1 className="mt-4 font-heading text-5xl font-light text-text-primary md:text-display">
-            We&rsquo;re Here for You
-          </h1>
+      <InteriorHero
+        heading="Who We *Serve*"
+        backgroundImage="/images/placeholder-hero.svg"
+      />
+
+      {/* Intro */}
+      <section className="bg-surface-page py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <SectionLabel text="OUR COMMUNITIES" align="center" />
+          <EmphasisHeading
+            text="We're Here for *You*"
+            as="h2"
+            className="mx-auto mt-6 max-w-3xl text-3xl md:text-4xl text-text-primary"
+          />
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-text-body">
             Whether you&rsquo;re farming the land, working offshore, supporting
             family from home, or looking to connect with your community &mdash;
@@ -38,13 +45,19 @@ export default function WhoWeServePage() {
           segment.relevantPillarIds.includes(pillar.id)
         );
         const isReversed = index % 2 !== 0;
-        const bgClass = index % 2 === 0 ? "bg-stone-50" : "bg-stone-100";
 
         return (
           <section
             key={segment.id}
-            className={`${bgClass} px-6 py-16 md:py-20`}
+            className="bg-surface-page px-6 pb-20 md:pb-28"
           >
+            {/* Thin divider between segments */}
+            {index > 0 && (
+              <div
+                className="mx-auto mb-20 max-w-5xl border-t border-divider md:mb-28"
+                aria-hidden="true"
+              />
+            )}
             <AudienceCard
               segment={segment}
               relevantPillars={relevantPillars}
@@ -55,27 +68,31 @@ export default function WhoWeServePage() {
       })}
 
       {/* "Not sure where you fit?" CTA section */}
-      <section className="bg-primary-900 px-6 py-16 md:py-20">
+      <section className="bg-primary-900 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-3xl font-semibold text-text-on-dark">
-            Not sure where you fit?
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-text-on-dark/80">
+          <EmphasisHeading
+            text="Not Sure Where You *Fit*?"
+            as="h2"
+            className="text-3xl text-white md:text-4xl"
+          />
+          <p className="mt-6 text-lg leading-relaxed text-white/80">
             That&rsquo;s absolutely fine. Our support isn&rsquo;t about fitting
             into a category &mdash; it&rsquo;s about getting you the help
             that&rsquo;s right for you. Get in touch and we&rsquo;ll take it
             from there.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button variant="default" size="lg" asChild>
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
-            <Link
+          <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
+            <CircleArrowCTA
+              label="Get in Touch"
+              href="/contact"
+              variant="light"
+            />
+            <a
               href="/services"
-              className="text-base font-medium text-accent-300 underline underline-offset-4 transition-colors duration-200 hover:text-accent-200"
+              className="font-body text-base font-medium text-accent-300 underline underline-offset-4 transition-colors duration-200 hover:text-accent-200"
             >
               View Our Services
-            </Link>
+            </a>
           </div>
         </div>
       </section>

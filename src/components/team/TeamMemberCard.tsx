@@ -9,34 +9,54 @@ function getInitials(name: string): string {
 
 interface TeamMemberCardProps {
   member: TeamMember;
+  /** Vary gradient per card for visual distinction */
+  gradientIndex?: number;
 }
 
-export function TeamMemberCard({ member }: TeamMemberCardProps) {
+const GRADIENTS = [
+  "from-primary-800 via-primary-900 to-primary-950",
+  "from-primary-900 via-primary-800 to-primary-950",
+  "from-primary-950 via-primary-900 to-primary-800",
+  "from-primary-800 via-primary-950 to-primary-900",
+  "from-primary-900 via-primary-950 to-primary-800",
+  "from-primary-950 via-primary-800 to-primary-900",
+  "from-primary-800 to-primary-950",
+];
+
+export function TeamMemberCard({ member, gradientIndex = 0 }: TeamMemberCardProps) {
   const initials = getInitials(member.name);
-  const connectionLabel =
-    member.group === "board" ? "Rural connection" : "Responsibility";
+  const gradient = GRADIENTS[gradientIndex % GRADIENTS.length];
 
   return (
-    <article className="group relative overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition-all duration-300 ease-premium hover:border-accent-300 hover:shadow-md before:absolute before:left-0 before:top-0 before:h-[2px] before:w-full before:origin-left before:scale-x-0 before:bg-accent-500 before:transition-transform before:duration-500 hover:before:scale-x-100">
-      {/* Avatar placeholder */}
-      <div className="flex h-48 items-center justify-center bg-stone-200">
-        <span className="font-heading text-3xl font-semibold text-stone-400">
-          {initials}
-        </span>
+    <article className="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
+      style={{ aspectRatio: "3 / 4" }}
+    >
+      {/* Gradient placeholder background */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient}`}>
+        {/* Initials centered as placeholder for photo */}
+        <div className="flex h-full items-center justify-center">
+          <span className="font-heading text-5xl font-semibold text-white/20">
+            {initials}
+          </span>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="space-y-3 p-6">
-        <h3 className="font-heading text-xl font-semibold text-primary-900">
-          {member.name}
-        </h3>
-        <p className="font-body text-sm font-medium uppercase tracking-wide text-accent-600">
-          {member.role}
-        </p>
-        <p className="text-sm leading-relaxed text-text-body">{member.bio}</p>
-        <p className="mt-3 border-t border-stone-100 pt-3 text-xs italic text-text-muted">
-          {connectionLabel}: {member.connection}
-        </p>
+      {/* Dark gradient from bottom for readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-950/40 to-transparent" />
+
+      {/* Frosted glass overlay at bottom */}
+      <div className="absolute inset-x-0 bottom-0 backdrop-blur-md bg-white/10 border-t border-white/10">
+        <div className="p-5">
+          <h3 className="font-heading text-xl font-semibold text-white">
+            {member.name}
+          </h3>
+          <p className="mt-1 font-body text-sm font-medium text-accent-300">
+            {member.role}
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-white/70 line-clamp-3">
+            {member.bio}
+          </p>
+        </div>
       </div>
     </article>
   );
