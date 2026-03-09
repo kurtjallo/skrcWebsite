@@ -317,3 +317,25 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **ContactForm redirect** (`src/components/contact/ContactForm.tsx`): Replaced inline success state with `useRouter().push("/thank-you")` on successful server action response, removed unused `useState`/`CheckCircle2` imports
 - **Sitemap updated** (`src/app/sitemap.ts`): Added /faq (priority 0.6), /links (priority 0.3), /thank-you (priority 0.2)
 - **NAV_ITEMS updated** (`src/lib/constants.ts`): Added FAQ link between Testimonials and Contact
+
+### Phase 14: Quality Verification
+- **Accessibility audit (QUALITY-01)**:
+  - All 12 v1.0 checks pass: lang, titles, landmarks, heading hierarchy, focus-visible, touch targets, reduced motion, tel: links, skip link, form labels, aria-live, no viewport restrictions
+  - Fixed: `aria-hidden="true"` added to decorative Menu/X icons in Header.tsx and MobileNav.tsx
+  - Fixed: `aria-live="polite"` added to event filter results count in events/page.tsx
+  - Fixed: Event detail 404 title now includes site name suffix
+- **SEO audit (QUALITY-02)**:
+  - Fixed: `SITE_CONFIG.url` unified to `https://skrc.org.uk` as single source of truth (was mismatched with sitemap/robots)
+  - Fixed: sitemap.ts and robots.ts now import from SITE_CONFIG instead of hardcoding URLs
+  - Fixed: JsonLd.tsx uses SITE_CONFIG.url instead of hardcoded URLs
+  - Fixed: OpenGraph tags added to homepage, service detail, event detail, and links pages
+  - Fixed: Root layout now has `metadataBase` + default OpenGraph metadata for social sharing fallback
+  - Fixed: 404 page now has description metadata
+  - All 16 pages verified with unique title/description, sitemap complete (13 static + 14 dynamic), robots.txt, JSON-LD, charity number in footer
+- **Performance audit (QUALITY-03)**:
+  - LazyMotionProvider verified: single instance in root layout, domAnimation feature set, no redundant wrappers
+  - All 18 motion components use `m.*` (not `motion.*`) for tree-shaking
+  - Fixed: Raw `<img>` in FeaturedTestimonial.tsx replaced with `next/image` `<Image fill sizes="80px">`; added `images.unsplash.com` to next.config.ts remotePatterns
+  - Fixed: Removed unnecessary `"use client"` from EventCard.tsx (no hooks/state/handlers)
+  - Fonts verified: next/font/google with display="swap" for both Cormorant Garamond and DM Sans
+  - Reduced motion verified: CSS media query + useReducedMotion in all 17 motion components

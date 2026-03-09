@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ **v1.0 MVP** - Phases 1-8 (shipped 2026-03-07)
-- 🚧 **v2.0 Visual Revamp** - Phases 9-14 (in progress)
+- ✅ **v2.0 Visual Revamp** - Phases 9-14 (shipped 2026-03-09)
 
 ## Phases
 
@@ -25,16 +25,16 @@
 
 </details>
 
-### 🚧 v2.0 Visual Revamp (In Progress)
+### ✅ v2.0 Visual Revamp (Shipped)
 
 **Milestone Goal:** Full visual redesign to match modern navy blue design language — new color palette, italic-emphasis headings, circle-arrow CTAs, white card surfaces — plus 4 new pages (FAQ, Links, 404, Thank You).
 
 - [x] **Phase 9: Design System & Layout** - New color tokens, typography, shared components (heroes, footer, CTAs, cards)
 - [x] **Phase 10: Homepage Redesign** - Complete homepage in new visual language
-- [ ] **Phase 11: Core Page Redesigns** - Services, About, and Contact pages
-- [ ] **Phase 12: Community Page Redesigns** - Events, Who We Serve, Get Involved, Partnerships, Team, Testimonials
-- [ ] **Phase 13: New Pages** - FAQ, Links, 404, Thank You
-- [ ] **Phase 14: Quality Verification** - Accessibility, SEO, performance preservation audit
+- [x] **Phase 11: Core Page Redesigns** - Services, About, and Contact pages
+- [x] **Phase 12: Community Page Redesigns** - Events, Who We Serve, Get Involved, Partnerships, Team, Testimonials
+- [x] **Phase 13: New Pages** - FAQ, Links, 404, Thank You
+- [x] **Phase 14: Quality Verification** - Accessibility, SEO, performance preservation audit
 
 ## Parallel Execution
 
@@ -146,7 +146,7 @@ Phases 9-10 sequential, then 11-13 in parallel, then 14.
 | 8. Cross-Cutting Quality | v1.0 | Complete | Complete | ✅ |
 | 9. Design System & Layout | v2.0 | 5/5 | Complete | ✅ |
 | 10. Homepage Redesign | v2.0 | 1/1 | Complete | ✅ |
-| 11. Core Page Redesigns | v2.0 | 0/TBD | Not started | - |
-| 12. Community Page Redesigns | v2.0 | 0/TBD | Not started | - |
-| 13. New Pages | v2.0 | 0/TBD | Not started | - |
-| 14. Quality Verification | v2.0 | 0/TBD | Not started | - |
+| 11. Core Page Redesigns | v2.0 | 1/1 | Complete | ✅ |
+| 12. Community Page Redesigns | v2.0 | 1/1 | Complete | ✅ |
+| 13. New Pages | v2.0 | 1/1 | Complete | ✅ |
+| 14. Quality Verification | v2.0 | 1/1 | Complete | ✅ |
