@@ -10,7 +10,7 @@ interface EventGridProps {
 export function EventGrid({ events, onClearFilters }: EventGridProps) {
   if (events.length === 0) {
     return (
-      <div className="py-16 text-center">
+      <div className="rounded-2xl bg-surface-card py-20 text-center">
         <CalendarX
           className="mx-auto mb-4 text-stone-300"
           size={48}
@@ -26,7 +26,7 @@ export function EventGrid({ events, onClearFilters }: EventGridProps) {
           <button
             type="button"
             onClick={onClearFilters}
-            className="font-body font-medium text-accent-600 underline hover:text-accent-500"
+            className="font-body font-medium text-accent-600 transition-colors hover:text-accent-500"
           >
             Clear all filters
           </button>

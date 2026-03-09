@@ -15,9 +15,9 @@ const columnClasses: Record<number, string> = {
 
 export function TeamGrid({ members, columns = 3 }: TeamGridProps) {
   return (
-    <div className={cn("grid gap-8", columnClasses[columns])}>
-      {members.map((member) => (
-        <TeamMemberCard key={member.id} member={member} />
+    <div className={cn("grid gap-6", columnClasses[columns])}>
+      {members.map((member, index) => (
+        <TeamMemberCard key={member.id} member={member} gradientIndex={index} />
       ))}
     </div>
   );
