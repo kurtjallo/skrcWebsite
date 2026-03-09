@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { Heart, Wheat, Anchor, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { createMetadata } from "@/lib/metadata";
+import { HERO_IMAGES, CTA_IMAGES, SERVICE_IMAGES } from "@/lib/placeholders";
 import { servicePillars } from "@/data/services";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -24,11 +26,18 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Users,
 };
 
+const PILLAR_IMAGES: Record<string, string> = {
+  "supporting-your-wellbeing": SERVICE_IMAGES.wellness,
+  "supporting-farm-life": SERVICE_IMAGES.agriculture,
+  "supporting-those-who-work-away": SERVICE_IMAGES.offshore,
+  "strengthening-our-community": SERVICE_IMAGES.community,
+};
+
 export default function ServicesPage() {
   return (
     <>
       {/* 1. Interior Hero */}
-      <InteriorHero heading="Our *Services*" />
+      <InteriorHero heading="Our *Services*" backgroundImage={HERO_IMAGES.services} />
 
       {/* 2. Section intro */}
       <section className="bg-surface-page px-6 py-20 md:py-28">
@@ -68,17 +77,13 @@ export default function ServicesPage() {
                     isReversed ? "lg:[direction:ltr]" : ""
                   }`}
                 >
-                  {/* Gradient placeholder background */}
-                  <div className="aspect-[4/5] bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950">
-                    {/* Dot texture */}
-                    <div
-                      className="absolute inset-0 opacity-[0.04]"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle, white 1px, transparent 1px)",
-                        backgroundSize: "20px 20px",
-                      }}
-                      aria-hidden="true"
+                  <div className="aspect-[4/5] relative">
+                    <Image
+                      src={PILLAR_IMAGES[pillar.slug] ?? SERVICE_IMAGES.community}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
                     />
 
                     {/* Dark gradient overlay from bottom */}
@@ -164,7 +169,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. PreFooterCTA */}
-      <PreFooterCTA
+      <PreFooterCTA backgroundImage={CTA_IMAGES.services}
         heading="Not Sure Where to *Start*?"
         body="That's completely fine. Get in touch and we'll help you find the right support for your situation."
         ctaLabel="Get in Touch"

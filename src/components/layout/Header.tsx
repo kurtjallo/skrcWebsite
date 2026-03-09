@@ -55,7 +55,7 @@ export function Header({ variant }: HeaderProps) {
         <Link
           href="/"
           className={cn(
-            "font-heading font-semibold text-2xl transition-colors",
+            "font-heading font-semibold text-xl xl:text-2xl transition-colors whitespace-nowrap",
             isTransparent
               ? "text-white hover:text-white/80"
               : "text-primary-900 hover:text-primary-700"
@@ -65,13 +65,13 @@ export function Header({ variant }: HeaderProps) {
         </Link>
 
         {/* Desktop navigation */}
-        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
+        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-5">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "relative font-body font-medium text-base transition-colors",
+                "relative font-body font-medium text-sm whitespace-nowrap transition-colors",
                 isTransparent
                   ? "text-white/90 hover:text-white"
                   : "text-text-body hover:text-primary-900",
@@ -94,7 +94,7 @@ export function Header({ variant }: HeaderProps) {
         {/* Mobile hamburger */}
         <button
           className={cn(
-            "lg:hidden p-2 transition-colors",
+            "xl:hidden p-2 transition-colors",
             isTransparent
               ? "text-white hover:text-white/80"
               : "text-text-body hover:text-primary-900"

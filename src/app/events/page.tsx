@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { events } from "@/data/events";
+import { HERO_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EventFilters } from "@/components/events/EventFilters";
@@ -48,7 +49,7 @@ export default function EventsPage() {
     <>
       <InteriorHero
         heading="*Events*"
-        backgroundImage="/images/placeholder-hero.svg"
+        backgroundImage={HERO_IMAGES.events}
       />
 
       <section className="bg-surface-page py-20 md:py-28">

@@ -1,6 +1,7 @@
 import { createMetadata } from "@/lib/metadata";
 import { boardMembers, staffMembers } from "@/data/team-members";
 import { TeamGrid } from "@/components/team/TeamGrid";
+import { HERO_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
@@ -17,7 +18,7 @@ export default function TeamPage() {
     <>
       <InteriorHero
         heading="Our *Team*"
-        backgroundImage="/images/placeholder-hero.svg"
+        backgroundImage={HERO_IMAGES.team}
       />
 
       {/* Board of Directors */}

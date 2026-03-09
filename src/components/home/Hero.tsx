@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { m, useReducedMotion } from "motion/react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { HERO_IMAGES } from "@/lib/placeholders";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
 import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 
@@ -29,9 +31,18 @@ export default function Hero() {
         className="relative overflow-hidden rounded-[20px]"
         style={{ minHeight: "75vh" }}
       >
-        {/* Background placeholder — TODO: replace with next/image when real photo is ready */}
+        {/* Background image */}
+        <Image
+          src={HERO_IMAGES.home}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Dark overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800"
+          className="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-950/50 to-primary-950/30"
           aria-hidden="true"
         />
 

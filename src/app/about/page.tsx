@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { createMetadata } from "@/lib/metadata";
+import { HERO_IMAGES, CTA_IMAGES, SECTION_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
@@ -54,7 +56,7 @@ export default function AboutPage() {
   return (
     <>
       {/* 1. Interior Hero */}
-      <InteriorHero heading="About *Us*" />
+      <InteriorHero heading="About *Us*" backgroundImage={HERO_IMAGES.about} />
 
       {/* 2. Asymmetric two-column intro */}
       <section className="bg-surface-page px-6 py-20 md:py-28">
@@ -109,18 +111,14 @@ export default function AboutPage() {
       <section className="bg-surface-page px-6 pb-20 md:pb-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
-            {/* Gradient placeholder image card */}
             <div className="relative overflow-hidden rounded-[20px]">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950 lg:aspect-auto lg:h-full">
-                {/* Dot texture */}
-                <div
-                  className="absolute inset-0 opacity-[0.04]"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle, white 1px, transparent 1px)",
-                    backgroundSize: "20px 20px",
-                  }}
-                  aria-hidden="true"
+              <div className="aspect-[4/3] lg:aspect-auto lg:h-full relative">
+                <Image
+                  src={SECTION_IMAGES.mission}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -167,18 +165,14 @@ export default function AboutPage() {
             className="mx-auto mt-5 max-w-4xl text-center text-3xl md:text-4xl text-text-primary"
           />
 
-          {/* Gradient placeholder image */}
           <div className="mt-12 overflow-hidden rounded-[20px]">
-            <div className="relative aspect-[21/9] bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950">
-              {/* Dot texture */}
-              <div
-                className="absolute inset-0 opacity-[0.04]"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, white 1px, transparent 1px)",
-                  backgroundSize: "20px 20px",
-                }}
-                aria-hidden="true"
+            <div className="relative aspect-[21/9]">
+              <Image
+                src={SECTION_IMAGES.vision}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="100vw"
               />
             </div>
           </div>
@@ -233,7 +227,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. PreFooterCTA */}
-      <PreFooterCTA
+      <PreFooterCTA backgroundImage={CTA_IMAGES.about}
         heading="Ready to *Connect* With Us?"
         body="Whether you need support, have a question, or want to get involved, we'd love to hear from you."
         ctaLabel="Get in Touch"

@@ -1,4 +1,5 @@
 import { createMetadata } from "@/lib/metadata";
+import { HERO_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
@@ -19,7 +20,7 @@ export default function FaqPage() {
       {/* Hero */}
       <InteriorHero
         heading="Frequently Asked *Questions*"
-        backgroundImage="/images/hero-faq.jpg"
+        backgroundImage={HERO_IMAGES.faq}
       />
 
       {/* FAQ Accordion Section */}

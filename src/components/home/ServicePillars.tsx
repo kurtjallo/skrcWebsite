@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { m, useReducedMotion } from "motion/react";
 import { Heart, Wheat, Anchor, Users } from "lucide-react";
+import { HERO_IMAGES } from "@/lib/placeholders";
 import type { LucideIcon } from "lucide-react";
 import { servicePillars } from "@/data/homepage";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -95,17 +97,16 @@ export default function ServicePillars() {
                 : cardVariants
             }
           >
-            <div className="relative flex h-full min-h-[320px] flex-col justify-end overflow-hidden rounded-2xl bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 p-8">
-              {/* Texture overlay */}
-              <div
-                className="absolute inset-0 opacity-[0.04]"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                  backgroundSize: "24px 24px",
-                }}
-                aria-hidden="true"
+            <div className="relative flex h-full min-h-[320px] flex-col justify-end overflow-hidden rounded-2xl p-8">
+              <Image
+                src={HERO_IMAGES.home}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/50 to-primary-950/30" />
               <div className="relative z-10">
                 <EmphasisHeading
                   text="Start Your *Support Journey*"

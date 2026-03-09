@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle, Heart, Wheat, Anchor, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ServicePillar } from "@/types/services";
+import { HERO_IMAGES, CTA_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
@@ -25,7 +26,7 @@ export function PillarDetail({ pillar }: PillarDetailProps) {
   return (
     <>
       {/* 1. Interior Hero */}
-      <InteriorHero heading={pillar.name} />
+      <InteriorHero heading={pillar.name} backgroundImage={HERO_IMAGES.services} />
 
       {/* 2. Back link + intro */}
       <section className="bg-surface-page px-6 pt-10 pb-0">
@@ -169,7 +170,7 @@ export function PillarDetail({ pillar }: PillarDetailProps) {
       </section>
 
       {/* 7. PreFooterCTA */}
-      <PreFooterCTA
+      <PreFooterCTA backgroundImage={CTA_IMAGES.generic}
         heading="Explore All Our *Services*"
         body="Discover the full range of support available through St Katharine Rural Connect."
         ctaLabel="View All Services"

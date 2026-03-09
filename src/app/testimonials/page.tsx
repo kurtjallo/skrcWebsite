@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { createMetadata } from "@/lib/metadata";
 import { testimonials } from "@/data/testimonials";
+import { HERO_IMAGES, PORTRAITS } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
@@ -21,11 +23,11 @@ const SEGMENT_LABELS: Record<AudienceSegment, string> = {
   family: "Family Member",
 };
 
-const CARD_GRADIENTS = [
-  "from-primary-800 via-primary-900 to-primary-950",
-  "from-primary-950 via-primary-800 to-primary-900",
-  "from-primary-900 via-primary-950 to-primary-800",
-  "from-primary-800 to-primary-950",
+const CARD_PORTRAITS = [
+  PORTRAITS.man1,
+  PORTRAITS.man2,
+  PORTRAITS.woman1,
+  PORTRAITS.woman2,
 ];
 
 export default function TestimonialsPage() {
@@ -33,7 +35,7 @@ export default function TestimonialsPage() {
     <>
       <InteriorHero
         heading="*Testimonials*"
-        backgroundImage="/images/placeholder-hero.svg"
+        backgroundImage={HERO_IMAGES.testimonials}
       />
 
       {/* Section intro */}
@@ -56,7 +58,7 @@ export default function TestimonialsPage() {
       <section className="bg-surface-page px-4 pb-20 md:pb-28 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((testimonial, index) => {
-            const gradient = CARD_GRADIENTS[index % CARD_GRADIENTS.length];
+            const portrait = CARD_PORTRAITS[index % CARD_PORTRAITS.length];
             const segmentLabel = SEGMENT_LABELS[testimonial.segment];
             // Truncate quote for card display
             const truncatedQuote =
@@ -70,9 +72,12 @@ export default function TestimonialsPage() {
                 className="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
                 style={{ aspectRatio: "3 / 4" }}
               >
-                {/* Gradient placeholder background */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${gradient}`}
+                <Image
+                  src={portrait}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
 
                 {/* Dark gradient from bottom */}
