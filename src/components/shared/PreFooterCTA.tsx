@@ -39,7 +39,7 @@ export function PreFooterCTA({
 
         {/* Curved shape at top -- creates the arch/wave transition from page bg */}
         <div
-          className="absolute top-0 right-0 left-0 h-[80px] bg-background"
+          className="absolute top-0 right-0 left-0 h-[80px] bg-surface-page"
           style={{
             clipPath: "ellipse(55% 100% at 50% 0%)",
           }}
