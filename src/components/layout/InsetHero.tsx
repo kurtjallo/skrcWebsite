@@ -41,6 +41,8 @@ export function InsetHero({
           )}
         />
 
+
+
         {/* Content area -- positioned at bottom with large top padding for transparent header */}
         <div className="absolute inset-0 z-10 flex items-end">
           <div className="mx-auto w-full max-w-7xl px-6 pb-16 pt-32 md:pb-20 md:pt-40">

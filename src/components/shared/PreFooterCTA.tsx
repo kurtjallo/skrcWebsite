@@ -37,6 +37,8 @@ export function PreFooterCTA({
         {/* Dark gradient overlay from bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/40 to-transparent" />
 
+
+
         {/* Curved shape at top -- creates the arch/wave transition from page bg */}
         <div
           className="absolute top-0 right-0 left-0 h-[80px] bg-surface-page"
