@@ -300,3 +300,8 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - template.tsx and AnimatedSection.tsx updated to use `m` imports and removed local LazyMotion wrappers
   - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
   - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
+
+### Phase 9: Design System & Layout (09-02)
+- **EmphasisHeading** (`src/components/shared/EmphasisHeading.tsx`): Server component, parses `*italic*` markers via regex split `(/(\*[^*]+\*)/g)`, renders `<em>` with `font-heading` (Cormorant Garamond italic), supports h1-h4 via `as` prop (default h2), optional `accentItalic` prop for text-accent-500 on italic words, handles edge cases (no asterisks, multiple/adjacent groups)
+- **SectionLabel** (`src/components/shared/SectionLabel.tsx`): Server component, pill badge with blue dot (`bg-accent-500`, `aria-hidden`) + uppercase text (`text-xs`, `tracking-[0.15em]`, `font-body`), `rounded-full` with `border-divider`, left/center alignment (center wraps in `flex justify-center` container)
+- **CircleArrowCTA** (`src/components/shared/CircleArrowCTA.tsx`): Server component, text + filled circle with ArrowUpRight icon (`h-10 w-10`), Link mode (with href) or button mode (with onClick/type), dark variant (navy circle, white arrow) or light variant (white circle, navy arrow), `group-hover:scale-110` on circle, `aria-hidden` on icon
