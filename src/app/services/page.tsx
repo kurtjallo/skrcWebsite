@@ -58,7 +58,7 @@ export default function ServicesPage() {
             find the right support.
           </p>
           <div className="mt-8">
-            <Button variant="gold" size="lg" asChild>
+            <Button variant="default" size="lg" asChild>
               <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
