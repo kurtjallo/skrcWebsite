@@ -1,9 +1,9 @@
 "use client";
 
-import { useActionState, useRef, useEffect, useState } from "react";
+import { useActionState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckCircle2 } from "lucide-react";
 import {
   contactSchema,
   type ContactFormData,
@@ -21,18 +21,17 @@ const initialState: ContactFormState = {
 };
 
 export function ContactForm() {
+  const router = useRouter();
   const [state, formAction, isPending] = useActionState(
     submitContact,
     initialState
   );
   const formRef = useRef<HTMLFormElement>(null);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -45,50 +44,19 @@ export function ContactForm() {
     },
   });
 
-  // Handle server action response
+  // Handle server action response -- redirect to thank-you page on success
   useEffect(() => {
     if (state.success && state.message) {
-      setShowSuccess(true);
-      reset();
+      router.push("/thank-you");
     }
-  }, [state, reset]);
+  }, [state, router]);
 
   // Client-side validation passes, trigger server action submission
   const onSubmit = () => {
     formRef.current?.requestSubmit();
   };
 
-  const handleSendAnother = () => {
-    setShowSuccess(false);
-  };
-
   const hasErrors = !!(state.errors || Object.keys(errors).length > 0);
-
-  // ── Success State ──────────────────────────────────────────────
-  if (showSuccess) {
-    return (
-      <div className="rounded-lg border border-success/30 bg-success/10 p-8 text-center">
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-success/20">
-          <CheckCircle2 className="h-6 w-6 text-success" aria-hidden="true" />
-        </div>
-        <h3 className="font-heading text-2xl font-semibold text-text-primary">
-          Thank you for getting in touch
-        </h3>
-        <p className="mt-2 font-body text-text-body">
-          We&rsquo;ll get back to you as soon as we can.
-        </p>
-        <button
-          type="button"
-          onClick={handleSendAnother}
-          className="mt-6 font-body text-sm font-medium text-accent-600 underline underline-offset-4 transition-colors hover:text-accent-500"
-        >
-          Send another message
-        </button>
-      </div>
-    );
-  }
-
-  // ── Form State ─────────────────────────────────────────────────
   return (
     <form
       ref={formRef}
