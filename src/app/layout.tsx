@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
-      <body className="font-body text-base text-text-body bg-stone-50 antialiased">
+      <body className="font-body text-base text-text-body bg-surface-page antialiased">
         <JsonLd data={ngoSchema()} />
         <LazyMotionProvider>
           <SkipLink />

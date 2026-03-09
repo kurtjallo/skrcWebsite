@@ -13,7 +13,7 @@ interface CornerBracketsProps {
   color?: string;
 }
 
-const GOLD_COLOR = "#C9A227";
+const ACCENT_COLOR = "#3b3bff";
 
 function CornerElement({
   corner,
@@ -77,7 +77,7 @@ export function CornerBrackets({
   size = 40,
   thickness = 1,
   opacity = 0.4,
-  color = GOLD_COLOR,
+  color = ACCENT_COLOR,
 }: CornerBracketsProps) {
   return (
     <div className={cn("relative", className)}>
