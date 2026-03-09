@@ -300,3 +300,9 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - template.tsx and AnimatedSection.tsx updated to use `m` imports and removed local LazyMotion wrappers
   - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
   - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
+
+### Phase 9: Design System & Layout (09-03 -- in progress)
+- **Card** (`src/components/ui/card.tsx`): v2.0 update -- removed border and shadow-sm from base, removed gold top-border scaleX animation from hoverable variant, kept hover lift (-translate-y-1) + shadow-lg
+- **Button** (`src/components/ui/button.tsx`): Removed gold and gold-outline variants entirely, removed isGoldVariant check and span wrapper, remaining variants (default, destructive, outline, secondary, ghost, link) unchanged
+- **Footer** (`src/components/layout/Footer.tsx`): Rewritten to dark navy 4-column design -- bg-primary-950 text-white, columns: brand (serif name + tagline + Contact Us button), menu (NAV_ITEMS first 5), socials (text links), contact (phone/email/hours/location with Lucide icons), bottom bar with copyright + charity number + social icons, text-white/70 links with hover:text-white, no accent or stone colors
+- **Button consumers updated**: WhatHappensWhenYouCall, PillarDetail, AudienceCard, services page, who-we-serve page all changed from variant="gold" to variant="default"
