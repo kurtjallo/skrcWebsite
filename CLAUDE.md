@@ -300,3 +300,10 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - template.tsx and AnimatedSection.tsx updated to use `m` imports and removed local LazyMotion wrappers
   - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
   - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
+
+### Phase 9: Design System & Layout (09-04)
+- **InsetHero** (`src/components/layout/InsetHero.tsx`): Full-width hero with px-4 pt-4 inset and rounded-[20px] card corners, next/image with fill + priority, dark overlay gradient (left-to-right, configurable via overlayClassName), content positioned at bottom via absolute flex items-end, configurable height (default 70vh), server component
+- **InteriorHero** (`src/components/layout/InteriorHero.tsx`): Shorter 45vh banner with centered heading, reuses InsetHero, uniform overlay (bg-primary-950/60), uses EmphasisHeading for heading text, server component
+- **EmphasisHeading** (`src/components/shared/EmphasisHeading.tsx`): Parses *italic* markers via regex split on (\*[^*]+\*), renders em tags with italic font-heading style, supports h1-h4 via as prop, optional accentItalic boolean for accent-colored italic text, server component
+- **Header** (`src/components/layout/Header.tsx`): Updated with variant prop (solid/transparent), scroll-based transition at 100px via passive scroll listener, transparent mode: fixed bg-transparent white text, solid mode: sticky bg-surface-page/95 backdrop-blur-sm border-divider, active underline updated to accent-400
+- **Design tokens** (`src/app/globals.css`): Added surface-page (#FAFAF7), surface-card (#ffffff), surface-dark (#0F1A2E), divider (#EDE8DF) semantic token aliases (values will be updated to v2.0 colors by 09-01)
