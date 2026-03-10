@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd, ngoSchema } from "@/components/shared/JsonLd";
 import { LazyMotionProvider } from "@/components/shared/LazyMotionProvider";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </LazyMotionProvider>
+        <Analytics />
       </body>
     </html>
   );
