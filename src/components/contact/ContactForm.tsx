@@ -284,7 +284,7 @@ export function ContactForm({ variant = "light" }: ContactFormProps) {
       <button
         type="submit"
         disabled={isPending}
-        className={`w-full rounded-xl px-8 py-3.5 font-body text-base font-medium transition-all duration-300 ease-premium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 ${
+        className={`w-full rounded-xl px-8 py-3.5 font-body text-base font-medium transition-[background-color,opacity] duration-300 ease-premium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 ${
           isDark
             ? "bg-white text-primary-950 hover:bg-white/90 focus:ring-offset-primary-950"
             : "bg-primary-900 text-text-on-dark hover:bg-primary-700"

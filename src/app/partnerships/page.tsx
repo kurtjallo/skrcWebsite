@@ -20,6 +20,7 @@ export default function PartnershipsPage() {
       <InteriorHero
         heading="*Partnerships*"
         backgroundImage={HERO_IMAGES.partnerships}
+        objectPosition="center 35%"
       />
 
       {/* Partnership Approach */}
@@ -108,7 +109,7 @@ export default function PartnershipsPage() {
               return (
                 <div
                   key={partner.id}
-                  className="flex min-h-[160px] flex-col items-center justify-center rounded-2xl bg-surface-card p-6 transition-all duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
+                  className="flex min-h-[160px] flex-col items-center justify-center rounded-2xl bg-surface-card p-6 transition-[transform,box-shadow] duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
                 >
                   {partner.url ? (
                     <a

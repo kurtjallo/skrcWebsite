@@ -49,7 +49,7 @@ function FilterGroup<T extends string>({
               type="button"
               aria-pressed={isSelected}
               onClick={() => onChange(toggleItem(selected, key))}
-              className={`rounded-full border px-4 py-1.5 font-body text-sm font-medium transition-all duration-200
+              className={`rounded-full border px-4 py-1.5 font-body text-sm font-medium transition-colors duration-200
                 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2
                 ${
                   isSelected

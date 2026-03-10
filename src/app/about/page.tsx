@@ -56,7 +56,7 @@ export default function AboutPage() {
   return (
     <>
       {/* 1. Interior Hero */}
-      <InteriorHero heading="About *Us*" backgroundImage={HERO_IMAGES.about} />
+      <InteriorHero heading="About *Us*" backgroundImage={HERO_IMAGES.about} objectPosition="center 45%" />
 
       {/* 2. Asymmetric two-column intro */}
       <section className="bg-surface-page px-6 py-20 md:py-28">
@@ -208,7 +208,7 @@ export default function AboutPage() {
             {values.map((value, index) => (
               <div
                 key={value.name}
-                className="group rounded-2xl bg-surface-card p-6 text-center transition-all duration-300 ease-premium hover:shadow-lg motion-safe:hover:-translate-y-1"
+                className="group rounded-2xl bg-surface-card p-6 text-center transition-[transform,box-shadow] duration-300 ease-premium hover:shadow-lg motion-safe:hover:-translate-y-1"
               >
                 {/* Number indicator */}
                 <span className="font-heading text-3xl font-light text-stone-300">

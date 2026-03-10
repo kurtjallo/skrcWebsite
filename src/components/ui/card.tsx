@@ -13,7 +13,7 @@ function Card({ className, hoverable = false, ...props }: CardProps) {
         "bg-card text-card-foreground flex flex-col gap-6 rounded-xl py-6",
         hoverable && [
           "group relative overflow-hidden",
-          "transition-all duration-300 ease-premium",
+          "transition-[transform,box-shadow] duration-300 ease-premium",
           "hover:-translate-y-1 hover:shadow-lg",
         ],
         className

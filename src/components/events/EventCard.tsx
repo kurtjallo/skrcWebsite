@@ -33,7 +33,7 @@ export function EventCard({ event }: EventCardProps) {
     : event.time;
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl bg-surface-card transition-all duration-300 ease-premium hover:shadow-lg motion-safe:hover:-translate-y-1">
+    <article className="group relative overflow-hidden rounded-2xl bg-surface-card transition-[transform,box-shadow] duration-300 ease-premium hover:shadow-lg motion-safe:hover:-translate-y-1">
       <Link
         href={`/events/${event.slug}`}
         className="flex flex-col gap-5 p-6"

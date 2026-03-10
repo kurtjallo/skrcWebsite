@@ -36,7 +36,7 @@ function FaqAccordionItem({
           </span>
           <span
             className={cn(
-              "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-divider text-primary-900 transition-all duration-300",
+              "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-divider text-primary-900 transition-[transform,background-color,color,border-color] duration-300",
               isOpen && "rotate-45 bg-primary-900 text-white border-primary-900"
             )}
             aria-hidden="true"

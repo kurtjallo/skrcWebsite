@@ -66,7 +66,7 @@ export default function ServicePillars() {
                 >
                   <Link
                     href={`/services/${pillar.slug}`}
-                    className="group block rounded-2xl bg-white p-7 transition-all duration-300 ease-premium hover:-translate-y-1 hover:shadow-lg"
+                    className="group block rounded-2xl bg-white p-7 transition-[transform,box-shadow] duration-300 ease-premium hover:-translate-y-1 hover:shadow-lg"
                   >
                     {Icon && (
                       <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-100 text-accent-500">

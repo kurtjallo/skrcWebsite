@@ -1,12 +1,10 @@
-import Image from "next/image";
 import { createMetadata } from "@/lib/metadata";
 import { testimonials } from "@/data/testimonials";
-import { HERO_IMAGES, PORTRAITS } from "@/lib/placeholders";
+import { HERO_IMAGES, COMMUNITY_VIDEOS } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
 import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
-import { Play } from "lucide-react";
 import type { AudienceSegment } from "@/types";
 
 export const metadata = createMetadata({
@@ -23,11 +21,13 @@ const SEGMENT_LABELS: Record<AudienceSegment, string> = {
   family: "Family Member",
 };
 
-const CARD_PORTRAITS = [
-  PORTRAITS.man1,
-  PORTRAITS.man2,
-  PORTRAITS.woman1,
-  PORTRAITS.woman2,
+const CARD_VIDEOS = [
+  COMMUNITY_VIDEOS.outdoorGames,
+  COMMUNITY_VIDEOS.indoorGathering,
+  COMMUNITY_VIDEOS.eventSetup,
+  COMMUNITY_VIDEOS.communityMeal,
+  COMMUNITY_VIDEOS.indoorActivity,
+  COMMUNITY_VIDEOS.paintNight,
 ];
 
 export default function TestimonialsPage() {
@@ -36,6 +36,7 @@ export default function TestimonialsPage() {
       <InteriorHero
         heading="*Testimonials*"
         backgroundImage={HERO_IMAGES.testimonials}
+        objectPosition="center 30%"
       />
 
       {/* Section intro */}
@@ -58,7 +59,7 @@ export default function TestimonialsPage() {
       <section className="bg-surface-page px-4 pb-20 md:pb-28 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((testimonial, index) => {
-            const portrait = CARD_PORTRAITS[index % CARD_PORTRAITS.length];
+            const video = CARD_VIDEOS[index % CARD_VIDEOS.length];
             const segmentLabel = SEGMENT_LABELS[testimonial.segment];
             // Truncate quote for card display
             const truncatedQuote =
@@ -69,29 +70,21 @@ export default function TestimonialsPage() {
             return (
               <div
                 key={testimonial.id}
-                className="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl transition-[transform,box-shadow] duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
                 style={{ aspectRatio: "3 / 4" }}
               >
-                <Image
-                  src={portrait}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                <video
+                  src={video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
 
                 {/* Dark gradient from bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-950/95 via-primary-950/60 to-transparent" />
-
-                {/* Decorative play button */}
-                <div
-                  className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
-                  aria-hidden="true"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
-                    <Play className="h-6 w-6 text-white/60 ml-0.5" />
-                  </div>
-                </div>
 
                 {/* Content at bottom */}
                 <div className="absolute inset-x-0 bottom-0 p-5">

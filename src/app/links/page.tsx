@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import { createMetadata } from "@/lib/metadata";
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
@@ -39,12 +40,14 @@ export default function LinksPage() {
       <div className="relative z-10 w-full max-w-sm">
         {/* Profile */}
         <div className="text-center mb-10">
-          {/* Initials circle */}
-          <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-accent-500/20 border border-accent-500/30">
-            <span className="font-heading text-2xl font-semibold text-accent-400">
-              SK
-            </span>
-          </div>
+          {/* Logo */}
+          <Image
+            src="/images/skrc-logo.png"
+            alt="St Katharine Rural Connect"
+            width={120}
+            height={120}
+            className="mx-auto mb-5 h-24 w-auto"
+          />
 
           <h1 className="font-heading text-2xl font-semibold text-white">
             {SITE_CONFIG.name}
@@ -63,7 +66,7 @@ export default function LinksPage() {
                 key={link.label}
                 href={link.href}
                 aria-label={link.label}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white/70 transition-all duration-300 hover:border-accent-400 hover:text-accent-400 hover:bg-accent-400/10"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white/70 transition-colors duration-300 hover:border-accent-400 hover:text-accent-400 hover:bg-accent-400/10"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -79,7 +82,7 @@ export default function LinksPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="block w-full rounded-full border border-white/20 px-6 py-3.5 text-center font-body text-base font-medium text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
+              className="block w-full rounded-full border border-white/20 px-6 py-3.5 text-center font-body text-base font-medium text-white transition-colors duration-300 hover:border-white/40 hover:bg-white/10"
             >
               {link.label}
             </Link>

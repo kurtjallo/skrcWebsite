@@ -85,7 +85,7 @@ export default function EventsPreview() {
                 >
                   <Link
                     href={`/events/${event.slug}`}
-                    className="group block overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
+                    className="group block overflow-hidden rounded-lg bg-white shadow-sm transition-[transform,box-shadow] duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
                   >
                     {/* Date badge */}
                     <div className="bg-primary-800 p-4 text-center text-white">

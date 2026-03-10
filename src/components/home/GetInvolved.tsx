@@ -90,7 +90,7 @@ export default function GetInvolved() {
               return (
                 <m.div
                   key={card.title}
-                  className="group relative overflow-hidden rounded-lg bg-white p-8 text-center shadow-sm transition-all duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
+                  className="group relative overflow-hidden rounded-lg bg-white p-8 text-center shadow-sm transition-[transform,box-shadow] duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
                   variants={
                     shouldReduceMotion
                       ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
