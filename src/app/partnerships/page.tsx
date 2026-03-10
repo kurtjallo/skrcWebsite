@@ -1,7 +1,11 @@
-import Link from "next/link";
 import { createMetadata } from "@/lib/metadata";
 import { SITE_CONFIG } from "@/lib/constants";
 import { partners, partnershipApproach } from "@/data/partners";
+import { HERO_IMAGES } from "@/lib/placeholders";
+import { InteriorHero } from "@/components/layout/InteriorHero";
+import { SectionLabel } from "@/components/shared/SectionLabel";
+import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
+import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 
 export const metadata = createMetadata({
   title: "Partnerships",
@@ -13,32 +17,24 @@ export const metadata = createMetadata({
 export default function PartnershipsPage() {
   return (
     <>
-      {/* Section 1: Page Header */}
-      <section className="bg-stone-50 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-body text-overline font-bold uppercase tracking-widest text-accent-600">
-            Partnerships
-          </p>
-          <h1 className="mt-4 font-heading text-5xl font-semibold text-text-primary">
-            Stronger Together
-          </h1>
-          <p className="mt-6 max-w-prose text-lg text-text-body">
-            Real, lasting change in rural communities happens through
-            collaboration. We work alongside organisations that share our
-            commitment to supporting rural people and places.
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        heading="*Partnerships*"
+        backgroundImage={HERO_IMAGES.partnerships}
+        objectPosition="center 35%"
+      />
 
-      {/* Section 2: Partnership Approach */}
-      <section className="bg-stone-100 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
+      {/* Partnership Approach */}
+      <section className="bg-surface-page py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
             {/* Left column: Narrative */}
             <div>
-              <h2 className="font-heading text-4xl font-semibold text-text-primary">
-                Our Approach to Partnership
-              </h2>
+              <SectionLabel text="OUR APPROACH" />
+              <EmphasisHeading
+                text="*Stronger* Together"
+                as="h2"
+                className="mt-6 text-3xl md:text-4xl text-text-primary"
+              />
               <p className="mt-6 text-base leading-relaxed text-text-body">
                 We believe that the best support for rural communities comes from
                 organisations working together, not in isolation. Our
@@ -51,14 +47,17 @@ export default function PartnershipsPage() {
             </div>
 
             {/* Right column: Partner types list */}
-            <div>
-              <h3 className="mb-4 font-heading text-xl font-semibold text-primary-900">
+            <div className="rounded-2xl bg-surface-card p-8">
+              <h3 className="mb-5 font-heading text-xl font-semibold text-primary-900">
                 We partner with:
               </h3>
               <ul className="space-y-4">
                 {partnershipApproach.map((item) => (
                   <li key={item} className="flex items-start">
-                    <span className="mr-3 mt-2 inline-block h-2 w-2 flex-shrink-0 rotate-45 bg-accent-500" />
+                    <span
+                      className="mr-3 mt-2 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-accent-500"
+                      aria-hidden="true"
+                    />
                     <span className="text-base text-text-body">{item}</span>
                   </li>
                 ))}
@@ -68,83 +67,96 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      {/* Section 3: Partner Logos */}
-      <section className="bg-stone-50 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center font-heading text-4xl font-semibold text-text-primary">
-            Our Partners
-          </h2>
-          <p className="mb-12 mt-4 text-center text-base text-text-muted">
-            We are proud to work alongside these organisations.
-          </p>
+      {/* Partner Grid */}
+      <section className="bg-surface-page pb-20 md:pb-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div
+            className="mx-auto mb-12 border-t border-divider"
+            aria-hidden="true"
+          />
+          <div className="text-center">
+            <SectionLabel text="OUR PARTNERS" align="center" />
+            <EmphasisHeading
+              text="*Trusted* By"
+              as="h2"
+              className="mx-auto mt-6 text-3xl md:text-4xl text-text-primary"
+            />
+            <p className="mt-4 text-base text-text-muted">
+              We are proud to work alongside these organisations.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-2 items-center gap-8 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {partners.map((partner) => {
-              const content = (
-                <div className="text-center">
-                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-stone-100 grayscale transition-all duration-500 hover:grayscale-0">
-                    <span className="font-heading text-lg font-semibold text-stone-400">
+              const cardContent = (
+                <div className="flex flex-col items-center justify-center gap-3 text-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary-900/5">
+                    <span className="font-heading text-xl font-semibold text-primary-900">
                       {partner.name.charAt(0)}
                     </span>
                   </div>
-                  <span className="font-body text-sm font-medium text-text-muted">
+                  <span className="font-body text-sm font-medium text-primary-900">
                     {partner.name}
                   </span>
+                  {partner.description && (
+                    <span className="text-xs text-text-muted">
+                      {partner.description}
+                    </span>
+                  )}
                 </div>
               );
 
               return (
                 <div
                   key={partner.id}
-                  className="flex min-h-[120px] flex-col items-center justify-center rounded-lg border border-stone-200 bg-white p-6 transition-all duration-300 hover:border-accent-300 hover:shadow-md"
+                  className="flex min-h-[160px] flex-col items-center justify-center rounded-2xl bg-surface-card p-6 transition-[transform,box-shadow] duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
                 >
                   {partner.url ? (
                     <a
                       href={partner.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="flex flex-col items-center"
                     >
-                      {content}
+                      {cardContent}
                     </a>
                   ) : (
-                    content
+                    cardContent
                   )}
                 </div>
               );
             })}
           </div>
-
-          <p className="mt-8 text-center text-xs italic text-text-muted">
-            Partner logos will be displayed here. Showing partner names as
-            placeholders.
-          </p>
         </div>
       </section>
 
-      {/* Section 4: Become a Partner CTA */}
-      <section className="bg-primary-900 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="font-heading text-4xl font-semibold text-text-on-dark">
-            Become a Partner
-          </h2>
-          <p className="mx-auto mt-6 max-w-prose text-lg text-stone-300">
+      {/* Become a Partner CTA */}
+      <section className="bg-primary-900 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <EmphasisHeading
+            text="Become a *Partner*"
+            as="h2"
+            className="text-3xl text-white md:text-4xl"
+          />
+          <p className="mx-auto mt-6 max-w-prose text-lg text-white/80">
             If your organisation shares our commitment to rural wellbeing,
             we&rsquo;d love to explore how we can work together. Partnership
             with SKRC means joining a growing network dedicated to ensuring no
             rural person faces their challenges alone.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-md bg-accent-500 px-8 py-4 font-body font-semibold text-primary-950 transition-colors duration-300 hover:bg-accent-400"
-          >
-            Get in Touch About Partnership
-          </Link>
-          <a
-            href={SITE_CONFIG.phoneHref}
-            className="mt-4 block text-sm text-stone-400 transition-colors duration-300 hover:text-stone-300"
-          >
-            Or call us on {SITE_CONFIG.phone}
-          </a>
+          <div className="mt-8 flex flex-col items-center gap-4">
+            <CircleArrowCTA
+              label="Get in Touch About Partnership"
+              href="/contact"
+              variant="light"
+            />
+            <a
+              href={SITE_CONFIG.phoneHref}
+              className="text-sm text-white/60 transition-colors duration-300 hover:text-white/80"
+            >
+              Or call us on {SITE_CONFIG.phone}
+            </a>
+          </div>
         </div>
       </section>
     </>

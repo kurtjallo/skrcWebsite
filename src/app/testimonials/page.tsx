@@ -1,6 +1,10 @@
-import Link from "next/link";
 import { createMetadata } from "@/lib/metadata";
 import { testimonials } from "@/data/testimonials";
+import { HERO_IMAGES, COMMUNITY_VIDEOS } from "@/lib/placeholders";
+import { InteriorHero } from "@/components/layout/InteriorHero";
+import { SectionLabel } from "@/components/shared/SectionLabel";
+import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
+import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 import type { AudienceSegment } from "@/types";
 
 export const metadata = createMetadata({
@@ -10,109 +14,126 @@ export const metadata = createMetadata({
   path: "/testimonials",
 });
 
-const segmentStyles: Record<
-  AudienceSegment,
-  { label: string; borderColor: string; bgColor: string; iconColor: string }
-> = {
-  farmer: {
-    label: "Farmer",
-    borderColor: "border-l-green-700",
-    bgColor: "bg-green-50",
-    iconColor: "text-green-700",
-  },
-  "offshore-worker": {
-    label: "Offshore Worker",
-    borderColor: "border-l-blue-700",
-    bgColor: "bg-blue-50",
-    iconColor: "text-blue-700",
-  },
-  community: {
-    label: "Community Member",
-    borderColor: "border-l-secondary-500",
-    bgColor: "bg-secondary-100",
-    iconColor: "text-secondary-700",
-  },
-  family: {
-    label: "Family Member",
-    borderColor: "border-l-accent-500",
-    bgColor: "bg-accent-100",
-    iconColor: "text-accent-600",
-  },
+const SEGMENT_LABELS: Record<AudienceSegment, string> = {
+  farmer: "Farmer",
+  "offshore-worker": "Offshore Worker",
+  community: "Community Member",
+  family: "Family Member",
 };
+
+const CARD_VIDEOS = [
+  COMMUNITY_VIDEOS.outdoorGames,
+  COMMUNITY_VIDEOS.indoorGathering,
+  COMMUNITY_VIDEOS.eventSetup,
+  COMMUNITY_VIDEOS.communityMeal,
+  COMMUNITY_VIDEOS.indoorActivity,
+  COMMUNITY_VIDEOS.paintNight,
+];
 
 export default function TestimonialsPage() {
   return (
     <>
-      {/* Section 1: Page Header */}
-      <section className="bg-stone-50 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-body text-overline font-bold uppercase tracking-widest text-accent-600">
-            Testimonials
-          </p>
-          <h1 className="mt-4 font-heading text-5xl font-semibold text-text-primary">
-            Voices from Our Community
-          </h1>
-          <p className="mt-6 max-w-prose text-lg text-text-body">
+      <InteriorHero
+        heading="*Testimonials*"
+        backgroundImage={HERO_IMAGES.testimonials}
+        objectPosition="center 30%"
+      />
+
+      {/* Section intro */}
+      <section className="bg-surface-page py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <SectionLabel text="TESTIMONIALS" align="center" />
+          <EmphasisHeading
+            text="What *Our Community* Says"
+            as="h2"
+            className="mx-auto mt-6 max-w-3xl text-3xl md:text-4xl text-text-primary"
+          />
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-text-body">
             The people we serve are at the heart of everything we do. Here are
             some of their stories &mdash; in their own words.
           </p>
         </div>
       </section>
 
-      {/* Section 2: Testimonials Grid */}
-      <section className="bg-stone-100 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {testimonials.map((testimonial) => {
-              const style = segmentStyles[testimonial.segment];
-              return (
-                <blockquote
-                  key={testimonial.id}
-                  className={`rounded-lg border border-stone-200 border-l-4 p-8 shadow-sm ${style.bgColor} ${style.borderColor}`}
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mb-2 block font-heading text-5xl leading-none text-accent-500"
-                  >
-                    &ldquo;
+      {/* Testimonial Cards */}
+      <section className="bg-surface-page px-4 pb-20 md:pb-28 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {testimonials.map((testimonial, index) => {
+            const video = CARD_VIDEOS[index % CARD_VIDEOS.length];
+            const segmentLabel = SEGMENT_LABELS[testimonial.segment];
+            // Truncate quote for card display
+            const truncatedQuote =
+              testimonial.quote.length > 180
+                ? testimonial.quote.substring(0, 180).trimEnd() + "\u2026"
+                : testimonial.quote;
+
+            return (
+              <div
+                key={testimonial.id}
+                className="group relative overflow-hidden rounded-2xl transition-[transform,box-shadow] duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
+                style={{ aspectRatio: "3 / 4" }}
+              >
+                <video
+                  src={video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+
+                {/* Dark gradient from bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/95 via-primary-950/60 to-transparent" />
+
+                {/* Content at bottom */}
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  {/* Segment tag */}
+                  <span className="mb-3 inline-flex items-center rounded-full bg-accent-500 px-2.5 py-0.5 font-body text-xs font-medium text-white">
+                    {segmentLabel}
                   </span>
-                  <p className="text-base italic leading-relaxed text-text-body">
-                    {testimonial.quote}
-                  </p>
-                  <footer className="mt-4">
-                    <cite className="block text-sm font-medium not-italic text-text-primary">
-                      &mdash; {testimonial.firstName}, {testimonial.identifier}
-                    </cite>
-                    <span
-                      className={`mt-3 inline-block rounded-full border border-current/20 px-3 py-1 text-xs font-medium ${style.iconColor} ${style.bgColor}`}
-                    >
-                      {style.label}
-                    </span>
-                  </footer>
-                </blockquote>
-              );
-            })}
-          </div>
+
+                  {/* Quote */}
+                  <blockquote>
+                    <p className="text-sm leading-relaxed text-white/90">
+                      &ldquo;{truncatedQuote}&rdquo;
+                    </p>
+                    <footer className="mt-3">
+                      <cite className="block text-sm font-medium not-italic text-white">
+                        {testimonial.firstName}
+                      </cite>
+                      <span className="text-xs text-white/60">
+                        {testimonial.identifier}
+                      </span>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* Section 3: CTA Section */}
-      <section className="bg-primary-900 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="font-heading text-4xl font-semibold text-text-on-dark">
-            Your Story Matters Too
-          </h2>
-          <p className="mx-auto mt-6 max-w-prose text-lg text-stone-300">
+      {/* CTA Section */}
+      <section className="bg-primary-900 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <EmphasisHeading
+            text="Your Story *Matters* Too"
+            as="h2"
+            className="text-3xl text-white md:text-4xl"
+          />
+          <p className="mx-auto mt-6 max-w-prose text-lg text-white/80">
             Whether you&rsquo;re a farmer, offshore worker, family member, or
             community member, we&rsquo;re here for you. Every conversation is
             confidential, and there&rsquo;s never any pressure.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-md bg-accent-500 px-8 py-4 font-body font-semibold text-primary-950 transition-colors duration-300 hover:bg-accent-400"
-          >
-            Get in Touch
-          </Link>
+          <div className="mt-8 flex justify-center">
+            <CircleArrowCTA
+              label="Get in Touch"
+              href="/contact"
+              variant="light"
+            />
+          </div>
         </div>
       </section>
     </>

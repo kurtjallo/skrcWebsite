@@ -63,7 +63,7 @@ export default function SelfIdCards() {
                 >
                   <Link
                     href={card.href}
-                    className="group relative block overflow-hidden rounded-lg bg-white p-6 shadow-sm transition-all duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
+                    className="group relative block overflow-hidden rounded-lg bg-white p-6 shadow-sm transition-[transform,box-shadow] duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
                   >
                     {/* Gold top border on hover */}
                     <GoldAccentLine

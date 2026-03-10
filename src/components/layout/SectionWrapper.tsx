@@ -15,11 +15,11 @@ interface SectionWrapperProps {
 }
 
 const AUTO_BACKGROUNDS = [
-  "bg-stone-50",
-  "bg-stone-100",
-  "bg-stone-50",
-  "bg-primary-900 text-stone-100",
-  "bg-stone-100",
+  "bg-surface-page",
+  "bg-surface-page",
+  "bg-surface-page",
+  "bg-surface-dark text-white",
+  "bg-surface-page",
 ] as const;
 
 function getAutoBackground(index: number): string {
@@ -29,11 +29,11 @@ function getAutoBackground(index: number): string {
 function getVariantBackground(variant: SectionWrapperProps["variant"], index: number): string {
   switch (variant) {
     case "light-a":
-      return "bg-stone-50";
+      return "bg-surface-page";
     case "light-b":
-      return "bg-stone-100";
+      return "bg-surface-card";
     case "dark":
-      return "bg-primary-900 text-stone-100";
+      return "bg-surface-dark text-white";
     case "auto":
     default:
       return getAutoBackground(index);

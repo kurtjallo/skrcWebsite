@@ -1,0 +1,19 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/events/[slug]/page": "app/events/[slug]/page.js",
+  "/events/page": "app/events/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/get-involved/page": "app/get-involved/page.js",
+  "/page": "app/page.js",
+  "/partnerships/page": "app/partnerships/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/services/[slug]/page": "app/services/[slug]/page.js",
+  "/services/page": "app/services/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/team/page": "app/team/page.js",
+  "/testimonials/page": "app/testimonials/page.js",
+  "/who-we-serve/page": "app/who-we-serve/page.js"
+}

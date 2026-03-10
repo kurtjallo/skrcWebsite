@@ -33,4 +33,12 @@ export const testimonials: Testimonial[] = [
     identifier: "spouse of an offshore worker",
     segment: "family",
   },
+  {
+    id: "testi-dave",
+    quote:
+      "You are the rarest diamond and your worth is immeasurable. The lives of the people you have impacted over the years and around the world just boggles my mind. Your strength of character and your commitment to the community is truly beyond compare and I am truly honoured and humbled to call you my friend.",
+    firstName: "Dave",
+    identifier: "Founder, LuxGive",
+    segment: "community",
+  },
 ];

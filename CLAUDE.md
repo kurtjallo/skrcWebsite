@@ -300,3 +300,48 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - template.tsx and AnimatedSection.tsx updated to use `m` imports and removed local LazyMotion wrappers
   - No raw `<img>` tags in codebase (all icon/text-based, next/image ready for future images)
   - All pages under 500KB transferred (gzipped); largest HTML page is who-we-serve at 95KB raw
+
+### Phase 9: Design System & Layout (09-02)
+- **EmphasisHeading** (`src/components/shared/EmphasisHeading.tsx`): Server component, parses `*italic*` markers via regex split `(/(\*[^*]+\*)/g)`, renders `<em>` with `font-heading` (Cormorant Garamond italic), supports h1-h4 via `as` prop (default h2), optional `accentItalic` prop for text-accent-500 on italic words, handles edge cases (no asterisks, multiple/adjacent groups)
+- **SectionLabel** (`src/components/shared/SectionLabel.tsx`): Server component, pill badge with blue dot (`bg-accent-500`, `aria-hidden`) + uppercase text (`text-xs`, `tracking-[0.15em]`, `font-body`), `rounded-full` with `border-divider`, left/center alignment (center wraps in `flex justify-center` container)
+- **CircleArrowCTA** (`src/components/shared/CircleArrowCTA.tsx`): Server component, text + filled circle with ArrowUpRight icon (`h-10 w-10`), Link mode (with href) or button mode (with onClick/type), dark variant (navy circle, white arrow) or light variant (white circle, navy arrow), `group-hover:scale-110` on circle, `aria-hidden` on icon
+
+### Phase 13: New Pages -- FAQ, Links, 404, Thank You
+- **FAQ data** (`src/data/faqs.ts`): 10 FAQ items covering services, access, confidentiality, contact, referrals, cost, events, volunteering, partnerships, urgent help
+- **FaqAccordion** (`src/components/faq/FaqAccordion.tsx`): Client component, controlled accordion with single-open behavior, "+" icon rotates 45deg to "x" on open, `aria-expanded`/`aria-controls` pattern, CSS grid-rows transition for smooth open/close, white `rounded-xl bg-surface-card` cards with `border-divider`
+- **FAQ page** (`src/app/faq/page.tsx`): InteriorHero "Frequently Asked *Questions*", SectionLabel "FAQS" center + EmphasisHeading "Answers to *Common* Questions", max-w-3xl centered accordion, bottom CTA card with CircleArrowCTA to /contact
+- **Links page** (`src/app/links/page.tsx`): Standalone dark "link in bio" page for social media, custom layout (`src/app/links/layout.tsx`) that strips Header/Footer/UtilityBar, centered card with SKRC name + tagline, social icon row (Facebook/Instagram/Twitter via Lucide), 5 rounded-full outline action buttons to key pages, charity number footer
+- **Links layout** (`src/app/links/layout.tsx`): Overrides root layout -- no SkipLink/UtilityBar/Header/Footer, bg-primary-950 dark background, minimal html/body with font variables
+- **404 page** (`src/app/not-found.tsx`): Full-height dark gradient bg with dot texture, large decorative "404" text (opacity 6%), EmphasisHeading "Oops, *Nothing* Here", friendly subtext, CircleArrowCTA light "Back to Home", secondary text links to /services and /contact
+- **Thank You page** (`src/app/thank-you/page.tsx`): Full-height dark gradient bg with dot texture, SectionLabel "MESSAGE RECEIVED", EmphasisHeading "Thank You for *Reaching Out*", confirmation text with 2-day turnaround, phone tel: link pill using SITE_CONFIG, 3 CircleArrowCTA light next-step links (Services/Events/Get Involved)
+- **ContactForm redirect** (`src/components/contact/ContactForm.tsx`): Replaced inline success state with `useRouter().push("/thank-you")` on successful server action response, removed unused `useState`/`CheckCircle2` imports
+- **Sitemap updated** (`src/app/sitemap.ts`): Added /faq (priority 0.6), /links (priority 0.3), /thank-you (priority 0.2)
+- **NAV_ITEMS updated** (`src/lib/constants.ts`): Added FAQ link between Testimonials and Contact
+
+### Phase 14: Quality Verification
+- **Accessibility audit (QUALITY-01)**:
+  - All 12 v1.0 checks pass: lang, titles, landmarks, heading hierarchy, focus-visible, touch targets, reduced motion, tel: links, skip link, form labels, aria-live, no viewport restrictions
+  - Fixed: `aria-hidden="true"` added to decorative Menu/X icons in Header.tsx and MobileNav.tsx
+  - Fixed: `aria-live="polite"` added to event filter results count in events/page.tsx
+  - Fixed: Event detail 404 title now includes site name suffix
+- **SEO audit (QUALITY-02)**:
+  - Fixed: `SITE_CONFIG.url` unified to `https://skrc.org.uk` as single source of truth (was mismatched with sitemap/robots)
+  - Fixed: sitemap.ts and robots.ts now import from SITE_CONFIG instead of hardcoding URLs
+  - Fixed: JsonLd.tsx uses SITE_CONFIG.url instead of hardcoded URLs
+  - Fixed: OpenGraph tags added to homepage, service detail, event detail, and links pages
+  - Fixed: Root layout now has `metadataBase` + default OpenGraph metadata for social sharing fallback
+  - Fixed: 404 page now has description metadata
+  - All 16 pages verified with unique title/description, sitemap complete (13 static + 14 dynamic), robots.txt, JSON-LD, charity number in footer
+- **Performance audit (QUALITY-03)**:
+  - LazyMotionProvider verified: single instance in root layout, domAnimation feature set, no redundant wrappers
+  - All 18 motion components use `m.*` (not `motion.*`) for tree-shaking
+  - Fixed: Raw `<img>` in FeaturedTestimonial.tsx replaced with `next/image` `<Image fill sizes="80px">`; added `images.unsplash.com` to next.config.ts remotePatterns
+  - Fixed: Removed unnecessary `"use client"` from EventCard.tsx (no hooks/state/handlers)
+  - Fonts verified: next/font/google with display="swap" for both Cormorant Garamond and DM Sans
+  - Reduced motion verified: CSS media query + useReducedMotion in all 17 motion components
+
+### Phase 15: Web Interface Guidelines (15-01)
+- **WIG-01: Eliminated transition-all**: All 18 instances across 17 files replaced with explicit transition properties (transition-colors, transition-[transform,box-shadow], transition-[background-color,opacity], etc.) for better browser paint performance
+- **WIG-02: Logo hover feedback**: Header and Footer logo Images now have `transition-opacity hover:opacity-80` for visible interactive feedback
+- **WIG-03: Image dimension metadata**: All logo Image components corrected to 2:3 aspect ratio (Header 80x120, Footer 35x53, Links 80x120) matching actual skrc-logo.png dimensions
+- **WIG-04: Hydration-safe year**: Footer copyright `<p>` has `suppressHydrationWarning` to prevent React hydration mismatch on year boundary

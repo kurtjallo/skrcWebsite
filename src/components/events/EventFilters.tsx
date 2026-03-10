@@ -37,7 +37,7 @@ function FilterGroup<T extends string>({
 }) {
   return (
     <div>
-      <p className="mb-2 font-body text-sm font-semibold uppercase tracking-wider text-text-body">
+      <p className="mb-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-muted">
         {label}
       </p>
       <div className="flex flex-wrap gap-2" role="group" aria-label={`Filter by ${label.toLowerCase()}`}>
@@ -49,12 +49,12 @@ function FilterGroup<T extends string>({
               type="button"
               aria-pressed={isSelected}
               onClick={() => onChange(toggleItem(selected, key))}
-              className={`rounded-full border px-4 py-1.5 font-body text-sm font-medium transition-all duration-200
+              className={`rounded-full border px-4 py-1.5 font-body text-sm font-medium transition-colors duration-200
                 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2
                 ${
                   isSelected
-                    ? "border-primary-900 bg-primary-900 text-stone-50"
-                    : "border-stone-200 bg-stone-100 text-text-body hover:border-stone-300 hover:bg-stone-200"
+                    ? "border-accent-500 bg-accent-100 text-accent-600"
+                    : "border-divider bg-surface-card text-text-body hover:border-accent-300 hover:bg-accent-100/50"
                 }`}
             >
               {display}
@@ -77,10 +77,10 @@ export function EventFilters({
   activeFilterCount,
 }: EventFiltersProps) {
   return (
-    <div className="mb-8 rounded-xl border border-stone-200 bg-white p-6">
+    <div className="mb-8 rounded-2xl bg-surface-card p-6">
       <h2 className="sr-only">Filter Events</h2>
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         <FilterGroup<EventAudience>
           label="Audience"
           options={AUDIENCE_LABELS}
@@ -104,11 +104,11 @@ export function EventFilters({
       </div>
 
       {activeFilterCount > 0 && (
-        <div className="mt-4 border-t border-stone-200 pt-4">
+        <div className="mt-5 border-t border-divider pt-4">
           <button
             type="button"
             onClick={onClearAll}
-            className="font-body text-sm font-medium text-accent-600 underline hover:text-accent-500"
+            className="font-body text-sm font-medium text-accent-600 transition-colors hover:text-accent-500"
           >
             Clear all filters
             <span className="ml-2 inline-flex items-center rounded-full bg-accent-100 px-2 py-0.5 font-body text-xs font-bold text-accent-600">

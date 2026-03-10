@@ -1,16 +1,19 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { m, useReducedMotion } from "motion/react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { HERO_IMAGES } from "@/lib/placeholders";
+import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
+import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 
 const PREMIUM_EASE = [0.25, 0.1, 0.25, 1] as const;
 
 function fadeUp(delay: number) {
   return {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 24 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: PREMIUM_EASE, delay },
+    transition: { duration: 0.7, ease: PREMIUM_EASE, delay },
   };
 }
 
@@ -23,102 +26,102 @@ export default function Hero() {
       : fadeUp(delay);
 
   return (
-    <>
-      {/* TODO: Replace gradient with actual landscape image using next/image */}
-      <section
-        className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800"
-        aria-label="Welcome to St Katharine Rural Connect"
+    <section className="px-4 pt-4" aria-label="Welcome to St Katharine Rural Connect">
+      <div
+        className="relative overflow-hidden rounded-[20px]"
+        style={{ minHeight: "75vh" }}
       >
+        {/* Background image */}
+        <Image
+          src={HERO_IMAGES.home}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Dark overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-950/50 to-primary-950/30"
+          aria-hidden="true"
+        />
+
         {/* Subtle texture overlay */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
               "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "40px 40px",
+            backgroundSize: "32px 32px",
           }}
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-24 text-center md:py-32 lg:py-40">
-          {/* Gold accent line */}
-          <m.div
-            className="mx-auto mb-8 h-[2px] bg-accent-500"
-            initial={shouldReduceMotion ? { width: 80 } : { width: 0 }}
-            animate={{ width: 80 }}
-            transition={
-              shouldReduceMotion
-                ? { duration: 0 }
-                : { duration: 0.8, ease: PREMIUM_EASE }
-            }
-            aria-hidden="true"
-          />
+        {/* Content positioned at bottom */}
+        <div className="relative z-10 flex min-h-[75vh] items-end">
+          <div className="mx-auto w-full max-w-7xl px-6 pb-12 pt-32 md:px-12 md:pb-20 md:pt-40 lg:px-16">
+            {/* Two-column layout */}
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
+              {/* Left: Heading */}
+              <m.div
+                {...motionProps(0.1)}
+                animate={
+                  shouldReduceMotion
+                    ? { opacity: 1, y: 0 }
+                    : fadeUp(0.1).animate
+                }
+              >
+                <EmphasisHeading
+                  text="Support That *Strengthens* the Heart of *Rural Life*"
+                  as="h1"
+                  className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-display"
+                />
+              </m.div>
 
-          {/* Overline */}
-          <m.p
-            className="mb-6 text-overline font-bold uppercase tracking-widest text-accent-500"
-            {...motionProps(0.2)}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : fadeUp(0.2).animate}
-          >
-            St Katharine Rural Connect
-          </m.p>
+              {/* Right: Subtext + CTA */}
+              <m.div
+                className="flex flex-col justify-end"
+                {...motionProps(0.3)}
+                animate={
+                  shouldReduceMotion
+                    ? { opacity: 1, y: 0 }
+                    : fadeUp(0.3).animate
+                }
+              >
+                <p className="mb-8 max-w-md text-lg leading-relaxed text-white/80">
+                  We serve farmers, offshore workers, families, and community
+                  members by creating accessible pathways to wellness, practical
+                  resources, and meaningful belonging.
+                </p>
+                <CircleArrowCTA
+                  label="Get in Touch"
+                  href="/contact"
+                  variant="light"
+                />
+              </m.div>
+            </div>
 
-          {/* Main heading */}
-          <m.h1
-            className="mx-auto mb-6 max-w-4xl font-heading text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-display"
-            {...motionProps(0.4)}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : fadeUp(0.4).animate}
-          >
-            Strengthening rural communities through support, connection, and care
-          </m.h1>
-
-          {/* Subheading */}
-          <m.p
-            className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-stone-200"
-            {...motionProps(0.55)}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : fadeUp(0.55).animate}
-          >
-            We serve farmers, offshore workers, families, and community members
-            by creating accessible pathways to wellness, practical resources, and
-            meaningful belonging.
-          </m.p>
-
-          {/* CTAs */}
-          <m.div
-            className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
-            {...motionProps(0.7)}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : fadeUp(0.7).animate}
-          >
-            <Link
-              href="/contact"
-              className="inline-flex rounded-md bg-accent-500 px-8 py-3 font-medium text-primary-950 transition-colors duration-300 hover:bg-accent-400"
+            {/* Crisis line */}
+            <m.p
+              className="mt-10 text-sm text-white/50"
+              {...motionProps(0.5)}
+              animate={
+                shouldReduceMotion
+                  ? { opacity: 1, y: 0 }
+                  : fadeUp(0.5).animate
+              }
             >
-              Get in Touch
-            </Link>
-            <Link
-              href="/events"
-              className="inline-flex rounded-md border-2 border-white px-8 py-3 font-medium text-white transition-colors duration-300 hover:bg-white/10"
-            >
-              See What&apos;s On
-            </Link>
-          </m.div>
-
-          {/* Crisis line */}
-          <m.p
-            className="text-sm text-stone-300"
-            {...motionProps(0.85)}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : fadeUp(0.85).animate}
-          >
-            Need to talk now? Call{" "}
-            <a
-              href={SITE_CONFIG.phoneHref}
-              className="font-medium text-stone-100 underline decoration-stone-400 underline-offset-2 transition-colors duration-200 hover:text-accent-400 hover:decoration-accent-400"
-            >
-              {SITE_CONFIG.phone}
-            </a>
-          </m.p>
+              Need to talk now? Call{" "}
+              <a
+                href={SITE_CONFIG.phoneHref}
+                className="font-medium text-white/70 underline decoration-white/30 underline-offset-2 transition-colors duration-200 hover:text-white hover:decoration-white/60"
+              >
+                {SITE_CONFIG.phone}
+              </a>
+            </m.p>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

@@ -10,16 +10,11 @@ function Card({ className, hoverable = false, ...props }: CardProps) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl py-6",
         hoverable && [
           "group relative overflow-hidden",
-          "transition-all duration-300 ease-premium",
+          "transition-[transform,box-shadow] duration-300 ease-premium",
           "hover:-translate-y-1 hover:shadow-lg",
-          "before:content-[''] before:absolute before:top-0 before:left-0",
-          "before:w-full before:h-[2px] before:bg-accent-500",
-          "before:scale-x-0 before:origin-left",
-          "before:transition-transform before:duration-400 before:ease-premium",
-          "hover:before:scale-x-100",
         ],
         className
       )}

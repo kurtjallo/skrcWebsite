@@ -1,42 +1,62 @@
-import type { TeamMember } from "@/types";
+"use client";
 
-function getInitials(name: string): string {
-  const parts = name.split(" ").filter(Boolean);
-  if (parts.length === 0) return "";
-  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
-  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
-}
+import { useState } from "react";
+import Image from "next/image";
+import type { TeamMember } from "@/types";
 
 interface TeamMemberCardProps {
   member: TeamMember;
+  gradientIndex?: number;
 }
 
 export function TeamMemberCard({ member }: TeamMemberCardProps) {
-  const initials = getInitials(member.name);
-  const connectionLabel =
-    member.group === "board" ? "Rural connection" : "Responsibility";
+  const [expanded, setExpanded] = useState(false);
+
+  const initials = member.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
 
   return (
-    <article className="group relative overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition-all duration-300 ease-premium hover:border-accent-300 hover:shadow-md before:absolute before:left-0 before:top-0 before:h-[2px] before:w-full before:origin-left before:scale-x-0 before:bg-accent-500 before:transition-transform before:duration-500 hover:before:scale-x-100">
-      {/* Avatar placeholder */}
-      <div className="flex h-48 items-center justify-center bg-stone-200">
-        <span className="font-heading text-3xl font-semibold text-stone-400">
-          {initials}
-        </span>
+    <article className="group overflow-hidden rounded-2xl bg-white border border-divider transition-[transform,box-shadow] duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1">
+      {/* Photo */}
+      <div className="relative aspect-[3/4]">
+        {member.imageUrl ? (
+          <Image
+            src={member.imageUrl}
+            alt={member.name}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-primary-100">
+            <span className="font-heading text-4xl font-semibold text-primary-400">
+              {initials}
+            </span>
+          </div>
+        )}
       </div>
 
-      {/* Content */}
-      <div className="space-y-3 p-6">
-        <h3 className="font-heading text-xl font-semibold text-primary-900">
+      {/* Info below photo */}
+      <div className="p-5">
+        <h3 className="font-heading text-xl font-semibold text-text-primary">
           {member.name}
         </h3>
-        <p className="font-body text-sm font-medium uppercase tracking-wide text-accent-600">
+        <p className="mt-1 font-body text-sm font-medium text-accent-600">
           {member.role}
         </p>
-        <p className="text-sm leading-relaxed text-text-body">{member.bio}</p>
-        <p className="mt-3 border-t border-stone-100 pt-3 text-xs italic text-text-muted">
-          {connectionLabel}: {member.connection}
+        <p
+          className={`mt-3 text-sm leading-relaxed text-text-muted ${expanded ? "" : "line-clamp-3"}`}
+        >
+          {member.bio}
         </p>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-2 text-sm font-medium text-accent-600 hover:text-accent-700 transition-colors"
+        >
+          {expanded ? "Read less" : "Read more"}
+        </button>
       </div>
     </article>
   );

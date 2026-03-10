@@ -1,11 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { m, useReducedMotion } from "motion/react";
-import { Heart, Wheat, Anchor, Users, ArrowRight } from "lucide-react";
+import { Heart, Wheat, Anchor, Users } from "lucide-react";
+import { HERO_IMAGES } from "@/lib/placeholders";
 import type { LucideIcon } from "lucide-react";
 import { servicePillars } from "@/data/homepage";
-import { GoldAccentLine } from "@/components/shared/GoldAccentLine";
+import { SectionLabel } from "@/components/shared/SectionLabel";
+import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
+import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   Heart,
@@ -30,30 +34,25 @@ export default function ServicePillars() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-stone-50 py-16 md:py-24" aria-label="Our services">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-overline font-bold uppercase tracking-widest text-accent-600">
-            Our Services
-          </p>
-          <h2 className="mb-4 font-heading text-4xl font-semibold text-text-primary">
-            Four Pillars of Support
-          </h2>
-          <p className="mx-auto max-w-2xl text-text-muted">
-            Whether you need someone to talk to, practical help on the farm, or
-            a place to feel part of something -- we&apos;re here for you.
-          </p>
-        </div>
+    <section className="bg-surface-page py-20 md:py-28" aria-label="Our services">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionLabel text="OUR SERVICES" />
+        <EmphasisHeading
+          text="Four Pillars of *Support*"
+          as="h2"
+          className="mt-6 text-3xl font-semibold text-primary-900 md:text-4xl"
+        />
 
+        {/* Grid: 2x2 service cards + tall CTA card */}
         <m.div
-            className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{
-              staggerChildren: shouldReduceMotion ? 0 : 0.12,
-            }}
-          >
+          className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ staggerChildren: shouldReduceMotion ? 0 : 0.1 }}
+        >
+          {/* 2x2 grid on the left (takes 2 columns) */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:col-span-2">
             {servicePillars.map((pillar) => {
               const Icon = ICON_MAP[pillar.icon];
               return (
@@ -67,41 +66,65 @@ export default function ServicePillars() {
                 >
                   <Link
                     href={`/services/${pillar.slug}`}
-                    className="group relative block overflow-hidden rounded-lg bg-white p-8 shadow-sm transition-all duration-300 ease-premium hover:-translate-y-1 hover:shadow-md"
+                    className="group block rounded-2xl bg-white p-7 transition-[transform,box-shadow] duration-300 ease-premium hover:-translate-y-1 hover:shadow-lg"
                   >
-                    {/* Gold top border on hover */}
-                    <GoldAccentLine
-                      className="absolute left-0 top-0"
-                      animated
-                    />
-
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-stone-100 text-primary-700">
-                      {Icon && (
+                    {Icon && (
+                      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-100 text-accent-500">
                         <Icon
-                          className="h-6 w-6"
+                          className="h-5 w-5"
                           strokeWidth={1.5}
                           aria-hidden="true"
                         />
-                      )}
-                    </div>
-
-                    <h3 className="mt-4 font-heading text-2xl font-semibold text-text-primary">
+                      </div>
+                    )}
+                    <h3 className="font-heading text-xl font-semibold text-primary-900">
                       {pillar.title}
                     </h3>
-                    <p className="mt-3 line-clamp-3 text-base text-text-body">
+                    <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-text-muted">
                       {pillar.description}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent-600 transition-colors duration-200 group-hover:text-accent-500">
-                      Learn more
-                      <ArrowRight
-                        className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                        aria-hidden="true"
-                      />
-                    </span>
                   </Link>
                 </m.div>
               );
             })}
+          </div>
+
+          {/* Tall CTA card spanning both rows */}
+          <m.div
+            variants={
+              shouldReduceMotion
+                ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+                : cardVariants
+            }
+          >
+            <div className="relative flex h-full min-h-[320px] flex-col justify-end overflow-hidden rounded-2xl p-8">
+              <Image
+                src={HERO_IMAGES.home}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/50 to-primary-950/30" />
+              <div className="relative z-10">
+                <EmphasisHeading
+                  text="Start Your *Support Journey*"
+                  as="h3"
+                  className="mb-4 text-2xl font-semibold text-white md:text-3xl"
+                />
+                <p className="mb-6 text-sm leading-relaxed text-white/70">
+                  Not sure where to begin? Get in touch and we&apos;ll help you
+                  find the right support.
+                </p>
+                <CircleArrowCTA
+                  label="Get in Touch"
+                  href="/contact"
+                  variant="light"
+                />
+              </div>
+            </div>
+          </m.div>
         </m.div>
       </div>
     </section>

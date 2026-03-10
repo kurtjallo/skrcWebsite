@@ -1,140 +1,126 @@
-# Requirements: St Katharine Rural Connect Website
+# Requirements: St Katharine Rural Connect Website — v2.0 Visual Revamp
 
-**Defined:** 2026-02-28
+**Defined:** 2026-03-08
 **Core Value:** People in rural crisis can find and contact support within 2 clicks on any device, any connection speed.
 
 ## v1 Requirements
 
-Requirements for initial release. Each maps to roadmap phases.
+Requirements for v2.0 milestone release. Each maps to roadmap phases.
 
-### Foundation
+### Design System
 
-- [ ] **FOUND-01**: Next.js 15 project scaffolded with App Router, TypeScript, and Tailwind CSS v4
-- [ ] **FOUND-02**: Design tokens configured (full color palette, typography scale, spacing, transitions)
-- [ ] **FOUND-03**: Cormorant Garamond + DM Sans loaded via next/font with zero layout shift
-- [ ] **FOUND-04**: shadcn/ui initialized with custom theme matching design system
-- [ ] **FOUND-05**: Project structure follows defined architecture (app/, components/, lib/, data/, types/)
+- [ ] **DS-01**: New color palette applied globally — deep navy primary, royal blue accent, light blue-grey page backgrounds, white card surfaces (drop gold entirely)
+- [ ] **DS-02**: Italic-emphasis heading pattern — selective words in Cormorant Garamond italic for emotional weight, applied consistently across all pages
+- [ ] **DS-03**: Section label component — blue dot + uppercase pill badge used for all section headers site-wide
+- [ ] **DS-04**: Circle-arrow CTA button — text + circular icon button pattern replaces all current gold/outline button styles
+- [ ] **DS-05**: White card pattern — rounded corners (~12-16px radius), minimal/no border, hover lift + subtle shadow for interactive cards
+- [ ] **DS-06**: Stats cards — white cards with left border accent in blue, animated counters, on light blue-grey background
 
-### Layout
+### Layout & Navigation
 
-- [ ] **LAYOUT-01**: Utility bar with persistent phone number and "Need Support?" link
-- [ ] **LAYOUT-02**: Desktop navigation with logo, page links, and gold underline hover effects
-- [ ] **LAYOUT-03**: Mobile navigation with hamburger menu and slide-out drawer
-- [ ] **LAYOUT-04**: Footer with contact info, nav links, charity registration number, and social links
-- [ ] **LAYOUT-05**: Skip-to-main-content link as first focusable element
-- [ ] **LAYOUT-06**: Page transition animations via template.tsx (fade-up)
-- [ ] **LAYOUT-07**: SectionWrapper component with alternating background rhythm
+- [ ] **LAYOUT-01**: Inset rounded-corner hero — full-width image with ~20px border-radius, inset from page edges, dark overlay for text contrast
+- [ ] **LAYOUT-02**: Interior page hero — shorter half-height banner with single centered serif heading, reusable across all inner pages
+- [ ] **LAYOUT-03**: Footer redesign — dark navy background, 4-column grid (brand description, menu links, social links, contact info), bottom bar with copyright
+- [ ] **LAYOUT-04**: Pre-footer CTA — large image card with curved clip-path/wave transition, inset from page edges, heading + body text + circle-arrow CTA overlaid
 
 ### Homepage
 
-- [ ] **HOME-01**: Hero section with mission statement, landscape imagery, and dual CTAs
-- [ ] **HOME-02**: Self-identification cards ("I am a..." — Farmer, Offshore Worker, Family, Community)
-- [ ] **HOME-03**: Four service pillars displayed as cards (2x2 grid)
-- [ ] **HOME-04**: Impact statistics section with animated counters
-- [ ] **HOME-05**: Featured testimonial in dark section with gold accents
-- [ ] **HOME-06**: Upcoming events preview (next 2-3 events) with "View All" link
-- [ ] **HOME-07**: Get Involved section (Volunteer, Partner, Donate)
-- [ ] **HOME-08**: Newsletter signup form
-- [ ] **HOME-09**: Partner logos strip ("Supported by")
+- [ ] **HOME-01**: Two-column hero — large serif heading with italic emphasis (left), subheading paragraph + circle-arrow CTA (right), professional background image with dark overlay, inset rounded corners
+- [ ] **HOME-02**: Who-we-are statement — blue dot + pill label, very large serif text (~36-44px) with italic-emphasis words, full-width, serves as mission elevator pitch
+- [ ] **HOME-03**: Services grid — 2x2 white service cards (icon, title, description) + tall right-side CTA card with background image spanning both rows, "Start Your Support Journey" or similar
+- [ ] **HOME-04**: Full-width story/impact cards — large rounded image cards with dark gradient overlay, category tag pills, headline + description overlaid, circle-arrow CTA per card
+- [ ] **HOME-05**: Portrait testimonial cards — 3 cards in a row, portrait photo with dark gradient, quote text overlaid, name + identifier, decorative play button icon (visual only, no video)
+- [ ] **HOME-06**: Numbered approach steps — "Our Approach" section with large italic-emphasis statement, two-column layout (image left, 4 numbered step cards right: 01-04 with icons, titles, descriptions)
+- [ ] **HOME-07**: Partner logo grid — blue dot + "Trusted By" label, 2x4 grid of partner logos in white rounded cards, monochrome navy treatment
 
-### About
+### Services Page
 
-- [ ] **ABOUT-01**: Founding intention / origin story section
-- [ ] **ABOUT-02**: Mission, Vision, Values display
-- [ ] **ABOUT-03**: "Why the Name Matters" section explaining St Katharine + Rural Connect
+- [ ] **SERV-01**: Services hero — interior page hero pattern (shorter banner, centered heading, inset rounded corners)
+- [ ] **SERV-02**: Service pillar detail cards — 4 pillars stacked vertically, each with image-left (~40%) + content-right (~60%) two-column layout
+- [ ] **SERV-03**: Pillar image cards — rounded corners, dark gradient overlay, service title overlaid in white serif, "Book a Consultation" CTA on image
+- [ ] **SERV-04**: Pillar content — "Why It Matters:" label heading + value description paragraph, "What's Included:" label heading + blue checkmark list (5 items per pillar)
 
-### Services
+### About Page
 
-- [ ] **SERV-01**: Services overview page with all four pillars
-- [ ] **SERV-02**: Individual pillar detail page for Community Wellness & Mental Health
-- [ ] **SERV-03**: Individual pillar detail page for Agricultural Support & Resources
-- [ ] **SERV-04**: Individual pillar detail page for Offshore Worker Engagement & Support
-- [ ] **SERV-05**: Individual pillar detail page for Community Connection & Development
-- [ ] **SERV-06**: User-centered plain language naming (e.g., "Supporting Farm Life" not "Agricultural Resources")
-- [ ] **SERV-07**: "What Happens When You Call" reassurance section on each pillar page
+- [ ] **ABOUT-01**: About hero — interior page hero pattern
+- [ ] **ABOUT-02**: Asymmetric two-column intro — large italic-emphasis heading + body text (left), rounded-corner image (right)
+- [ ] **ABOUT-03**: Mission card — white card with image, mission statement prominently displayed
+- [ ] **ABOUT-04**: Large vision statement — full-width serif italic-emphasis text + supporting image + stats row
+- [ ] **ABOUT-05**: Values display — updated to match new white card pattern with blue accent
 
-### Audience
+### Contact Page
 
-- [ ] **AUD-01**: Who We Serve overview page with all audience segments
-- [ ] **AUD-02**: Audience-specific content sections (relevant services, testimonials, contact options)
-- [ ] **AUD-03**: Access points listed per audience (phone, email, forms, workshops)
+- [ ] **CONTACT-01**: Full-screen dark hero — deep navy/dark background filling the viewport, conversational heading with italic emphasis
+- [ ] **CONTACT-02**: Embedded form on hero — two-column layout (contact info + reassurance left, form right), form fields on dark background with light text/borders
+- [ ] **CONTACT-03**: Contact info display — phone, email, office hours, location with updated icon styling to match new design language
 
-### Events
+### Events Page
 
-- [ ] **EVENT-01**: Events calendar page with list/grid view
-- [ ] **EVENT-02**: Filter by audience (farmers, offshore workers, families, all community)
-- [ ] **EVENT-03**: Filter by type (workshop, social, volunteer, support)
-- [ ] **EVENT-04**: Filter by format (in-person, virtual, hybrid)
-- [ ] **EVENT-05**: Individual event detail page with date, time, location, description
+- [ ] **EVENT-01**: Events hero — interior page hero pattern
+- [ ] **EVENT-02**: Event cards — updated to white card pattern with rounded corners, blue accent tags, circle-arrow CTAs, hover lift
+- [ ] **EVENT-03**: Filter controls — updated styling to match new design language (blue active states, rounded pills)
 
-### Get Involved
+### Who We Serve Page
 
-- [ ] **INVOLVE-01**: Get Involved page with sections for Volunteer, Attend Events, Donate, Partner, Share
-- [ ] **INVOLVE-02**: Clear CTAs routing to appropriate actions/pages
+- [ ] **SERVE-01**: Who We Serve hero — interior page hero pattern
+- [ ] **SERVE-02**: Audience segments — updated to new card patterns, two-column layouts with images, blue checkmark access points
+- [ ] **SERVE-03**: Segment CTAs — circle-arrow buttons replacing current button styles
 
-### Partnerships
+### Get Involved Page
 
-- [ ] **PART-01**: Partnership approach description
-- [ ] **PART-02**: Partner logos display
-- [ ] **PART-03**: "Become a Partner" CTA
+- [ ] **INVOLVE-01**: Get Involved hero — interior page hero pattern
+- [ ] **INVOLVE-02**: Involvement cards — updated to white card pattern with icons, descriptions, circle-arrow CTAs
+- [ ] **INVOLVE-03**: Dark CTA banner — updated to match new navy design language
 
-### Team
+### Partnerships Page
 
-- [ ] **TEAM-01**: Board of Directors section with name, role, bio, rural connection
-- [ ] **TEAM-02**: Staff team section with name, position, bio, area of responsibility
-- [ ] **TEAM-03**: Card-based layout with consistent presentation
+- [ ] **PARTNER-01**: Partnerships hero — interior page hero pattern
+- [ ] **PARTNER-02**: Partner grid — white rounded cards with monochrome logos, matching homepage partner grid style
+- [ ] **PARTNER-03**: Partnership approach — updated typography and card styling
 
-### Testimonials
+### Team Page
 
-- [ ] **TESTI-01**: Testimonials page with quotes from all audience segments
-- [ ] **TESTI-02**: Each testimonial shows first name, identifier (e.g., "dairy farmer near Huntly")
-- [ ] **TESTI-03**: Visual distinction between audience segment testimonials
+- [ ] **TEAM-01**: Team hero — interior page hero pattern
+- [ ] **TEAM-02**: Frosted glass portrait cards — team member cards with photo background, frosted glass overlay for name/role/bio, rounded corners
+- [ ] **TEAM-03**: Grid layout — board (4-column) and staff (3-column) sections with updated spacing and typography
 
-### Contact
+### Testimonials Page
 
-- [ ] **CONTACT-01**: Contact form with name, email, message, and audience selector
-- [ ] **CONTACT-02**: Honeypot field for spam prevention (no CAPTCHA)
-- [ ] **CONTACT-03**: Empathetic validation messages and "Your information is confidential" reassurance
-- [ ] **CONTACT-04**: Phone number, email, office hours, and location displayed
-- [ ] **CONTACT-05**: Form submission via Server Action
+- [ ] **TESTI-01**: Testimonials hero — interior page hero pattern
+- [ ] **TESTI-02**: Portrait testimonial cards — dark gradient overlay on portrait photos, white quote text, name + segment identifier, decorative play button icons
+- [ ] **TESTI-03**: Segment visual distinction — maintained through subtle color coding or tag pills
 
-### Accessibility
+### FAQ Page (New)
 
-- [ ] **A11Y-01**: `<html lang="en-GB">` on every page
-- [ ] **A11Y-02**: Unique descriptive `<title>` per page (pattern: "Page | St Katharine Rural Connect")
-- [ ] **A11Y-03**: Semantic landmarks: header, nav, main, footer
-- [ ] **A11Y-04**: Strict heading hierarchy (no skipped levels)
-- [ ] **A11Y-05**: All images have meaningful alt text or `alt=""` for decorative
-- [ ] **A11Y-06**: Visible focus indicators (gold rings, never outline: none)
-- [ ] **A11Y-07**: Content reflows at 320px with no horizontal scroll
-- [ ] **A11Y-08**: Touch targets minimum 44x44px
-- [ ] **A11Y-09**: `prefers-reduced-motion` respected (disable transforms, zero durations)
-- [ ] **A11Y-10**: `tel:` links on all phone numbers
+- [ ] **FAQ-01**: FAQ hero — interior page hero pattern
+- [ ] **FAQ-02**: White card accordion — each question in a white rounded card, serif question text, "+" toggle icon that rotates to "×" on open
+- [ ] **FAQ-03**: Narrow content column — centered, max-width ~700px for comfortable reading
+- [ ] **FAQ-04**: FAQ content — minimum 8 questions covering services, access, confidentiality, events, volunteering, referrals
 
-### SEO
+### Links Page (New)
 
-- [ ] **SEO-01**: `generateMetadata` per page with unique title and description
-- [ ] **SEO-02**: `sitemap.ts` auto-generated
-- [ ] **SEO-03**: `robots.ts` configured
-- [ ] **SEO-04**: JSON-LD structured data (NGO type + CommunityEvent)
-- [ ] **SEO-05**: Charity registration number in footer
+- [ ] **LINKS-01**: Standalone dark page — no navigation or footer, deep navy/dark background
+- [ ] **LINKS-02**: Centered card layout — SKRC logo/name, tagline, profile-style layout
+- [ ] **LINKS-03**: Social media icons — links to all SKRC social profiles
+- [ ] **LINKS-04**: Action buttons — key links (website, contact, events, donate) as rounded button list
 
-### Performance
+### 404 Page (New)
 
-- [ ] **PERF-01**: Total page weight under 500KB
-- [ ] **PERF-02**: Images optimized via next/image (WebP/AVIF, responsive srcset, lazy loading)
-- [ ] **PERF-03**: LazyMotion with domAnimation for tree-shaking (~15KB saving)
-- [ ] **PERF-04**: Under 100KB JS gzipped
+- [ ] **404-01**: Full-screen hero — dark or branded background filling viewport
+- [ ] **404-02**: Friendly messaging — "Oops" or warm tone, not technical error language
+- [ ] **404-03**: Homepage redirect — prominent circle-arrow CTA to return home, optional secondary links
 
-### Design
+### Thank You Page (New)
 
-- [ ] **DESIGN-01**: Gold accent lines (2px) on hover states and section dividers
-- [ ] **DESIGN-02**: Card hover effects (4px lift, shadow increase, gold top-border grows)
-- [ ] **DESIGN-03**: Button hover with gold sweep animation
-- [ ] **DESIGN-04**: Staggered section reveal animations (fade up 30px, whileInView, once)
-- [ ] **DESIGN-05**: Diamond divider and corner bracket architectural line graphics
-- [ ] **DESIGN-06**: Two-column layouts for problem/solution sections
-- [ ] **DESIGN-07**: Alternating section backgrounds (stone-50, stone-100, primary-900 for dramatic breaks)
+- [ ] **THANKS-01**: Full-screen hero — branded background with confirmation messaging
+- [ ] **THANKS-02**: Confirmation content — warm acknowledgment of form submission, expected response time
+- [ ] **THANKS-03**: Next steps — links to explore (events, services, get involved) so the user isn't dead-ended
+
+### Quality Preservation
+
+- [ ] **QUALITY-01**: All v1.0 accessibility standards maintained — WCAG AA, skip links, keyboard nav, reduced motion, 44px touch targets, semantic landmarks, heading hierarchy, focus indicators, tel: links
+- [ ] **QUALITY-02**: All v1.0 SEO standards maintained — metadata per page, sitemap, robots, JSON-LD structured data, charity number in footer
+- [ ] **QUALITY-03**: All v1.0 performance standards maintained — <500KB per page, lazy loading, 3G-friendly, LazyMotion with domAnimation
 
 ## v2 Requirements
 
@@ -159,110 +145,104 @@ Deferred to future release. Tracked but not in current roadmap.
 - **ANAL-01**: Plausible analytics integration (privacy-friendly)
 - **ANAL-02**: Event tracking for CTA clicks and form submissions
 
+### Content
+
+- **CONTENT-01**: Video testimonial playback (play buttons currently visual only)
+- **CONTENT-02**: Case Studies / Impact Stories detail pages with real content
+- **CONTENT-03**: Real event data replacing placeholder/sample data
+
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
 | Real-time chat | High complexity, not core to support model |
-| User accounts / login | Not needed — organization-facing, not user-facing |
+| User accounts / login | Organization-facing site, not user-facing |
 | E-commerce / payments | Donation will link externally |
 | Multi-language (Gaelic) | Complexity; add if requested later |
 | Blog / news section | Defer until CMS integrated |
 | Google Maps embed | Performance cost; static location info sufficient |
 | Video hosting | Link to YouTube/Vimeo externally |
-| reCAPTCHA | Accessibility barrier per research; use honeypot |
+| reCAPTCHA | Accessibility barrier; honeypot sufficient |
+| Google Business Profile | External to website build |
+| Video testimonial functionality | Play buttons are visual only — no actual video playback in v2.0 |
+| Case study detail pages | SKRC doesn't have case study content yet |
 
 ## Traceability
 
+Which phases cover which requirements. Updated by create-roadmap.
+
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
-| FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
-| FOUND-05 | Phase 1 | Pending |
-| LAYOUT-01 | Phase 2 | Pending |
-| LAYOUT-02 | Phase 2 | Pending |
-| LAYOUT-03 | Phase 2 | Pending |
-| LAYOUT-04 | Phase 2 | Pending |
-| LAYOUT-05 | Phase 2 | Pending |
-| LAYOUT-06 | Phase 2 | Pending |
-| LAYOUT-07 | Phase 2 | Pending |
-| DESIGN-01 | Phase 2 | Pending |
-| DESIGN-02 | Phase 2 | Pending |
-| DESIGN-03 | Phase 2 | Pending |
-| DESIGN-04 | Phase 2 | Pending |
-| DESIGN-05 | Phase 2 | Pending |
-| DESIGN-06 | Phase 2 | Pending |
-| DESIGN-07 | Phase 2 | Pending |
-| HOME-01 | Phase 3 | Pending |
-| HOME-02 | Phase 3 | Pending |
-| HOME-03 | Phase 3 | Pending |
-| HOME-04 | Phase 3 | Pending |
-| HOME-05 | Phase 3 | Pending |
-| HOME-06 | Phase 3 | Pending |
-| HOME-07 | Phase 3 | Pending |
-| HOME-08 | Phase 3 | Pending |
-| HOME-09 | Phase 3 | Pending |
-| SERV-01 | Phase 4 | Pending |
-| SERV-02 | Phase 4 | Pending |
-| SERV-03 | Phase 4 | Pending |
-| SERV-04 | Phase 4 | Pending |
-| SERV-05 | Phase 4 | Pending |
-| SERV-06 | Phase 4 | Pending |
-| SERV-07 | Phase 4 | Pending |
-| AUD-01 | Phase 4 | Pending |
-| AUD-02 | Phase 4 | Pending |
-| AUD-03 | Phase 4 | Pending |
-| EVENT-01 | Phase 5 | Pending |
-| EVENT-02 | Phase 5 | Pending |
-| EVENT-03 | Phase 5 | Pending |
-| EVENT-04 | Phase 5 | Pending |
-| EVENT-05 | Phase 5 | Pending |
-| ABOUT-01 | Phase 6 | Pending |
-| ABOUT-02 | Phase 6 | Pending |
-| ABOUT-03 | Phase 6 | Pending |
-| TEAM-01 | Phase 6 | Pending |
-| TEAM-02 | Phase 6 | Pending |
-| TEAM-03 | Phase 6 | Pending |
-| TESTI-01 | Phase 6 | Pending |
-| TESTI-02 | Phase 6 | Pending |
-| TESTI-03 | Phase 6 | Pending |
-| INVOLVE-01 | Phase 6 | Pending |
-| INVOLVE-02 | Phase 6 | Pending |
-| PART-01 | Phase 6 | Pending |
-| PART-02 | Phase 6 | Pending |
-| PART-03 | Phase 6 | Pending |
-| CONTACT-01 | Phase 7 | Pending |
-| CONTACT-02 | Phase 7 | Pending |
-| CONTACT-03 | Phase 7 | Pending |
-| CONTACT-04 | Phase 7 | Pending |
-| CONTACT-05 | Phase 7 | Pending |
-| A11Y-01 | Phase 8 | Pending |
-| A11Y-02 | Phase 8 | Pending |
-| A11Y-03 | Phase 8 | Pending |
-| A11Y-04 | Phase 8 | Pending |
-| A11Y-05 | Phase 8 | Pending |
-| A11Y-06 | Phase 8 | Pending |
-| A11Y-07 | Phase 8 | Pending |
-| A11Y-08 | Phase 8 | Pending |
-| A11Y-09 | Phase 8 | Pending |
-| A11Y-10 | Phase 8 | Pending |
-| SEO-01 | Phase 8 | Pending |
-| SEO-02 | Phase 8 | Pending |
-| SEO-03 | Phase 8 | Pending |
-| SEO-04 | Phase 8 | Pending |
-| SEO-05 | Phase 8 | Pending |
-| PERF-01 | Phase 8 | Pending |
-| PERF-02 | Phase 8 | Pending |
-| PERF-03 | Phase 8 | Pending |
-| PERF-04 | Phase 8 | Pending |
+| DS-01 | Phase 9 | Pending |
+| DS-02 | Phase 9 | Pending |
+| DS-03 | Phase 9 | Pending |
+| DS-04 | Phase 9 | Pending |
+| DS-05 | Phase 9 | Pending |
+| DS-06 | Phase 9 | Pending |
+| LAYOUT-01 | Phase 9 | Pending |
+| LAYOUT-02 | Phase 9 | Pending |
+| LAYOUT-03 | Phase 9 | Pending |
+| LAYOUT-04 | Phase 9 | Pending |
+| HOME-01 | Phase 10 | Pending |
+| HOME-02 | Phase 10 | Pending |
+| HOME-03 | Phase 10 | Pending |
+| HOME-04 | Phase 10 | Pending |
+| HOME-05 | Phase 10 | Pending |
+| HOME-06 | Phase 10 | Pending |
+| HOME-07 | Phase 10 | Pending |
+| SERV-01 | Phase 11 | Pending |
+| SERV-02 | Phase 11 | Pending |
+| SERV-03 | Phase 11 | Pending |
+| SERV-04 | Phase 11 | Pending |
+| ABOUT-01 | Phase 11 | Pending |
+| ABOUT-02 | Phase 11 | Pending |
+| ABOUT-03 | Phase 11 | Pending |
+| ABOUT-04 | Phase 11 | Pending |
+| ABOUT-05 | Phase 11 | Pending |
+| CONTACT-01 | Phase 11 | Pending |
+| CONTACT-02 | Phase 11 | Pending |
+| CONTACT-03 | Phase 11 | Pending |
+| EVENT-01 | Phase 12 | Pending |
+| EVENT-02 | Phase 12 | Pending |
+| EVENT-03 | Phase 12 | Pending |
+| SERVE-01 | Phase 12 | Pending |
+| SERVE-02 | Phase 12 | Pending |
+| SERVE-03 | Phase 12 | Pending |
+| INVOLVE-01 | Phase 12 | Pending |
+| INVOLVE-02 | Phase 12 | Pending |
+| INVOLVE-03 | Phase 12 | Pending |
+| PARTNER-01 | Phase 12 | Pending |
+| PARTNER-02 | Phase 12 | Pending |
+| PARTNER-03 | Phase 12 | Pending |
+| TEAM-01 | Phase 12 | Pending |
+| TEAM-02 | Phase 12 | Pending |
+| TEAM-03 | Phase 12 | Pending |
+| TESTI-01 | Phase 12 | Pending |
+| TESTI-02 | Phase 12 | Pending |
+| TESTI-03 | Phase 12 | Pending |
+| FAQ-01 | Phase 13 | Pending |
+| FAQ-02 | Phase 13 | Pending |
+| FAQ-03 | Phase 13 | Pending |
+| FAQ-04 | Phase 13 | Pending |
+| LINKS-01 | Phase 13 | Pending |
+| LINKS-02 | Phase 13 | Pending |
+| LINKS-03 | Phase 13 | Pending |
+| LINKS-04 | Phase 13 | Pending |
+| 404-01 | Phase 13 | Pending |
+| 404-02 | Phase 13 | Pending |
+| 404-03 | Phase 13 | Pending |
+| THANKS-01 | Phase 13 | Pending |
+| THANKS-02 | Phase 13 | Pending |
+| THANKS-03 | Phase 13 | Pending |
+| QUALITY-01 | Phase 14 | Pending |
+| QUALITY-02 | Phase 14 | Pending |
+| QUALITY-03 | Phase 14 | Pending |
 
 **Coverage:**
-- v1 requirements: 81 total
-- Mapped to phases: 81
-- Unmapped: 0
+- v1 requirements: 64 total
+- Mapped to phases: 64
+- Unmapped: 0 ✓
 
 ---
-*Requirements defined: 2026-02-28*
-*Last updated: 2026-02-28 after roadmap creation*
+*Requirements defined: 2026-03-08*
+*Last updated: 2026-03-09 after roadmap creation*

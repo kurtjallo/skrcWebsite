@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { m, AnimatePresence, useReducedMotion } from "motion/react";
 import { X, Phone } from "lucide-react";
-import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
+import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface MobileNavProps {
@@ -86,12 +86,12 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               aria-label="Close menu"
               className="p-2 text-text-body hover:text-primary-900 transition-colors"
             >
-              <X size={24} />
+              <X size={24} aria-hidden="true" />
             </button>
           </div>
 
           <div className="flex flex-col px-6 py-4 gap-1">
-            {NAV_ITEMS.map((item) => (
+            {PRIMARY_NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -101,6 +101,22 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   pathname === item.href
                     ? "text-primary-900 bg-stone-100 font-medium"
                     : "text-text-body hover:bg-stone-100 hover:text-primary-900"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="my-2 border-t border-stone-200" />
+            {SECONDARY_NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={onClose}
+                className={cn(
+                  "block py-2.5 px-4 font-body text-base rounded-lg transition-colors",
+                  pathname === item.href
+                    ? "text-primary-900 bg-stone-100 font-medium"
+                    : "text-text-muted hover:bg-stone-100 hover:text-primary-900"
                 )}
               >
                 {item.label}
@@ -157,13 +173,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 aria-label="Close menu"
                 className="p-2 text-text-body hover:text-primary-900 transition-colors"
               >
-                <X size={24} />
+                <X size={24} aria-hidden="true" />
               </button>
             </div>
 
             {/* Nav links */}
             <div className="flex flex-col px-6 py-4 gap-1">
-              {NAV_ITEMS.map((item, i) => (
+              {PRIMARY_NAV_ITEMS.map((item, i) => (
                 <m.div
                   key={item.href}
                   initial={{ opacity: 0, x: 20 }}
@@ -178,6 +194,28 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                       pathname === item.href
                         ? "text-primary-900 bg-stone-100 font-medium"
                         : "text-text-body hover:bg-stone-100 hover:text-primary-900"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </m.div>
+              ))}
+              <div className="my-2 border-t border-stone-200" />
+              {SECONDARY_NAV_ITEMS.map((item, i) => (
+                <m.div
+                  key={item.href}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + (PRIMARY_NAV_ITEMS.length + i) * 0.05, duration: 0.3 }}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className={cn(
+                      "block py-2.5 px-4 font-body text-base rounded-lg transition-colors",
+                      pathname === item.href
+                        ? "text-primary-900 bg-stone-100 font-medium"
+                        : "text-text-muted hover:bg-stone-100 hover:text-primary-900"
                     )}
                   >
                     {item.label}
