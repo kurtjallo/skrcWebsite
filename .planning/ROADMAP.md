@@ -4,6 +4,7 @@
 
 - ✅ **v1.0 MVP** - Phases 1-8 (shipped 2026-03-07)
 - ✅ **v2.0 Visual Revamp** - Phases 9-14 (shipped 2026-03-09)
+- **v2.1 Polish** - Phase 15+
 
 ## Phases
 
@@ -35,6 +36,12 @@
 - [x] **Phase 12: Community Page Redesigns** - Events, Who We Serve, Get Involved, Partnerships, Team, Testimonials
 - [x] **Phase 13: New Pages** - FAQ, Links, 404, Thank You
 - [x] **Phase 14: Quality Verification** - Accessibility, SEO, performance preservation audit
+
+### v2.1 Polish
+
+**Milestone Goal:** Fix web interface guideline violations and integrate logo asset across the site.
+
+- [x] **Phase 15: Web Interface Guidelines Compliance** - Fix transition-all anti-patterns, add logo hover states, correct image dimensions, address hydration risk
 
 ## Parallel Execution
 
@@ -129,6 +136,18 @@ Phases 11-13 have zero cross-dependencies and can execute in parallel.
   3. All v1.0 performance standards pass — <500KB per page, lazy loading, LazyMotion with domAnimation
 **Plans**: 5 (all complete)
 
+### Phase 15: Web Interface Guidelines Compliance
+**Goal**: Fix web interface guideline violations found in code review — transition-all anti-patterns, missing logo hover states, image dimension mismatch, hydration risk
+**Depends on**: Phase 14
+**Requirements**: WIG-01, WIG-02, WIG-03, WIG-04
+**Research**: Unlikely
+**Success Criteria** (what must be TRUE):
+  1. Zero `transition-all` usage — all transitions list properties explicitly
+  2. Logo links in Header and Footer have visible hover feedback
+  3. Links page logo Image dimensions match actual aspect ratio
+  4. Footer year rendering is hydration-safe
+**Plans**: 1 (all complete)
+
 ## Progress
 
 **Execution Order:**
@@ -150,3 +169,4 @@ Phases 9-10 sequential, then 11-13 in parallel, then 14.
 | 12. Community Page Redesigns | v2.0 | 1/1 | Complete | ✅ |
 | 13. New Pages | v2.0 | 1/1 | Complete | ✅ |
 | 14. Quality Verification | v2.0 | 1/1 | Complete | ✅ |
+| 15. Web Interface Guidelines Compliance | v2.1 | 1/1 | Complete | ✅ |
