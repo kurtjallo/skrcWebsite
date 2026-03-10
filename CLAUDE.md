@@ -345,3 +345,10 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
 - **WIG-02: Logo hover feedback**: Header and Footer logo Images now have `transition-opacity hover:opacity-80` for visible interactive feedback
 - **WIG-03: Image dimension metadata**: All logo Image components corrected to 2:3 aspect ratio (Header 80x120, Footer 35x53, Links 80x120) matching actual skrc-logo.png dimensions
 - **WIG-04: Hydration-safe year**: Footer copyright `<p>` has `suppressHydrationWarning` to prevent React hydration mismatch on year boundary
+
+### Phase 16: CI Pipeline
+- **ESLint config** (`eslint.config.mjs`): Flat config using native `eslint-config-next` export (ESLint 9, no FlatCompat shim)
+- **GitHub Actions** (`.github/workflows/ci.yml`): Three parallel jobs (lint, typecheck, build) on push to main and PR to main, Node 22, npm cache, concurrency groups with cancel-in-progress
+- **Package.json scripts**: `lint` targets `src/`, `typecheck` runs `tsc --noEmit`
+- **.gitignore**: Comprehensive coverage (.next/, env files, .DS_Store, editor configs, build artifacts, Vercel output) — previously only ignored node_modules
+- **Git cleanup**: Removed .next/ build artifacts from git tracking (320K lines of build output)
