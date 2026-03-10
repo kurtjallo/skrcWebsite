@@ -1,4 +1,4 @@
-import { SERVICE_IMAGES, SECTION_IMAGES } from "@/lib/placeholders";
+import { IMPACT_IMAGES } from "@/lib/placeholders";
 
 export interface ImpactStory {
   id: string;
@@ -19,7 +19,7 @@ export const impactStories: ImpactStory[] = [
       { text: "Agricultural Support", variant: "filled" },
       { text: "Community", variant: "outline" },
     ],
-    imageUrl: SERVICE_IMAGES.agriculture,
+    imageUrl: IMPACT_IMAGES.farmSupport,
     href: "/services/supporting-farm-life",
   },
   {
@@ -31,7 +31,7 @@ export const impactStories: ImpactStory[] = [
       { text: "Offshore Support", variant: "filled" },
       { text: "Families", variant: "outline" },
     ],
-    imageUrl: SERVICE_IMAGES.offshore,
+    imageUrl: IMPACT_IMAGES.offshoreFamily,
     href: "/services/supporting-those-who-work-away",
   },
   {
@@ -43,7 +43,7 @@ export const impactStories: ImpactStory[] = [
       { text: "Community Wellness", variant: "filled" },
       { text: "Development", variant: "outline" },
     ],
-    imageUrl: SECTION_IMAGES.impact1,
+    imageUrl: IMPACT_IMAGES.ruralResilience,
     href: "/services/strengthening-our-community",
   },
 ];

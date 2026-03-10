@@ -21,6 +21,7 @@ export default function FaqPage() {
       <InteriorHero
         heading="Frequently Asked *Questions*"
         backgroundImage={HERO_IMAGES.faq}
+        objectPosition="center 40%"
       />
 
       {/* FAQ Accordion Section */}

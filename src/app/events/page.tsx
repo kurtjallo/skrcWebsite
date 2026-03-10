@@ -50,6 +50,7 @@ export default function EventsPage() {
       <InteriorHero
         heading="*Events*"
         backgroundImage={HERO_IMAGES.events}
+        objectPosition="center 40%"
       />
 
       <section className="bg-surface-page py-20 md:py-28">

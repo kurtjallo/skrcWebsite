@@ -19,6 +19,7 @@ export default function TeamPage() {
       <InteriorHero
         heading="Our *Team*"
         backgroundImage={HERO_IMAGES.team}
+        objectPosition="center 35%"
       />
 
       {/* Board of Directors */}
@@ -35,7 +36,7 @@ export default function TeamPage() {
             stewardship, ensuring SKRC stays true to its mission and the
             communities it serves.
           </p>
-          <TeamGrid members={boardMembers} columns={4} />
+          <TeamGrid members={boardMembers} columns={3} />
         </div>
       </section>
 
@@ -56,7 +57,7 @@ export default function TeamPage() {
             The team who deliver SKRC&rsquo;s services day to day, bringing
             warmth, expertise, and genuine care to every interaction.
           </p>
-          <TeamGrid members={staffMembers} columns={3} />
+          <TeamGrid members={staffMembers} columns={2} />
         </div>
       </section>
     </>

@@ -23,18 +23,28 @@ export const SITE_CONFIG = {
   locale: "en-GB",
 } as const;
 
-export const NAV_ITEMS: readonly NavItem[] = [
+export const PRIMARY_NAV_ITEMS: readonly NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Who We Serve", href: "/who-we-serve" },
   { label: "Events", href: "/events" },
   { label: "Get Involved", href: "/get-involved" },
+  { label: "Contact", href: "/contact" },
+] as const;
+
+export const SECONDARY_NAV_ITEMS: readonly NavItem[] = [
+  { label: "Who We Serve", href: "/who-we-serve" },
+  { label: "Community", href: "/community" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Partnerships", href: "/partnerships" },
   { label: "Team", href: "/team" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+] as const;
+
+export const NAV_ITEMS: readonly NavItem[] = [
+  ...PRIMARY_NAV_ITEMS,
+  ...SECONDARY_NAV_ITEMS,
 ] as const;
 
 export const SOCIAL_LINKS: readonly SocialLink[] = [

@@ -174,38 +174,33 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    letter-spacing: var(--text-base--letter-spacing);
+    color: var(--color-text-body);
+    background-color: var(--color-surface-page);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-/* Base typography */
-body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--text-base--line-height);
-  letter-spacing: var(--text-base--letter-spacing);
-  color: var(--color-text-body);
-  background-color: var(--color-surface-page);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+  }
 
-/* Heading defaults */
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  color: var(--color-text-primary);
-}
+  h4, h5, h6 {
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+  }
 
-h4, h5, h6 {
-  font-family: var(--font-body);
-  color: var(--color-text-primary);
-}
-
-/* Focus visible - blue ring for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--color-accent-500);
-  outline-offset: 2px;
+  *:focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 2px;
+  }
 }
 
 /* Minimum touch target size for coarse pointers (WCAG 2.5.8) */

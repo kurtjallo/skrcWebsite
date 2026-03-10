@@ -2,13 +2,16 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { EmphasisHeading } from "./EmphasisHeading";
 import { CircleArrowCTA } from "./CircleArrowCTA";
+import { VideoBackground } from "./VideoBackground";
 
 interface PreFooterCTAProps {
-  heading: string; // "Ready to *Transform* Your Community?" (supports EmphasisHeading syntax)
-  body: string; // Description paragraph
-  ctaLabel: string; // "Get Started Today"
-  ctaHref: string; // "/contact"
-  backgroundImage: string; // image path for next/image
+  heading: string;
+  body: string;
+  ctaLabel: string;
+  ctaHref: string;
+  backgroundImage: string;
+  /** Optional video source — plays as background instead of the image */
+  backgroundVideo?: string;
   className?: string;
 }
 
@@ -18,6 +21,7 @@ export function PreFooterCTA({
   ctaLabel,
   ctaHref,
   backgroundImage,
+  backgroundVideo,
   className,
 }: PreFooterCTAProps) {
   return (
@@ -26,18 +30,21 @@ export function PreFooterCTA({
         className="relative overflow-hidden rounded-[20px]"
         style={{ minHeight: "500px" }}
       >
-        {/* Background image */}
-        <Image
-          src={backgroundImage}
-          alt=""
-          fill
-          className="object-cover"
-        />
+        {/* Background — video if provided, otherwise image */}
+        {backgroundVideo ? (
+          <VideoBackground src={backgroundVideo} poster={backgroundImage} />
+        ) : (
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover"
+            style={{ objectPosition: "center 30%" }}
+          />
+        )}
 
         {/* Dark gradient overlay from bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/40 to-transparent" />
-
-
 
         {/* Curved shape at top -- creates the arch/wave transition from page bg */}
         <div

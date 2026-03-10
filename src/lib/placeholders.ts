@@ -1,77 +1,112 @@
 /**
- * Placeholder images from Unsplash for development.
- * Replace with real photos before production launch.
+ * Site image paths – real photos from the organisation.
+ * Images are stored in public/images/ and served locally.
+ *
+ * IMPORTANT: Every image path must be unique across ALL collections.
+ * No image should appear in more than one place.
  */
 
-const unsplash = (id: string, w = 1920, h = 1080) =>
-  `https://images.unsplash.com/${id}?w=${w}&h=${h}&fit=crop&q=80`;
+// ── Community videos ─────────────────────────────────────────────
+export const COMMUNITY_VIDEOS = {
+  /** Outdoor games day — relay/bucket game on the field */
+  outdoorGames: "/videos/skrc-video-1.mp4",
+  /** Indoor social — card and board games at community hall */
+  indoorGathering: "/videos/skrc-video-2.mp4",
+  /** Event setup — barn venue with medals and decorations */
+  eventSetup: "/videos/skrc-video-3.mp4",
+  /** Outdoor community meal — long table in a garden */
+  communityMeal: "/videos/skrc-video-4.mp4",
+  /** Indoor group activity — warehouse gathering with ball game */
+  indoorActivity: "/videos/skrc-video-5.mp4",
+  /** Paint night — sunflower painting at a colourful table */
+  paintNight: "/videos/skrc-video-6.mp4",
+} as const;
 
 // ── Hero / landscape images ──────────────────────────────────────
 export const HERO_IMAGES = {
-  /** Homepage — Scottish highlands panorama */
-  home: unsplash("photo-1506905925346-21bda4d32df4"),
-  /** About page — rural countryside */
-  about: unsplash("photo-1501854140801-50d01698950b"),
-  /** Services page — green farmland */
-  services: unsplash("photo-1500382017468-9049fed747ef"),
-  /** Events page — outdoor community gathering */
-  events: unsplash("photo-1511795409834-ef04bbd61622"),
-  /** Team page — people working together */
-  team: unsplash("photo-1522071820081-009f0129c71c"),
-  /** Testimonials page — warm community */
-  testimonials: unsplash("photo-1529156069898-49953e39b3ac"),
-  /** FAQ page — conversation setting */
-  faq: unsplash("photo-1516321497487-e288fb19713f"),
-  /** Get Involved page — volunteers */
-  getInvolved: unsplash("photo-1559027615-cd4628902d4a"),
-  /** Partnerships page — collaboration */
-  partnerships: unsplash("photo-1552664730-d307ca884978"),
-  /** Who We Serve page — rural families */
-  whoWeServe: unsplash("photo-1491438590914-bc09fcaaf77a"),
+  /** Homepage — tractor planting in open field */
+  home: "/images/farm/tractor-planting.jpg",
+  /** About page — board and staff group photo */
+  about: "/images/community/board-staff-group.jpg",
+  /** Services page — tomato harvest workers */
+  services: "/images/farm/tomato-harvest.jpg",
+  /** Events page — community paint night sunset group */
+  events: "/images/community/paint-night-sunset-group.jpg",
+  /** Team page — greenhouse workers */
+  team: "/images/farm/greenhouse-workers.jpg",
+  /** Testimonials page — asparagus packing (smiling worker) */
+  testimonials: "/images/farm/asparagus-packing.jpg",
+  /** FAQ page — welcome centre art class */
+  faq: "/images/community/welcome-centre-art.jpg",
+  /** Get Involved page — barn community meal */
+  getInvolved: "/images/community/barn-community-meal.jpg",
+  /** Partnerships page — Norfolk OPP community event */
+  partnerships: "/images/community/norfolk-opp-community-event.jpg",
+  /** Who We Serve page — apple orchard worker */
+  whoWeServe: "/images/farm/apple-orchard-worker.jpg",
+  /** Gallery page — paint night painting activity */
+  gallery: "/images/community/paint-night-group.jpg",
+  /** Community page — barn activities and games */
+  community: "/images/community/barn-activities-games.jpg",
 } as const;
 
 // ── Pre-footer CTA images ────────────────────────────────────────
 export const CTA_IMAGES = {
-  /** Generic CTA — countryside path */
-  generic: unsplash("photo-1441974231531-c6227db76b6e"),
-  /** Services CTA — green hills */
-  services: unsplash("photo-1470071459604-3b5ec3a7fe05"),
-  /** About CTA — community connection */
-  about: unsplash("photo-1517486808906-6ca8b3f04846"),
+  /** Generic CTA — workers in planted field */
+  generic: "/images/farm/workers-planted-field.jpg",
+  /** Services CTA — asparagus field worker */
+  services: "/images/farm/asparagus-field-worker.jpg",
+  /** About CTA — paint night barn group */
+  about: "/images/community/paint-night-barn-group.jpg",
+  /** Community CTA — prize winners in barn */
+  community: "/images/community/prize-winners-barn.jpg",
 } as const;
 
 // ── Service pillar images ────────────────────────────────────────
 export const SERVICE_IMAGES = {
-  /** Wellness & Mental Health */
-  wellness: unsplash("photo-1544027993-37dbfe43562a", 800, 600),
-  /** Agricultural Support */
-  agriculture: unsplash("photo-1500595046743-cd271d694d30", 800, 600),
-  /** Offshore Worker Support */
-  offshore: unsplash("photo-1505118380757-91f5f5632de0", 800, 600),
-  /** Community Connection */
-  community: unsplash("photo-1529156069898-49953e39b3ac", 800, 600),
+  /** Wellness & Mental Health — women's support group meeting */
+  wellness: "/images/community/womens-support-group.jpg",
+  /** Agricultural Support — workers on tractor */
+  agriculture: "/images/community/workers-on-tractor.jpg",
+  /** Offshore Worker Support — field worker portrait */
+  offshore: "/images/farm/field-worker-portrait.jpg",
+  /** Community Connection — community meeting with families */
+  community: "/images/community/community-meeting-families.jpg",
 } as const;
 
 // ── Portrait photos ──────────────────────────────────────────────
 export const PORTRAITS = {
-  man1: unsplash("photo-1507003211169-0a1dd7228f2d", 400, 500),
-  woman1: unsplash("photo-1438761681033-6461ffad8d80", 400, 500),
-  man2: unsplash("photo-1472099645785-5658abf4ff4e", 400, 500),
-  woman2: unsplash("photo-1494790108377-be9c29b29330", 400, 500),
-  man3: unsplash("photo-1500648767791-00dcc994a43e", 400, 500),
-  woman3: unsplash("photo-1580489944761-15a19d654956", 400, 500),
-  man4: unsplash("photo-1560250097-0b93528c311a", 400, 500),
+  man1: "/images/farm/workers-tractor-barn.jpg",
+  woman1: "/images/community/partnership-three-women.jpg",
+  man2: "/images/farm/apple-picker.jpg",
+  woman2: "/images/community/bracelet-making-portrait-5.jpg",
+  man3: "/images/community/bracelet-making-portrait-1.jpg",
+  woman3: "/images/community/paint-night-artwork-2.jpg",
+  man4: "/images/community/paint-night-artwork-1.jpg",
+  /** Featured testimonial avatar — bracelet-making portrait */
+  featured: "/images/community/bracelet-making-portrait-4.jpg",
 } as const;
 
 // ── Misc section images ──────────────────────────────────────────
 export const SECTION_IMAGES = {
-  /** About page — mission card */
-  mission: unsplash("photo-1517486808906-6ca8b3f04846", 800, 600),
-  /** About page — vision section */
-  vision: unsplash("photo-1470071459604-3b5ec3a7fe05", 1200, 600),
-  /** Homepage — Our Approach left column */
-  approach: unsplash("photo-1464226184884-fa280b87c399", 800, 1000),
-  /** Impact stories */
-  impact1: unsplash("photo-1464226184884-fa280b87c399", 1200, 800),
-  impact2: unsplash("photo-1500382017468-9049fed747ef", 1200, 800),
+  /** About page — mission card (live music singing in barn) */
+  mission: "/images/community/live-music-singing.jpg",
+  /** About page — vision section (community meal in barn) */
+  vision: "/images/community/barn-community-meal.jpg",
+  /** Homepage — Our Approach left column (community meeting) */
+  approach: "/images/community/community-meeting-families-2.jpg",
+  /** Impact stories — soccer team medals */
+  impact1: "/images/community/soccer-team-medals.jpg",
+  /** Impact stories — soccer team sunset celebration */
+  impact2: "/images/community/soccer-team-sunset.jpg",
+} as const;
+
+// ── Impact story images (unique per story) ───────────────────────
+export const IMPACT_IMAGES = {
+  /** Farmers peer support story — asparagus cutting in field */
+  farmSupport: "/images/farm/asparagus-cutting.jpg",
+  /** Offshore families story — family gathering outdoors */
+  offshoreFamily: "/images/community/family-gathering.jpg",
+  /** Rural resilience story — community group portrait */
+  ruralResilience: "/images/community/community-group.jpg",
 } as const;

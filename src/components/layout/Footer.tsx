@@ -1,13 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Instagram, Phone, Mail, Clock, MapPin } from "lucide-react";
-import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
-
-const SOCIAL_ICON_MAP = {
-  facebook: Facebook,
-  twitter: Twitter,
-  instagram: Instagram,
-} as const;
+import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -21,32 +15,14 @@ export function Footer() {
               <Image
                 src="/images/skrc-logo.png"
                 alt="St Katharine Rural Connect"
-                width={35}
-                height={53}
-                className="h-12 w-auto transition-opacity hover:opacity-80"
+                width={133}
+                height={200}
+                className="h-40 w-auto transition-opacity hover:opacity-80"
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE_CONFIG.tagline}
             </p>
-            {/* Social icon links */}
-            <div className="mt-6 flex items-center gap-4">
-              {SOCIAL_LINKS.map((link) => {
-                const Icon = SOCIAL_ICON_MAP[link.icon];
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-white/50 transition-colors hover:text-white"
-                    aria-label={link.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon size={20} aria-hidden="true" />
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           {/* Column 2: Main pages */}

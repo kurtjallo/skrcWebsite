@@ -37,7 +37,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* 1. Interior Hero */}
-      <InteriorHero heading="Our *Services*" backgroundImage={HERO_IMAGES.services} />
+      <InteriorHero heading="Our *Services*" backgroundImage={HERO_IMAGES.services} objectPosition="center 25%" />
 
       {/* 2. Section intro */}
       <section className="bg-surface-page px-6 py-20 md:py-28">

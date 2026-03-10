@@ -84,6 +84,7 @@ export default function OurApproach() {
               alt=""
               fill
               className="object-cover"
+              style={{ objectPosition: "center 30%" }}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

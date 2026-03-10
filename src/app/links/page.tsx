@@ -1,20 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Twitter } from "lucide-react";
 import { createMetadata } from "@/lib/metadata";
-import { SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Links",
   description: SITE_CONFIG.tagline,
   path: "/links",
 });
-
-const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  facebook: Facebook,
-  instagram: Instagram,
-  twitter: Twitter,
-};
 
 const ACTION_LINKS = [
   { label: "Visit Our Website", href: "/" },
@@ -57,24 +50,6 @@ export default function LinksPage() {
           </p>
         </div>
 
-        {/* Social icons */}
-        <div className="flex items-center justify-center gap-4 mb-8">
-          {SOCIAL_LINKS.map((link) => {
-            const Icon = ICON_MAP[link.icon];
-            return (
-              <a
-                key={link.label}
-                href={link.href}
-                aria-label={link.label}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white/70 transition-colors duration-300 hover:border-accent-400 hover:text-accent-400 hover:bg-accent-400/10"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {Icon && <Icon className="h-5 w-5" aria-hidden="true" />}
-              </a>
-            );
-          })}
-        </div>
 
         {/* Action buttons */}
         <div className="flex flex-col gap-3">

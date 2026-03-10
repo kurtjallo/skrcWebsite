@@ -21,6 +21,7 @@ export default function WhoWeServePage() {
       <InteriorHero
         heading="Who We *Serve*"
         backgroundImage={HERO_IMAGES.whoWeServe}
+        objectPosition="center 20%"
       />
 
       {/* Intro */}
