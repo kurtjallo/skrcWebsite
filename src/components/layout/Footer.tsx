@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Instagram, Phone, Mail, Clock, MapPin } from "lucide-react";
-import { NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
+import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
 const SOCIAL_ICON_MAP = {
   facebook: Facebook,
@@ -9,36 +10,52 @@ const SOCIAL_ICON_MAP = {
 } as const;
 
 export function Footer() {
-  const menuLinks = NAV_ITEMS.slice(0, 5);
-
   return (
     <footer className="bg-primary-950 text-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 5-column grid */}
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           {/* Column 1: Brand */}
-          <div>
-            <p className="font-heading text-xl text-white">
-              St Katharine Rural Connect
-            </p>
+          <div className="lg:col-span-2">
+            <Link href="/">
+              <Image
+                src="/images/skrc-logo.png"
+                alt="St Katharine Rural Connect"
+                width={35}
+                height={53}
+                className="h-12 w-auto transition-opacity hover:opacity-80"
+              />
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {SITE_CONFIG.tagline}
             </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-block rounded border border-white/30 px-5 py-2 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10"
-            >
-              Contact Us
-            </Link>
+            {/* Social icon links */}
+            <div className="mt-6 flex items-center gap-4">
+              {SOCIAL_LINKS.map((link) => {
+                const Icon = SOCIAL_ICON_MAP[link.icon];
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-white/50 transition-colors hover:text-white"
+                    aria-label={link.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon size={20} aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Column 2: Menu */}
+          {/* Column 2: Main pages */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
               Menu
             </h4>
             <ul className="mt-4 space-y-3">
-              {menuLinks.map((item) => (
+              {PRIMARY_NAV_ITEMS.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -51,22 +68,20 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Socials */}
+          {/* Column 3: More */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Socials
+              More
             </h4>
             <ul className="mt-4 space-y-3">
-              {SOCIAL_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
+              {SECONDARY_NAV_ITEMS.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
                     className="text-sm text-white/70 transition-colors hover:text-white"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
-                    {link.label}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -110,32 +125,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            {/* Copyright + charity number */}
-            <p className="text-center text-xs text-white/50 sm:text-left">
-              &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. Scottish
-              Charity No. {SITE_CONFIG.charityNumber}
-            </p>
-
-            {/* Social icon links */}
-            <div className="flex items-center gap-4">
-              {SOCIAL_LINKS.map((link) => {
-                const Icon = SOCIAL_ICON_MAP[link.icon];
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-white/50 transition-colors hover:text-white"
-                    aria-label={link.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon size={20} aria-hidden="true" />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+          <p className="text-center text-xs text-white/50 sm:text-left" suppressHydrationWarning>
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. Scottish
+            Charity No. {SITE_CONFIG.charityNumber}
+          </p>
         </div>
       </div>
     </footer>

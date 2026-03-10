@@ -2,9 +2,10 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
-import { NAV_ITEMS } from "@/lib/constants";
+import { PRIMARY_NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "./MobileNav";
 
@@ -51,22 +52,21 @@ export function Header({ variant }: HeaderProps) {
       )}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-20">
-        {/* Logo */}
-        <Link
-          href="/"
-          className={cn(
-            "font-heading font-semibold text-xl xl:text-2xl transition-colors whitespace-nowrap",
-            isTransparent
-              ? "text-white hover:text-white/80"
-              : "text-primary-900 hover:text-primary-700"
-          )}
-        >
-          St Katharine Rural Connect
+        {/* Logo — intentionally oversized, overlaps nav bar */}
+        <Link href="/" className="relative z-10 shrink-0 -my-4">
+          <Image
+            src="/images/skrc-logo.png"
+            alt="St Katharine Rural Connect"
+            width={80}
+            height={120}
+            className="h-28 w-auto drop-shadow-sm transition-opacity hover:opacity-80"
+            priority
+          />
         </Link>
 
         {/* Desktop navigation */}
         <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-5">
-          {NAV_ITEMS.map((item) => (
+          {PRIMARY_NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
