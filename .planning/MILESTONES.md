@@ -21,3 +21,37 @@
 - Contact form with Zod validation, honeypot spam protection, server actions
 
 ---
+
+## v2.0 — Visual Revamp (Completed 2026-03-09)
+
+**Goal:** Full visual redesign to match modern navy blue design language — new color palette, italic-emphasis headings, circle-arrow CTAs, white card surfaces — plus 4 new pages (FAQ, Links, 404, Thank You).
+
+**Phases completed:** 6/6
+9. Design System & Layout — New color tokens, typography, shared components
+10. Homepage Redesign — Complete homepage in new visual language
+11. Core Page Redesigns — Services, About, Contact
+12. Community Page Redesigns — Events, Who We Serve, Get Involved, Partnerships, Team, Testimonials
+13. New Pages — FAQ, Links, 404, Thank You
+14. Quality Verification — Accessibility, SEO, performance preservation audit
+
+**Key outcomes:**
+- 14+ pages with navy blue premium design language
+- 4 new pages (FAQ, Links, 404, Thank You)
+- Italic-emphasis headings, circle-arrow CTAs, white card surfaces
+- All v1.0 quality standards preserved
+
+---
+
+## v2.1 — Polish (Completed 2026-03-10)
+
+**Goal:** Fix web interface guideline violations and integrate logo asset.
+
+**Phases completed:** 1/1
+15. Web Interface Guidelines Compliance — transition-all fixes, logo hover states, image dimensions, hydration safety
+
+**Key outcomes:**
+- Zero transition-all usage (explicit transition properties only)
+- Logo hover feedback in Header/Footer
+- Hydration-safe year rendering
+
+---
