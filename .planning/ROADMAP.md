@@ -4,7 +4,8 @@
 
 - ✅ **v1.0 MVP** - Phases 1-8 (shipped 2026-03-07)
 - ✅ **v2.0 Visual Revamp** - Phases 9-14 (shipped 2026-03-09)
-- **v2.1 Polish** - Phase 15+
+- ✅ **v2.1 Polish** - Phase 15 (shipped 2026-03-10)
+- **v2.2 CI Pipeline** - Phase 16
 
 ## Phases
 
@@ -37,11 +38,17 @@
 - [x] **Phase 13: New Pages** - FAQ, Links, 404, Thank You
 - [x] **Phase 14: Quality Verification** - Accessibility, SEO, performance preservation audit
 
-### v2.1 Polish
+### ✅ v2.1 Polish (Shipped)
 
 **Milestone Goal:** Fix web interface guideline violations and integrate logo asset across the site.
 
 - [x] **Phase 15: Web Interface Guidelines Compliance** - Fix transition-all anti-patterns, add logo hover states, correct image dimensions, address hydration risk
+
+### v2.2 CI Pipeline
+
+**Milestone Goal:** Add continuous integration via GitHub Actions and Vercel auto-checks — lint, typecheck, and build verification on every PR.
+
+- [x] **Phase 16: CI Pipeline** - GitHub Actions workflow, ESLint config, .gitignore cleanup, Vercel auto-checks
 
 ## Parallel Execution
 
@@ -148,6 +155,18 @@ Phases 11-13 have zero cross-dependencies and can execute in parallel.
   4. Footer year rendering is hydration-safe
 **Plans**: 1 (all complete)
 
+### Phase 16: CI Pipeline
+**Goal**: GitHub Actions CI workflow (lint + typecheck + build), ESLint config file, comprehensive .gitignore, Vercel auto-checks
+**Depends on**: Nothing (standalone DevOps work)
+**Requirements**: CI-01, CI-02, CI-03, CI-04
+**Research**: Unlikely
+**Success Criteria** (what must be TRUE):
+  1. GitHub Actions workflow runs lint, typecheck (`tsc --noEmit`), and build (`next build`) on every PR and push to main
+  2. ESLint config file exists and `next lint` passes cleanly in CI
+  3. .gitignore covers .next/, node_modules/, env files, OS files, editor files, build artifacts
+  4. Vercel auto-deploys preview builds on PRs with status checks
+**Plans**: 1 (all complete)
+
 ## Progress
 
 **Execution Order:**
@@ -170,3 +189,4 @@ Phases 9-10 sequential, then 11-13 in parallel, then 14.
 | 13. New Pages | v2.0 | 1/1 | Complete | ✅ |
 | 14. Quality Verification | v2.0 | 1/1 | Complete | ✅ |
 | 15. Web Interface Guidelines Compliance | v2.1 | 1/1 | Complete | ✅ |
+| 16. CI Pipeline | v2.2 | 1/1 | Complete | ✅ |

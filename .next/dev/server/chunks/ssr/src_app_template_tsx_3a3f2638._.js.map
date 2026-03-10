@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/kurt/Documents/git-repos/skrcWebsite/src/app/template.tsx"],"sourcesContent":["\"use client\";\n\nimport { m, useReducedMotion } from \"motion/react\";\n\nexport default function Template({ children }: { children: React.ReactNode }) {\n  const shouldReduceMotion = useReducedMotion();\n\n  if (shouldReduceMotion) {\n    return <>{children}</>;\n  }\n\n  return (\n    <m.div\n      initial={{ opacity: 0, y: 8 }}\n      animate={{ opacity: 1, y: 0 }}\n      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}\n    >\n      {children}\n    </m.div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAEA;AAAA;AAFA;;;AAIe,SAAS,SAAS,EAAE,QAAQ,EAAiC;IAC1E,MAAM,qBAAqB,IAAA,6NAAgB;IAE3C,IAAI,oBAAoB;QACtB,qBAAO;sBAAG;;IACZ;IAEA,qBACE,8OAAC,0LAAC,CAAC,GAAG;QACJ,SAAS;YAAE,SAAS;YAAG,GAAG;QAAE;QAC5B,SAAS;YAAE,SAAS;YAAG,GAAG;QAAE;QAC5B,YAAY;YAAE,UAAU;YAAK,MAAM;gBAAC;gBAAM;gBAAK;gBAAM;aAAE;QAAC;kBAEvD;;;;;;AAGP"}}]
-}

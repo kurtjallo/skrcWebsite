@@ -1,3 +1,0 @@
-module.exports=[3226,a=>{"use strict";var b=a.i(3071);function c({title:a,description:c,path:d=""}){let e=`${a} | ${b.SITE_CONFIG.name}`;return{title:e,description:c,openGraph:{title:e,description:c,url:`${b.SITE_CONFIG.url}${d}`,siteName:b.SITE_CONFIG.name,locale:b.SITE_CONFIG.locale,type:"website"}}}a.s(["createMetadata",()=>c])},75480,a=>{"use strict";let b=(0,a.i(3226).createMetadata)({title:"Events",description:"Find workshops, support groups, community gatherings, and volunteering opportunities from St Katharine Rural Connect. Filter by audience, type, or format.",path:"/events"});function c({children:a}){return a}a.s(["default",()=>c,"metadata",0,b])}];
-
-//# sourceMappingURL=src_cdf0450b._.js.map
