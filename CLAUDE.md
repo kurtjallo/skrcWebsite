@@ -339,3 +339,9 @@ St Katharine Rural Connect (SKRC) is a community-rooted initiative strengthening
   - Fixed: Removed unnecessary `"use client"` from EventCard.tsx (no hooks/state/handlers)
   - Fonts verified: next/font/google with display="swap" for both Cormorant Garamond and DM Sans
   - Reduced motion verified: CSS media query + useReducedMotion in all 17 motion components
+
+### Phase 15: Web Interface Guidelines (15-01)
+- **WIG-01: Eliminated transition-all**: All 18 instances across 17 files replaced with explicit transition properties (transition-colors, transition-[transform,box-shadow], transition-[background-color,opacity], etc.) for better browser paint performance
+- **WIG-02: Logo hover feedback**: Header and Footer logo Images now have `transition-opacity hover:opacity-80` for visible interactive feedback
+- **WIG-03: Image dimension metadata**: All logo Image components corrected to 2:3 aspect ratio (Header 80x120, Footer 35x53, Links 80x120) matching actual skrc-logo.png dimensions
+- **WIG-04: Hydration-safe year**: Footer copyright `<p>` has `suppressHydrationWarning` to prevent React hydration mismatch on year boundary

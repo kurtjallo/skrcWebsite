@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** People in rural crisis can find and contact support within 2 clicks on any device, any connection speed.
-**Current focus:** v2.0 Visual Revamp — COMPLETE
+**Current focus:** v2.1 Polish — Phase 15 (Web Interface Guidelines Compliance)
 
 ## Current Position
 
-Phase: 14 of 14 (Quality Verification) — COMPLETE
+Phase: 15 of 15 (Web Interface Guidelines Compliance) — Complete
 Plan: 1 of 1
-Status: Milestone complete
-Last activity: 2026-03-09 — Phase 14 executed (accessibility, SEO, performance audits)
+Status: Phase complete
+Last activity: 2026-03-10 — Completed 15-01-PLAN.md
 
-Progress: ██████████████████████████████ 100% (v2.0: All phases complete)
+Progress: v2.0 ██████████████████████████████ 100% | v2.1 ██████████ 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10 (v2.0)
-- Average duration: ~7 min
-- Total execution time: ~35 min wall clock
+- Total plans completed: 11 (v2.0: 10, v2.1: 1)
+- Average duration: ~6 min
+- Total execution time: ~38 min wall clock
 
 **By Phase:**
 
@@ -33,6 +33,7 @@ Progress: ███████████████████████�
 | 12 | 1/1 | ~5 min | ~5 min |
 | 13 | 1/1 | ~5 min | ~5 min |
 | 14 | 1/1 | ~8 min | ~8 min |
+| 15 | 1/1 | ~3 min | ~3 min |
 
 ## Accumulated Context
 
@@ -49,6 +50,9 @@ Recent decisions affecting current work:
 - 14-01: Default OpenGraph metadata in root layout for social sharing
 - 14-01: metadataBase set on root layout for relative OG URLs
 - 14-01: next/image for all images, no raw <img> tags
+- 15-01: Explicit transition properties only (zero transition-all in codebase)
+- 15-01: suppressHydrationWarning on dynamic year rendering
+- 15-01: All logo Images use 2:3 aspect ratio width/height + hover:opacity-80
 
 ### Pending Todos
 
@@ -63,6 +67,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-09
-Stopped at: v2.0 milestone complete
+Last session: 2026-03-10
+Stopped at: Completed 15-01-PLAN.md (v2.1 Phase 15 complete)
 Resume file: None
