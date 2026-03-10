@@ -48,7 +48,7 @@
 
 **Milestone Goal:** Add continuous integration via GitHub Actions and Vercel auto-checks — lint, typecheck, and build verification on every PR.
 
-- [ ] **Phase 16: CI Pipeline** - GitHub Actions workflow, ESLint config, .gitignore cleanup, Vercel auto-checks
+- [x] **Phase 16: CI Pipeline** - GitHub Actions workflow, ESLint config, .gitignore cleanup, Vercel auto-checks
 
 ## Parallel Execution
 
@@ -165,7 +165,7 @@ Phases 11-13 have zero cross-dependencies and can execute in parallel.
   2. ESLint config file exists and `next lint` passes cleanly in CI
   3. .gitignore covers .next/, node_modules/, env files, OS files, editor files, build artifacts
   4. Vercel auto-deploys preview builds on PRs with status checks
-**Plans**: TBD
+**Plans**: 1 (all complete)
 
 ## Progress
 
@@ -189,4 +189,4 @@ Phases 9-10 sequential, then 11-13 in parallel, then 14.
 | 13. New Pages | v2.0 | 1/1 | Complete | ✅ |
 | 14. Quality Verification | v2.0 | 1/1 | Complete | ✅ |
 | 15. Web Interface Guidelines Compliance | v2.1 | 1/1 | Complete | ✅ |
-| 16. CI Pipeline | v2.2 | 0/? | Planning | |
+| 16. CI Pipeline | v2.2 | 1/1 | Complete | ✅ |

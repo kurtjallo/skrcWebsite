@@ -7,6 +7,7 @@ import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
 import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
+import Link from "next/link";
 
 export const metadata = createMetadata({
   title: "Who We Serve",
@@ -89,12 +90,12 @@ export default function WhoWeServePage() {
               href="/contact"
               variant="light"
             />
-            <a
+            <Link
               href="/services"
               className="font-body text-base font-medium text-accent-300 underline underline-offset-4 transition-colors duration-200 hover:text-accent-200"
             >
               View Our Services
-            </a>
+            </Link>
           </div>
         </div>
       </section>
