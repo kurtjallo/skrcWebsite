@@ -137,11 +137,6 @@ export default function AboutPage() {
                 compassionate, and practical services that foster wellbeing,
                 resilience, and connection.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-text-body">
-                We exist because rural life comes with unique pressures &mdash;
-                and rural people deserve support that understands their world. Our
-                mission is to be the trusted bridge between need and help.
-              </p>
               <div className="mt-8">
                 <CircleArrowCTA
                   label="View Our Services"

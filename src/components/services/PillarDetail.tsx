@@ -6,7 +6,6 @@ import { HERO_IMAGES, CTA_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
-import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 import { PreFooterCTA } from "@/components/shared/PreFooterCTA";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -148,28 +147,7 @@ export function PillarDetail({ pillar }: PillarDetailProps) {
         </section>
       )}
 
-      {/* 6. Ready CTA */}
-      <section className="bg-surface-page px-6 pb-12 md:pb-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <EmphasisHeading
-            text="Ready to Get *Started*?"
-            as="h2"
-            className="text-3xl md:text-4xl text-text-primary"
-          />
-          <p className="mt-4 text-lg leading-relaxed text-text-body">
-            {pillar.howToGetStarted}
-          </p>
-          <div className="mt-8 flex justify-center">
-            <CircleArrowCTA
-              label="Get in Touch"
-              href="/contact"
-              variant="dark"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 7. PreFooterCTA */}
+      {/* 6. PreFooterCTA */}
       <PreFooterCTA backgroundImage={CTA_IMAGES.generic}
         heading="Explore All Our *Services*"
         body="Discover the full range of support available through St Katharine Rural Connect."

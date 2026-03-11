@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import WhoWeAre from "@/components/home/WhoWeAre";
 import ServicePillars from "@/components/home/ServicePillars";
-import ImpactStories from "@/components/home/ImpactStories";
 import TestimonialCards from "@/components/home/TestimonialCards";
-import OurApproach from "@/components/home/OurApproach";
 import PartnerLogos from "@/components/home/PartnerLogos";
 
 const title = "St Katharine Rural Connect | Support for Rural Communities";
@@ -31,9 +29,7 @@ export default function HomePage() {
       <Hero />
       <WhoWeAre />
       <ServicePillars />
-      <ImpactStories />
       <TestimonialCards />
-      <OurApproach />
       <PartnerLogos />
     </>
   );

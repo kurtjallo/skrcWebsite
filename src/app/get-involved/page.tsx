@@ -27,7 +27,7 @@ const involvementOptions: InvolvementOption[] = [
     icon: Heart,
     title: "Volunteer With Us",
     description:
-      "Give your time and skills to support rural communities. Whether you can spare an hour a week or a day a month, there's a role that fits. Volunteers are the backbone of our community work \u2014 from helping at events to providing peer support.",
+      "Give your time and skills to support rural communities. From helping at events to providing peer support, there\u2019s a role that fits.",
     ctaText: "Register Your Interest",
     ctaHref: "/contact",
   },
@@ -35,7 +35,7 @@ const involvementOptions: InvolvementOption[] = [
     icon: Calendar,
     title: "Attend Events",
     description:
-      "Join us for workshops, gatherings, and community events across rural Scotland. Our events bring people together for learning, connection, and support. Everyone is welcome, whether you're looking for help or simply want to be part of something positive.",
+      "Join us for workshops, gatherings, and community events across rural areas. Everyone is welcome, whether you\u2019re seeking support or simply want to connect.",
     ctaText: "See Upcoming Events",
     ctaHref: "/events",
   },
@@ -43,7 +43,7 @@ const involvementOptions: InvolvementOption[] = [
     icon: Gift,
     title: "Donate Today",
     description:
-      "Your generosity helps us reach more people in rural communities who need support. Every contribution, no matter the size, goes directly towards delivering services, running events, and keeping our support accessible and free for those who need it most.",
+      "Every contribution goes directly towards delivering services, running events, and keeping our support free for those who need it most.",
     ctaText: "Make a Donation",
     ctaHref: "/contact",
   },
@@ -51,7 +51,7 @@ const involvementOptions: InvolvementOption[] = [
     icon: Handshake,
     title: "Become a Partner",
     description:
-      "We work alongside community organisations, agricultural networks, mental health providers, local agencies, and businesses committed to rural wellbeing. Together, we can create a stronger network of support across rural Scotland.",
+      "We work alongside organisations, agencies, and businesses committed to rural wellbeing to create a stronger network of support.",
     ctaText: "Explore Partnership",
     ctaHref: "/partnerships",
   },
@@ -59,7 +59,7 @@ const involvementOptions: InvolvementOption[] = [
     icon: Share2,
     title: "Share Our Story",
     description:
-      "Sometimes the most powerful thing you can do is spread the word. Share our work with your community, on social media, or simply by telling a neighbour about us. You never know who might need to hear that support is available.",
+      "Spread the word in your community, on social media, or by telling a neighbour. You never know who needs to hear that support is available.",
     ctaText: "Learn More",
     ctaHref: "/about",
   },
@@ -146,9 +146,8 @@ export default function GetInvolvedPage() {
             className="text-3xl text-white md:text-4xl"
           />
           <p className="mx-auto mt-6 max-w-prose text-lg text-white/80">
-            That&rsquo;s perfectly fine. Get in touch and we&rsquo;ll help you
-            find the right way to get involved. No commitment, no pressure
-            &mdash; just a conversation.
+            Get in touch and we&rsquo;ll help you find the right way to
+            contribute.
           </p>
           <div className="mt-8 flex justify-center">
             <CircleArrowCTA
