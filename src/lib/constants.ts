@@ -21,6 +21,7 @@ export const SITE_CONFIG = {
   tagline: "Support, connection, and care for rural communities",
   url: "https://skrc.org.uk",
   locale: "en-GB",
+  formspreeEndpoint: "https://formspree.io/f/xbdzoywa",
 } as const;
 
 export const PRIMARY_NAV_ITEMS: readonly NavItem[] = [

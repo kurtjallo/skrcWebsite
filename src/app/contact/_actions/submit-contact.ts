@@ -1,6 +1,7 @@
 "use server";
 
 import { contactSchema, type ContactFormState } from "@/lib/schemas/contact";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export async function submitContact(
   _prevState: ContactFormState,
@@ -53,19 +54,28 @@ export async function submitContact(
   }
 
   // Submit to Formspree
-  const response = await fetch("https://formspree.io/f/xbdzoywa", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: result.data.name,
-      email: result.data.email,
-      phone: result.data.phone || "Not provided",
-      audience: result.data.audience || "Not specified",
-      message: result.data.message,
-    }),
-  });
+  try {
+    const response = await fetch(SITE_CONFIG.formspreeEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: result.data.name,
+        email: result.data.email,
+        phone: result.data.phone || "Not provided",
+        audience: result.data.audience || "Not specified",
+        message: result.data.message,
+      }),
+      signal: AbortSignal.timeout(10_000),
+    });
 
-  if (!response.ok) {
+    if (!response.ok) {
+      return {
+        success: false,
+        message:
+          "Something went wrong sending your message. Please try again, or call us directly.",
+      };
+    }
+  } catch {
     return {
       success: false,
       message:
