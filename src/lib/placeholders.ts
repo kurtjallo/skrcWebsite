@@ -38,8 +38,8 @@ export const HERO_IMAGES = {
   testimonials: "/images/farm/asparagus-packing.jpg",
   /** FAQ page — welcome centre art class */
   faq: "/images/community/welcome-centre-art.jpg",
-  /** Get Involved page — barn community meal */
-  getInvolved: "/images/community/barn-community-meal.jpg",
+  /** Get Involved page — outdoor giant Jenga community game */
+  getInvolved: "/images/community/giant-jenga-playing.jpg",
   /** Partnerships page — Norfolk OPP community event */
   partnerships: "/images/community/norfolk-opp-community-event.jpg",
   /** Who We Serve page — apple orchard worker */

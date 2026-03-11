@@ -71,7 +71,7 @@ export default function GetInvolvedPage() {
       <InteriorHero
         heading="Get *Involved*"
         backgroundImage={HERO_IMAGES.getInvolved}
-        objectPosition="center 30%"
+        objectPosition="center 40%"
       />
 
       {/* Intro */}
