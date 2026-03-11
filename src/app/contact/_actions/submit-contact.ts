@@ -52,18 +52,26 @@ export async function submitContact(
     };
   }
 
-  // MVP: Log to console (email service integration deferred)
-  console.log("[CONTACT] New submission:", {
-    timestamp: new Date().toISOString(),
-    name: result.data.name,
-    email: result.data.email,
-    phone: result.data.phone || "Not provided",
-    audience: result.data.audience || "Not specified",
-    message: result.data.message,
+  // Submit to Formspree
+  const response = await fetch("https://formspree.io/f/xbdzoywa", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: result.data.name,
+      email: result.data.email,
+      phone: result.data.phone || "Not provided",
+      audience: result.data.audience || "Not specified",
+      message: result.data.message,
+    }),
   });
 
-  // TODO: Send email notification (e.g., Resend, SendGrid)
-  // TODO: Store in database if needed
+  if (!response.ok) {
+    return {
+      success: false,
+      message:
+        "Something went wrong sending your message. Please try again, or call us directly.",
+    };
+  }
 
   return {
     success: true,
