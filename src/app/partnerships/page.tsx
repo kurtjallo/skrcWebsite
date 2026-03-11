@@ -151,10 +151,10 @@ export default function PartnershipsPage() {
               variant="light"
             />
             <a
-              href={SITE_CONFIG.phoneHref}
+              href={`mailto:${SITE_CONFIG.email}`}
               className="text-sm text-white/60 transition-colors duration-300 hover:text-white/80"
             >
-              Or call us on {SITE_CONFIG.phone}
+              Or email us at {SITE_CONFIG.email}
             </a>
           </div>
         </div>

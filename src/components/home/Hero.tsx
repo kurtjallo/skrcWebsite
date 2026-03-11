@@ -101,7 +101,7 @@ export default function Hero() {
               </m.div>
             </div>
 
-            {/* Crisis line */}
+            {/* Contact line */}
             <m.p
               className="mt-10 text-sm text-white/50"
               {...motionProps(0.5)}
@@ -111,12 +111,12 @@ export default function Hero() {
                   : fadeUp(0.5).animate
               }
             >
-              Need to talk now? Call{" "}
+              Need to talk?{" "}
               <a
-                href={SITE_CONFIG.phoneHref}
+                href={`mailto:${SITE_CONFIG.email}`}
                 className="font-medium text-white/70 underline decoration-white/30 underline-offset-2 transition-colors duration-200 hover:text-white hover:decoration-white/60"
               >
-                {SITE_CONFIG.phone}
+                {SITE_CONFIG.email}
               </a>
             </m.p>
           </div>

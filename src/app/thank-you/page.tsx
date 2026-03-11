@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
 import { CircleArrowCTA } from "@/components/shared/CircleArrowCTA";
 import { SectionLabel } from "@/components/shared/SectionLabel";
-import { Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export const metadata = createMetadata({
   title: "Thank You",
@@ -59,16 +59,16 @@ export default function ThankYouPage() {
 
         <p className="mt-6 font-body text-lg text-white/70 max-w-lg mx-auto">
           We&rsquo;ve received your message and will be in touch within 2
-          working days. If your need is urgent, please call us directly.
+          working days.
         </p>
 
-        {/* Phone CTA */}
+        {/* Email CTA */}
         <a
-          href={SITE_CONFIG.phoneHref}
+          href={`mailto:${SITE_CONFIG.email}`}
           className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-white/20 px-5 py-2.5 font-body text-base font-medium text-white transition-colors duration-300 hover:border-white/40 hover:bg-white/10"
         >
-          <Phone className="h-4 w-4" aria-hidden="true" />
-          {SITE_CONFIG.phone}
+          <Mail className="h-4 w-4" aria-hidden="true" />
+          {SITE_CONFIG.email}
         </a>
 
         {/* Divider */}

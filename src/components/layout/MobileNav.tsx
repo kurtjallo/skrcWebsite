@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { m, AnimatePresence, useReducedMotion } from "motion/react";
-import { X, Phone } from "lucide-react";
+import { X, Mail } from "lucide-react";
 import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -126,13 +126,12 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
           <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-stone-200">
             <a
-              href={SITE_CONFIG.phoneHref}
+              href={`mailto:${SITE_CONFIG.email}`}
               className="flex items-center gap-3 font-body text-primary-900 font-medium"
             >
-              <Phone size={18} aria-hidden="true" />
-              {SITE_CONFIG.phone}
+              <Mail size={18} aria-hidden="true" />
+              {SITE_CONFIG.email}
             </a>
-            <p className="mt-2 text-sm text-text-muted">{SITE_CONFIG.officeHours}</p>
           </div>
         </nav>
       </>
@@ -224,16 +223,15 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               ))}
             </div>
 
-            {/* Phone CTA at bottom */}
+            {/* Email CTA at bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-stone-200">
               <a
-                href={SITE_CONFIG.phoneHref}
+                href={`mailto:${SITE_CONFIG.email}`}
                 className="flex items-center gap-3 font-body text-primary-900 font-medium"
               >
-                <Phone size={18} aria-hidden="true" />
-                {SITE_CONFIG.phone}
+                <Mail size={18} aria-hidden="true" />
+                {SITE_CONFIG.email}
               </a>
-              <p className="mt-2 text-sm text-text-muted">{SITE_CONFIG.officeHours}</p>
             </div>
           </m.nav>
         </>

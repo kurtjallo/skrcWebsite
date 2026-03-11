@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
 export function Footer() {
@@ -71,29 +71,12 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
-                  href={SITE_CONFIG.phoneHref}
-                  className="flex items-center gap-2 text-white/70 transition-colors hover:text-white"
-                >
-                  <Phone size={16} aria-hidden="true" />
-                  {SITE_CONFIG.phone}
-                </a>
-              </li>
-              <li>
-                <a
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="flex items-center gap-2 text-white/70 transition-colors hover:text-white"
                 >
                   <Mail size={16} aria-hidden="true" />
                   {SITE_CONFIG.email}
                 </a>
-              </li>
-              <li className="flex items-center gap-2 text-white/70">
-                <Clock size={16} aria-hidden="true" />
-                {SITE_CONFIG.officeHours}
-              </li>
-              <li className="flex items-center gap-2 text-white/70">
-                <MapPin size={16} aria-hidden="true" />
-                {SITE_CONFIG.location}
               </li>
             </ul>
           </div>
@@ -102,8 +85,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-center text-xs text-white/50 sm:text-left" suppressHydrationWarning>
-            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. Scottish
-            Charity No. {SITE_CONFIG.charityNumber}
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}.
           </p>
         </div>
       </div>

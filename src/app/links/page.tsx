@@ -64,9 +64,9 @@ export default function LinksPage() {
           ))}
         </div>
 
-        {/* Footer charity info */}
+        {/* Footer */}
         <p className="mt-10 text-center font-body text-xs text-white/30">
-          Scottish Charity {SITE_CONFIG.charityNumber}
+          {SITE_CONFIG.email}
         </p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Phone, Mail, Clock, MapPin, ShieldCheck } from "lucide-react";
+import { Mail, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 interface ContactInfoProps {
@@ -7,67 +7,6 @@ interface ContactInfoProps {
 
 export function ContactInfo({ variant = "light" }: ContactInfoProps) {
   const isDark = variant === "dark";
-
-  const CONTACT_ITEMS = [
-    {
-      icon: Phone,
-      label: "Phone",
-      content: (
-        <a
-          href={SITE_CONFIG.phoneHref}
-          className={`mt-1 block font-body text-lg transition-colors ${
-            isDark
-              ? "text-white hover:text-accent-300"
-              : "text-text-primary hover:text-accent-600"
-          }`}
-        >
-          {SITE_CONFIG.phone}
-        </a>
-      ),
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      content: (
-        <a
-          href={`mailto:${SITE_CONFIG.email}`}
-          className={`mt-1 block font-body text-lg transition-colors ${
-            isDark
-              ? "text-white hover:text-accent-300"
-              : "text-text-primary hover:text-accent-600"
-          }`}
-        >
-          {SITE_CONFIG.email}
-        </a>
-      ),
-    },
-    {
-      icon: Clock,
-      label: "Office Hours",
-      content: (
-        <p
-          className={`mt-1 font-body text-lg ${
-            isDark ? "text-white/90" : "text-text-primary"
-          }`}
-        >
-          {SITE_CONFIG.officeHours}
-        </p>
-      ),
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      content: (
-        <p
-          className={`mt-1 font-body text-lg ${
-            isDark ? "text-white/90" : "text-text-primary"
-          }`}
-        >
-          {SITE_CONFIG.location}
-        </p>
-      ),
-    },
-  ] as const;
 
   return (
     <div className="space-y-8">
@@ -85,32 +24,39 @@ export function ContactInfo({ variant = "light" }: ContactInfoProps) {
       </div>
 
       <div className="space-y-6">
-        {CONTACT_ITEMS.map(({ icon: Icon, label, content }) => (
-          <div key={label} className="flex items-start gap-4">
-            <div
-              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${
-                isDark ? "bg-white/10" : "bg-accent-100"
+        <div className="flex items-start gap-4">
+          <div
+            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${
+              isDark ? "bg-white/10" : "bg-accent-100"
+            }`}
+          >
+            <Mail
+              className={`h-5 w-5 ${
+                isDark ? "text-accent-400" : "text-accent-600"
+              }`}
+              aria-hidden="true"
+            />
+          </div>
+          <div>
+            <h3
+              className={`font-body text-sm font-semibold uppercase tracking-wider ${
+                isDark ? "text-accent-400" : "text-accent-600"
               }`}
             >
-              <Icon
-                className={`h-5 w-5 ${
-                  isDark ? "text-accent-400" : "text-accent-600"
-                }`}
-                aria-hidden="true"
-              />
-            </div>
-            <div>
-              <h3
-                className={`font-body text-sm font-semibold uppercase tracking-wider ${
-                  isDark ? "text-accent-400" : "text-accent-600"
-                }`}
-              >
-                {label}
-              </h3>
-              {content}
-            </div>
+              Email
+            </h3>
+            <a
+              href={`mailto:${SITE_CONFIG.email}`}
+              className={`mt-1 block font-body text-lg transition-colors ${
+                isDark
+                  ? "text-white hover:text-accent-300"
+                  : "text-text-primary hover:text-accent-600"
+              }`}
+            >
+              {SITE_CONFIG.email}
+            </a>
           </div>
-        ))}
+        </div>
       </div>
 
       {/* Confidentiality reassurance */}

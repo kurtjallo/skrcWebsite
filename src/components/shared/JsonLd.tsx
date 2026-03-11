@@ -26,7 +26,6 @@ export function ngoSchema(): Record<string, unknown> {
     alternateName: "SKRC",
     description: SITE_CONFIG.tagline,
     url: SITE_CONFIG.url,
-    telephone: SITE_CONFIG.phoneHref.replace("tel:", ""),
     email: SITE_CONFIG.email,
     areaServed: {
       "@type": "Place",
