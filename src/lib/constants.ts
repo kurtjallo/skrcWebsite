@@ -6,7 +6,7 @@ export type NavItem = {
 export const SITE_CONFIG = {
   name: "St Katharine Rural Connect",
   shortName: "SKRC",
-  email: "hello@skrc.org.uk",
+  email: "skrc.media@gmail.com",
   tagline: "Support, connection, and care for rural communities",
   url: "https://skrc.org.uk",
   locale: "en-GB",

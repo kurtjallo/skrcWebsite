@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { cormorantGaramond, dmSans } from "@/lib/fonts";
 import { SITE_CONFIG } from "@/lib/constants";
 import { SkipLink } from "@/components/layout/SkipLink";
-import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd, ngoSchema } from "@/components/shared/JsonLd";
@@ -35,7 +34,6 @@ export default function RootLayout({
         <JsonLd data={ngoSchema()} />
         <LazyMotionProvider>
           <SkipLink />
-          <UtilityBar />
           <Header />
           <main id="main-content" className="min-h-screen">
             {children}
