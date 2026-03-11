@@ -1,6 +1,6 @@
 import { createMetadata } from "@/lib/metadata";
 import { SITE_CONFIG } from "@/lib/constants";
-import { partners, partnershipApproach } from "@/data/partners";
+import { partnershipApproach } from "@/data/partners";
 import { HERO_IMAGES } from "@/lib/placeholders";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -63,69 +63,6 @@ export default function PartnershipsPage() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Grid */}
-      <section className="bg-surface-page pb-20 md:pb-28">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div
-            className="mx-auto mb-12 border-t border-divider"
-            aria-hidden="true"
-          />
-          <div className="text-center">
-            <SectionLabel text="OUR PARTNERS" align="center" />
-            <EmphasisHeading
-              text="*Trusted* By"
-              as="h2"
-              className="mx-auto mt-6 text-3xl md:text-4xl text-text-primary"
-            />
-            <p className="mt-4 text-base text-text-muted">
-              We are proud to work alongside these organisations.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {partners.map((partner) => {
-              const cardContent = (
-                <div className="flex flex-col items-center justify-center gap-3 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary-900/5">
-                    <span className="font-heading text-xl font-semibold text-primary-900">
-                      {partner.name.charAt(0)}
-                    </span>
-                  </div>
-                  <span className="font-body text-sm font-medium text-primary-900">
-                    {partner.name}
-                  </span>
-                  {partner.description && (
-                    <span className="text-xs text-text-muted">
-                      {partner.description}
-                    </span>
-                  )}
-                </div>
-              );
-
-              return (
-                <div
-                  key={partner.id}
-                  className="flex min-h-[160px] flex-col items-center justify-center rounded-2xl bg-surface-card p-6 transition-[transform,box-shadow] duration-300 hover:shadow-lg motion-safe:hover:-translate-y-1"
-                >
-                  {partner.url ? (
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center"
-                    >
-                      {cardContent}
-                    </a>
-                  ) : (
-                    cardContent
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

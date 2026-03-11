@@ -4,7 +4,6 @@ import Hero from "@/components/home/Hero";
 import WhoWeAre from "@/components/home/WhoWeAre";
 import ServicePillars from "@/components/home/ServicePillars";
 import TestimonialCards from "@/components/home/TestimonialCards";
-import PartnerLogos from "@/components/home/PartnerLogos";
 
 const title = "St Katharine Rural Connect | Support for Rural Communities";
 const description =
@@ -30,7 +29,6 @@ export default function HomePage() {
       <WhoWeAre />
       <ServicePillars />
       <TestimonialCards />
-      <PartnerLogos />
     </>
   );
 }

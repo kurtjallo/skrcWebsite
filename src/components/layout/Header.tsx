@@ -1,23 +1,18 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { PRIMARY_NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
 import { MobileNav } from "./MobileNav";
 
-interface HeaderProps {
-  variant?: "solid" | "transparent";
-}
-
-export function Header({ variant }: HeaderProps) {
+export function Header() {
   const pathname = usePathname();
-  const resolvedVariant = variant ?? (pathname === "/" ? "transparent" : "solid");
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const handleOpenMobileNav = useCallback(() => {
     setIsMobileNavOpen(true);
@@ -27,29 +22,9 @@ export function Header({ variant }: HeaderProps) {
     setIsMobileNavOpen(false);
   }, []);
 
-  // Scroll detection for transparent -> solid transition
-  useEffect(() => {
-    if (resolvedVariant !== "transparent") return;
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [resolvedVariant]);
-
-  const isTransparent = resolvedVariant === "transparent" && !scrolled;
-
   return (
     <header
-      className={cn(
-        resolvedVariant === "transparent" ? "fixed" : "sticky",
-        "top-0 z-50 w-full transition-colors duration-300",
-        isTransparent
-          ? "bg-transparent"
-          : "bg-surface-page/95 backdrop-blur-sm border-b border-divider"
-      )}
+      className="sticky top-0 z-50 w-full bg-surface-page/95 backdrop-blur-sm border-b border-divider"
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-20">
         {/* Logo — intentionally oversized, overlaps nav bar */}
@@ -72,17 +47,12 @@ export function Header({ variant }: HeaderProps) {
               href={item.href}
               className={cn(
                 "relative font-body font-medium text-sm whitespace-nowrap transition-colors",
-                isTransparent
-                  ? "text-white/90 hover:text-white"
-                  : "text-text-body hover:text-primary-900",
+                "text-text-body hover:text-primary-900",
                 "after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[2px]",
                 "after:bg-accent-400 after:origin-left",
                 "after:transition-transform after:duration-400 after:ease-premium",
                 pathname === item.href
-                  ? cn(
-                      isTransparent ? "text-white" : "text-primary-900",
-                      "after:scale-x-100"
-                    )
+                  ? "text-primary-900 after:scale-x-100"
                   : "after:scale-x-0 hover:after:scale-x-100"
               )}
             >
@@ -93,12 +63,7 @@ export function Header({ variant }: HeaderProps) {
 
         {/* Mobile hamburger */}
         <button
-          className={cn(
-            "xl:hidden p-2 transition-colors",
-            isTransparent
-              ? "text-white hover:text-white/80"
-              : "text-text-body hover:text-primary-900"
-          )}
+          className="xl:hidden p-2 transition-colors text-text-body hover:text-primary-900"
           aria-label="Open menu"
           onClick={handleOpenMobileNav}
         >
