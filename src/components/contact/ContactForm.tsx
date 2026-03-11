@@ -37,6 +37,7 @@ export function ContactForm({ variant = "light" }: ContactFormProps) {
     initialState
   );
   const formRef = useRef<HTMLFormElement>(null);
+  const validatedRef = useRef(false);
 
   const {
     register,
@@ -63,6 +64,7 @@ export function ContactForm({ variant = "light" }: ContactFormProps) {
 
   // Client-side validation passes, trigger server action submission
   const onSubmit = () => {
+    validatedRef.current = true;
     formRef.current?.requestSubmit();
   };
 
@@ -74,6 +76,10 @@ export function ContactForm({ variant = "light" }: ContactFormProps) {
       ref={formRef}
       action={formAction}
       onSubmit={(e) => {
+        if (validatedRef.current) {
+          validatedRef.current = false;
+          return;
+        }
         e.preventDefault();
         handleSubmit(onSubmit)(e);
       }}
