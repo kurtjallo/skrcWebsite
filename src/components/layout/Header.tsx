@@ -32,9 +32,9 @@ export function Header() {
           <Image
             src="/images/skrc-logo.png"
             alt="St Katharine Rural Connect"
-            width={80}
-            height={120}
-            className="h-28 w-auto drop-shadow-sm transition-opacity hover:opacity-80"
+            width={93}
+            height={140}
+            className="h-32 w-auto drop-shadow-sm transition-opacity hover:opacity-80"
             priority
           />
         </Link>

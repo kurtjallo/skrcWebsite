@@ -37,9 +37,9 @@ export default function LinksPage() {
           <Image
             src="/images/skrc-logo.png"
             alt="St Katharine Rural Connect"
-            width={80}
-            height={120}
-            className="mx-auto mb-5 h-24 w-auto"
+            width={107}
+            height={160}
+            className="mx-auto mb-5 h-32 w-auto"
           />
 
           <h1 className="font-heading text-2xl font-semibold text-white">
