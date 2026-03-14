@@ -15,9 +15,9 @@ export function Footer() {
               <Image
                 src="/images/skrc-logo.png"
                 alt="St Katharine Rural Connect"
-                width={173}
-                height={260}
-                className="h-52 w-auto transition-opacity hover:opacity-80"
+                width={213}
+                height={320}
+                className="h-64 w-auto transition-opacity hover:opacity-80"
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
