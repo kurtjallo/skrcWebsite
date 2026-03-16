@@ -124,7 +124,15 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             ))}
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-stone-200">
+          <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-stone-200 space-y-4">
+            <a
+              href={SITE_CONFIG.zeffyDonateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full rounded-md bg-sky-200 px-5 py-2.5 text-center font-body text-sm font-semibold text-sky-800 transition-colors hover:bg-sky-300"
+            >
+              Donate
+            </a>
             <a
               href={`mailto:${SITE_CONFIG.email}`}
               className="flex items-center gap-3 font-body text-primary-900 font-medium"
@@ -223,8 +231,16 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               ))}
             </div>
 
-            {/* Email CTA at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-stone-200">
+            {/* Donate + Email at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-stone-200 space-y-4">
+              <a
+                href={SITE_CONFIG.zeffyDonateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded-md bg-sky-200 px-5 py-2.5 text-center font-body text-sm font-semibold text-sky-800 transition-colors hover:bg-sky-300"
+              >
+                Donate
+              </a>
               <a
                 href={`mailto:${SITE_CONFIG.email}`}
                 className="flex items-center gap-3 font-body text-primary-900 font-medium"
