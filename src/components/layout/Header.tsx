@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
-import { PRIMARY_NAV_ITEMS } from "@/lib/constants";
+import { PRIMARY_NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 import { MobileNav } from "./MobileNav";
@@ -59,6 +59,14 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a
+            href={SITE_CONFIG.zeffyDonateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 rounded-md bg-sky-200 px-5 py-2 font-body text-sm font-semibold text-sky-800 transition-colors hover:bg-sky-300"
+          >
+            Donate
+          </a>
         </nav>
 
         {/* Mobile hamburger */}

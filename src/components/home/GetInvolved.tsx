@@ -5,6 +5,7 @@ import { m, useReducedMotion } from "motion/react";
 import { HandHelping, Handshake, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { GoldAccentLine } from "@/components/shared/GoldAccentLine";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface EngagementCard {
   icon: LucideIcon;
@@ -40,7 +41,7 @@ const engagementCards: EngagementCard[] = [
     description:
       "Your donation helps us keep services free and accessible for everyone who needs them. Every contribution counts.",
     ctaText: "Donate Today",
-    ctaHref: "/contact",
+    ctaHref: SITE_CONFIG.zeffyDonateUrl,
     ctaVariant: "primary",
   },
 ];
@@ -118,16 +119,31 @@ export default function GetInvolved() {
                     {card.description}
                   </p>
 
-                  <Link
-                    href={card.ctaHref}
-                    className={`mt-6 inline-block rounded-md px-6 py-2.5 font-medium transition-colors duration-300 ${
-                      card.ctaVariant === "primary"
-                        ? "bg-accent-500 text-primary-950 hover:bg-accent-400"
-                        : "border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
-                    }`}
-                  >
-                    {card.ctaText}
-                  </Link>
+                  {card.ctaHref.startsWith("http") ? (
+                    <a
+                      href={card.ctaHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`mt-6 inline-block rounded-md px-6 py-2.5 font-medium transition-colors duration-300 ${
+                        card.ctaVariant === "primary"
+                          ? "bg-accent-500 text-primary-950 hover:bg-accent-400"
+                          : "border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
+                      }`}
+                    >
+                      {card.ctaText}
+                    </a>
+                  ) : (
+                    <Link
+                      href={card.ctaHref}
+                      className={`mt-6 inline-block rounded-md px-6 py-2.5 font-medium transition-colors duration-300 ${
+                        card.ctaVariant === "primary"
+                          ? "bg-accent-500 text-primary-950 hover:bg-accent-400"
+                          : "border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
+                      }`}
+                    >
+                      {card.ctaText}
+                    </Link>
+                  )}
                 </m.div>
               );
             })}

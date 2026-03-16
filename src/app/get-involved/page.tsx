@@ -1,6 +1,7 @@
 import { Heart, Calendar, Gift, Handshake, Share2 } from "lucide-react";
 import { createMetadata } from "@/lib/metadata";
 import { HERO_IMAGES } from "@/lib/placeholders";
+import { SITE_CONFIG } from "@/lib/constants";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { EmphasisHeading } from "@/components/shared/EmphasisHeading";
@@ -45,7 +46,7 @@ const involvementOptions: InvolvementOption[] = [
     description:
       "Every contribution goes directly towards delivering services, running events, and keeping our support free for those who need it most.",
     ctaText: "Make a Donation",
-    ctaHref: "/contact",
+    ctaHref: SITE_CONFIG.zeffyDonateUrl,
   },
   {
     icon: Handshake,

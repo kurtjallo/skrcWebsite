@@ -20,7 +20,9 @@ export function UtilityBar() {
             Need Support?
           </a>
           <a
-            href="/get-involved"
+            href={SITE_CONFIG.zeffyDonateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-stone-400 underline-offset-4 transition-colors hover:text-accent-400 hover:underline"
           >
             Donate

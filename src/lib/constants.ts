@@ -11,6 +11,7 @@ export const SITE_CONFIG = {
   url: "https://skrc.org.uk",
   locale: "en-GB",
   formspreeEndpoint: "https://formspree.io/f/xbdzoywa",
+  zeffyDonateUrl: "https://www.zeffy.com/en-CA/donation-form/support-rural-communities",
 } as const;
 
 export const PRIMARY_NAV_ITEMS: readonly NavItem[] = [

@@ -14,7 +14,7 @@ const ACTION_LINKS = [
   { label: "Get in Touch", href: "/contact" },
   { label: "See Upcoming Events", href: "/events" },
   { label: "Our Services", href: "/services" },
-  { label: "Donate", href: "/get-involved" },
+  { label: "Donate", href: SITE_CONFIG.zeffyDonateUrl },
 ] as const;
 
 export default function LinksPage() {
@@ -53,15 +53,29 @@ export default function LinksPage() {
 
         {/* Action buttons */}
         <div className="flex flex-col gap-3">
-          {ACTION_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block w-full rounded-full border border-white/20 px-6 py-3.5 text-center font-body text-base font-medium text-white transition-colors duration-300 hover:border-white/40 hover:bg-white/10"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {ACTION_LINKS.map((link) => {
+            const isExternal = link.href.startsWith("http");
+            const className = "block w-full rounded-full border border-white/20 px-6 py-3.5 text-center font-body text-base font-medium text-white transition-colors duration-300 hover:border-white/40 hover:bg-white/10";
+            return isExternal ? (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={className}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Footer */}

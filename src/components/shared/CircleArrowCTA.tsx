@@ -59,6 +59,14 @@ export function CircleArrowCTA({
   );
 
   if (href) {
+    const isExternal = href.startsWith("http");
+    if (isExternal) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={sharedClassName}>
+          {content}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={sharedClassName}>
         {content}
