@@ -8,8 +8,8 @@ export const SITE_CONFIG = {
   shortName: "SKRC",
   email: "skrc.media@gmail.com",
   tagline: "Support, connection, and care for rural communities",
-  url: "https://skrc.org.uk",
-  locale: "en-GB",
+  url: "https://skrc.ca",
+  locale: "en-CA",
   formspreeEndpoint: "https://formspree.io/f/xbdzoywa",
   zeffyDonateUrl: "https://www.zeffy.com/en-CA/donation-form/support-rural-communities",
 } as const;

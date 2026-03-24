@@ -1,5 +1,7 @@
 import type { Event } from "@/types/event";
 
+// TODO: All events are PLACEHOLDERS — no real events scheduled yet.
+// Leanne will provide real event details before launch. Locations set to "TBD".
 export const events: Event[] = [
   {
     slug: "farm-wellbeing-workshop",
@@ -9,7 +11,7 @@ export const events: Event[] = [
     date: "2026-04-12",
     time: "10:00 AM",
     endTime: "12:30 PM",
-    location: "Huntly Community Centre",
+    location: "TBD",
     audience: ["farmers"],
     type: "workshop",
     format: "in-person",
@@ -23,7 +25,7 @@ export const events: Event[] = [
     date: "2026-04-19",
     time: "7:00 PM",
     endTime: "8:30 PM",
-    location: "Online + Inverurie Library",
+    location: "Online",
     audience: ["offshore"],
     type: "support",
     format: "hybrid",
@@ -37,7 +39,7 @@ export const events: Event[] = [
     date: "2026-04-26",
     time: "2:00 PM",
     endTime: "5:00 PM",
-    location: "Turriff Recreation Ground",
+    location: "TBD",
     audience: ["community", "farmers", "families"],
     type: "social",
     format: "in-person",
@@ -63,7 +65,7 @@ export const events: Event[] = [
     date: "2026-05-10",
     time: "9:00 AM",
     endTime: "1:00 PM",
-    location: "Bennachie Forest Trails",
+    location: "TBD",
     audience: ["community"],
     type: "volunteer",
     format: "in-person",
@@ -76,7 +78,7 @@ export const events: Event[] = [
     date: "2026-05-17",
     time: "10:00 AM",
     endTime: "1:00 PM",
-    location: "Oldmeldrum Town Hall",
+    location: "TBD",
     audience: ["farmers"],
     type: "workshop",
     format: "in-person",
@@ -89,7 +91,7 @@ export const events: Event[] = [
     date: "2026-05-24",
     time: "6:00 PM",
     endTime: "7:30 PM",
-    location: "Peterhead Community Centre",
+    location: "TBD",
     audience: ["offshore", "families"],
     type: "support",
     format: "in-person",
@@ -102,7 +104,7 @@ export const events: Event[] = [
     date: "2026-06-07",
     time: "11:00 AM",
     endTime: "3:00 PM",
-    location: "Alford Heritage Centre",
+    location: "TBD",
     audience: ["community", "farmers"],
     type: "social",
     format: "in-person",

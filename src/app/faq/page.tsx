@@ -18,6 +18,8 @@ export default function FaqPage() {
   return (
     <>
       {/* Hero */}
+      {/* TODO: Replace HERO_IMAGES.faq — current image (welcome-centre-art.jpg) shows the CCSYR building.
+           Waiting on SKRC logo/replacement image from Leanne. */}
       <InteriorHero
         heading="Frequently Asked *Questions*"
         backgroundImage={HERO_IMAGES.faq}

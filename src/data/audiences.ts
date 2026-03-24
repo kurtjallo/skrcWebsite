@@ -30,7 +30,7 @@ export const audienceSegments: AudienceSegment[] = [
       quote:
         "Running a farm can be overwhelming, especially when everything feels like it depends on you. St Katharine Rural Connect gave us more than information -- they gave us support we could actually use, and people who understood the pressures we were under. It made us feel less alone.",
       name: "James",
-      identifier: "dairy farmer near Huntly",
+      identifier: "farmer",
     },
   },
   {
@@ -38,7 +38,7 @@ export const audienceSegments: AudienceSegment[] = [
     name: "Offshore, Rotational, and Remote Workers",
     shortName: "Offshore Workers",
     description:
-      "Working away from home for long stretches can take its toll -- on you and on the people who matter most. Whether you're on a rig, at sea, or on rotation, we offer support that fits around your schedule and understands the realities of your working life.",
+      "Working away from home comes with unique challenges -- for you and for the people who matter most. Whether you're on a rig, at sea, or working remotely, we offer support that fits around your schedule and understands your working life.",
     relevantPillarIds: ["wellbeing", "work-away"],
     accessPoints: [
       {
@@ -58,7 +58,7 @@ export const audienceSegments: AudienceSegment[] = [
       quote:
         "When you work away for long periods, it can feel like you're disconnected from everything at home. Having access to support that understood our lifestyle made a real difference for me and my family. It reminded us that we still had a community behind us.",
       name: "Craig",
-      identifier: "offshore engineer, North Sea",
+      identifier: "rotational worker",
     },
   },
   {
@@ -118,7 +118,7 @@ export const audienceSegments: AudienceSegment[] = [
       quote:
         "The events and programs have created a stronger sense of connection in our area. People are meeting, talking, and supporting one another in ways that weren't happening before. It feels like something positive and lasting is being built.",
       name: "Helen",
-      identifier: "community member, rural Aberdeenshire",
+      identifier: "community member",
     },
   },
 ];

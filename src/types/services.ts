@@ -14,6 +14,6 @@ export interface ServicePillar {
   testimonial?: {
     quote: string;
     name: string;
-    identifier: string; // e.g. "dairy farmer near Huntly"
+    identifier: string; // e.g. "farmer"
   };
 }

@@ -16,7 +16,7 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
 /**
  * NGO Organization schema for structured data.
  * Used on every page via the root layout to help search engines
- * understand SKRC as a Scottish community support NGO.
+ * understand SKRC as a Canadian rural community support NGO.
  */
 export function ngoSchema(): Record<string, unknown> {
   return {
@@ -29,7 +29,7 @@ export function ngoSchema(): Record<string, unknown> {
     email: SITE_CONFIG.email,
     areaServed: {
       "@type": "Place",
-      name: "Rural Scotland",
+      name: "Norfolk County, Ontario, Canada",
     },
     serviceType: [
       "Community Wellness and Mental Health",

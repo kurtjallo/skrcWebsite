@@ -75,7 +75,7 @@ export default async function EventDetailPage({
   if (!event) notFound();
 
   const eventDate = new Date(event.date + "T00:00:00");
-  const formattedDate = eventDate.toLocaleDateString("en-GB", {
+  const formattedDate = eventDate.toLocaleDateString("en-CA", {
     weekday: "long",
     day: "numeric",
     month: "long",

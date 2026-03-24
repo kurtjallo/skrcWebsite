@@ -1,42 +1,43 @@
 import type { Partner } from "@/types";
 
+// TODO: All partners are PLACEHOLDERS. Leanne needs to confirm permission from each partner
+// before listing them under the SKRC organization. Do not launch with placeholder partners.
 export const partners: Partner[] = [
   {
     id: "partner-1",
-    name: "RSABI",
-    logoUrl: "/images/partners/rsabi.svg",
-    description: "Royal Scottish Agricultural Benevolent Institution",
-    url: "https://rsabi.org.uk",
+    name: "Partner Organization",
+    logoUrl: "/images/partners/placeholder.svg",
+    description: "Awaiting confirmation",
   },
   {
     id: "partner-2",
-    name: "Farming Community Network",
-    logoUrl: "/images/partners/fcn.svg",
-    description: "Supporting farming families across the UK",
+    name: "Partner Organization",
+    logoUrl: "/images/partners/placeholder.svg",
+    description: "Awaiting confirmation",
   },
   {
     id: "partner-3",
-    name: "NHS Grampian",
-    logoUrl: "/images/partners/nhs-grampian.svg",
-    description: "Regional health services",
+    name: "Partner Organization",
+    logoUrl: "/images/partners/placeholder.svg",
+    description: "Awaiting confirmation",
   },
   {
     id: "partner-4",
-    name: "Aberdeenshire Council",
-    logoUrl: "/images/partners/aberdeenshire.svg",
-    description: "Local government services and community support",
+    name: "Partner Organization",
+    logoUrl: "/images/partners/placeholder.svg",
+    description: "Awaiting confirmation",
   },
   {
     id: "partner-5",
-    name: "SAMH",
-    logoUrl: "/images/partners/samh.svg",
-    description: "Scottish Association for Mental Health",
+    name: "Partner Organization",
+    logoUrl: "/images/partners/placeholder.svg",
+    description: "Awaiting confirmation",
   },
   {
     id: "partner-6",
-    name: "Rural Support NI",
-    logoUrl: "/images/partners/rural-support.svg",
-    description: "Supporting rural communities in Northern Ireland",
+    name: "Partner Organization",
+    logoUrl: "/images/partners/placeholder.svg",
+    description: "Awaiting confirmation",
   },
 ];
 

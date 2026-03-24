@@ -58,8 +58,8 @@ export const CTA_IMAGES = {
   services: "/images/farm/asparagus-field-worker.jpg",
   /** About CTA — paint night barn group */
   about: "/images/community/paint-night-barn-group.jpg",
-  /** Community CTA — prize winners in barn */
-  community: "/images/community/prize-winners-barn.jpg",
+  /** Community CTA — worship gathering in barn */
+  community: "/images/community/barn-worship-gathering.jpg",
 } as const;
 
 // ── Service pillar images ────────────────────────────────────────

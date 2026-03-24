@@ -21,7 +21,7 @@ export interface Testimonial {
   id: string;
   quote: string;
   firstName: string;
-  identifier: string; // e.g., "dairy farmer near Huntly"
+  identifier: string; // e.g., "farmer"
   segment: AudienceSegment; // Reuse existing AudienceSegment type
 }
 

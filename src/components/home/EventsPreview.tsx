@@ -26,8 +26,8 @@ const FORMAT_STYLES: Record<EventFormat, string> = {
 
 function formatEventDate(dateStr: string) {
   const date = new Date(dateStr + "T00:00:00");
-  const day = new Intl.DateTimeFormat("en-GB", { day: "numeric" }).format(date);
-  const month = new Intl.DateTimeFormat("en-GB", { month: "short" }).format(date);
+  const day = new Intl.DateTimeFormat("en-CA", { day: "numeric" }).format(date);
+  const month = new Intl.DateTimeFormat("en-CA", { month: "short" }).format(date);
   return { day, month: month.toUpperCase() };
 }
 

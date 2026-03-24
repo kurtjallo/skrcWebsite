@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
+    <html lang="en-CA" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
       <body className="font-body text-base text-text-body bg-surface-page antialiased">
         <JsonLd data={ngoSchema()} />
         <LazyMotionProvider>

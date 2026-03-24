@@ -32,7 +32,7 @@ export const galleryImages: GalleryImage[] = [
   // Paint Nights
   {
     src: "/images/community/paint-night-sunset-group.jpg",
-    alt: "Large group proudly showing their sunset paintings at a community paint night",
+    alt: "Girls night out",
     category: "paint-nights",
   },
   {
@@ -48,7 +48,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "/images/community/paint-night-group.jpg",
-    alt: "Community members gathered for a paint night session",
+    alt: "Farm workers gathered for a paint night session at NIAW Health Fair",
     category: "paint-nights",
   },
   {
@@ -60,12 +60,12 @@ export const galleryImages: GalleryImage[] = [
   // Community Events
   {
     src: "/images/community/clothing-swap-sorting.jpg",
-    alt: "Community members sorting donated clothing at a clothing swap event",
+    alt: "Shopping for free at a church event",
     category: "community-events",
   },
   {
     src: "/images/community/clothing-swap-browsing.jpg",
-    alt: "People browsing tables of donated clothes at the community clothing swap",
+    alt: "Free fun shopping!",
     category: "community-events",
   },
   {
@@ -75,7 +75,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "/images/community/prize-winners-barn.jpg",
-    alt: "Community members with prizes at a barn event celebration",
+    alt: "Christmas game night",
     category: "community-events",
   },
   {
@@ -103,119 +103,68 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "/images/community/giant-jenga-crowd.jpg",
-    alt: "Crowd watching a tense giant Jenga game at a community social",
-    category: "sports",
-    portrait: true,
-  },
-  {
-    src: "/images/community/giant-jenga-wide.jpg",
-    alt: "Wide view of the giant Jenga game at a summer community event",
+    alt: "Crowd watching intense giant Jenga game while shopping in Downtown Simcoe",
     category: "sports",
     portrait: true,
   },
   {
     src: "/images/community/barn-activities-games.jpg",
-    alt: "Women enjoying team games and activities in a barn",
+    alt: "Games night on a farm",
     category: "sports",
   },
 
   // Workshops & Classes
   {
-    src: "/images/community/bracelet-making-table.jpg",
-    alt: "Community members and a firefighter making bead bracelets at a workshop table",
-    category: "workshops",
-  },
-  {
-    src: "/images/community/bracelet-making-portrait-1.jpg",
-    alt: "Man proudly displaying a handmade bead bracelet at a craft workshop",
-    category: "workshops",
-    portrait: true,
-  },
-  {
     src: "/images/community/bracelet-making-portrait-2.jpg",
-    alt: "Man in a green cap showing off his handmade bracelet",
+    alt: "IAW Health Fair event",
     category: "workshops",
     portrait: true,
   },
   {
     src: "/images/community/bracelet-making-portrait-4.jpg",
-    alt: "Man wearing sunglasses showing a completed bead bracelet on his wrist",
+    alt: "IAW event",
     category: "workshops",
     portrait: true,
   },
   {
     src: "/images/community/bracelet-making-portrait-5.jpg",
-    alt: "Woman smiling while showing a blue bead bracelet she made",
+    alt: "Smiling while showing a bracelet he made",
     category: "workshops",
     portrait: true,
   },
   {
     src: "/images/community/esl-language-class.jpg",
-    alt: "Participants in an English language class working through workbooks together",
+    alt: "Participants in a class",
     category: "workshops",
   },
   {
     src: "/images/community/womens-support-group.jpg",
-    alt: "Women gathered around a conference table for a support group meeting",
-    category: "workshops",
-  },
-  {
-    src: "/images/community/spanish-speaking-group.jpg",
-    alt: "Spanish-speaking community members in a group workshop session",
+    alt: "Mixed English and Spanish support class",
     category: "workshops",
   },
   {
     src: "/images/community/workers-on-tractor.jpg",
-    alt: "Women posing on a large JCB tractor during a farm visit",
+    alt: "Posing for a photoshoot",
     category: "workshops",
     portrait: true,
   },
 
   // Outreach & Partnerships
   {
-    src: "/images/community/board-staff-group.jpg",
-    alt: "Board and staff group photo at a formal meeting",
-    category: "outreach",
-  },
-  {
-    src: "/images/community/ccsyr-staff-portrait.jpg",
-    alt: "Three staff members in front of an organisational banner",
-    category: "outreach",
-    portrait: true,
-  },
-  {
-    src: "/images/community/ccsyr-staff-spanish-banner.jpg",
-    alt: "Staff members with a Spanish-language services banner",
-    category: "outreach",
-    portrait: true,
-  },
-  {
-    src: "/images/community/outreach-banner-barn.jpg",
-    alt: "Two outreach workers with an information banner at a farm visit",
-    category: "outreach",
-    portrait: true,
-  },
-  {
     src: "/images/community/ccsyr-booth-raffle.jpg",
-    alt: "Staff members at a raffle and information booth at a community event",
-    category: "outreach",
-    portrait: true,
-  },
-  {
-    src: "/images/community/ccsyr-street-team.jpg",
-    alt: "Street team members ready for community outreach with flyers",
+    alt: "Leanne and Bobbi-Ann Brady, MPP of Norfolk Haldimand",
     category: "outreach",
     portrait: true,
   },
   {
     src: "/images/community/partnership-three-women.jpg",
-    alt: "Three women at a partnership event in a community hall",
+    alt: "Hazel Hernandez, Consulate General of El Salvador, visiting our office. Maureen from IAW",
     category: "outreach",
     portrait: true,
   },
   {
     src: "/images/community/partnership-two-women.jpg",
-    alt: "Two partners celebrating their collaboration",
+    alt: "Language support class",
     category: "outreach",
     portrait: true,
   },
@@ -223,28 +172,23 @@ export const galleryImages: GalleryImage[] = [
   // Gatherings & Meals
   {
     src: "/images/community/community-meeting-families.jpg",
-    alt: "Families and community members gathered around a large table for a meeting",
-    category: "gatherings",
-  },
-  {
-    src: "/images/community/community-meeting-families-2.jpg",
-    alt: "Community gathering with families around tables in a church hall",
+    alt: "English language support",
     category: "gatherings",
   },
   {
     src: "/images/community/pizza-night-barn.jpg",
-    alt: "Volunteer serving stacks of pizza at a barn community night",
+    alt: "SKRC board member serving pizza at a games night",
     category: "gatherings",
     portrait: true,
   },
   {
     src: "/images/community/barn-community-meal.jpg",
-    alt: "Large group eating together at colourful tables in a barn",
+    alt: "Games night!",
     category: "gatherings",
   },
   {
     src: "/images/community/barn-worship-gathering.jpg",
-    alt: "Community gathered for a worship and music evening in a barn",
+    alt: "Praise and worship night on a farm",
     category: "gatherings",
     portrait: true,
   },
@@ -255,12 +199,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "/images/community/community-group.jpg",
-    alt: "Community members gathered together outdoors",
-    category: "gatherings",
-  },
-  {
-    src: "/images/community/family-gathering.jpg",
-    alt: "Families enjoying time together at a community event",
+    alt: "Bingo night on a farm",
     category: "gatherings",
   },
 ];
