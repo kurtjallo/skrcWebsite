@@ -76,9 +76,10 @@ export default function AboutPage() {
                 <p className="text-lg leading-relaxed text-text-body">
                   St Katharine Rural Connect is a community-rooted initiative
                   strengthening social, emotional, and practical support systems
-                  for rural people and places across Scotland. We carry forward
-                  the spirit and values of St Katharine &mdash; a legacy of
-                  service, learning, dignity, and community care.
+                  for rural people and places across Norfolk and surrounding
+                  counties. We carry forward the spirit and values of St.
+                  Catherine Drexel &mdash; a legacy of service, learning,
+                  dignity, and community care.
                 </p>
                 <p className="text-lg leading-relaxed text-text-body">
                   Our founding grew from a simple observation: rural communities

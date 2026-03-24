@@ -4,7 +4,7 @@ export interface Testimonial {
   id: string;
   quote: string;
   name: string;
-  identifier: string; // e.g. "dairy farmer near Huntly"
+  identifier: string; // e.g. "farmer"
   audience: "farmer" | "offshore" | "family" | "community";
 }
 

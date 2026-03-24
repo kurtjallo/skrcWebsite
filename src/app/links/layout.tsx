@@ -9,7 +9,7 @@ export default function LinksLayout({
 }) {
   return (
     <html
-      lang="en-GB"
+      lang="en-CA"
       className={`${cormorantGaramond.variable} ${dmSans.variable}`}
     >
       <body className="font-body text-base text-white antialiased bg-primary-950 min-h-screen">

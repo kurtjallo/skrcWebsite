@@ -3,6 +3,7 @@ export interface FaqItem {
   answer: string;
 }
 
+// TODO: Placeholder FAQ content — Leanne will provide real questions and answers before launch.
 export const faqs: FaqItem[] = [
   {
     question: "What services does St Katharine Rural Connect provide?",
@@ -27,7 +28,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Do I need a referral to access support?",
     answer:
-      "No referral is needed. You can contact us directly at any time. If you have been referred by a partner organisation, GP, or other service, that is absolutely fine too \u2014 but it is not required.",
+      "No referral is needed. You can contact us directly at any time. If you have been referred by a partner organization, healthcare provider, or other service, that is absolutely fine too \u2014 but it is not required.",
   },
   {
     question: "Is there a cost for your services?",
@@ -52,6 +53,6 @@ export const faqs: FaqItem[] = [
   {
     question: "What if I need urgent help outside office hours?",
     answer:
-      "If you or someone you know is in crisis, please contact the Samaritans on 116 123 (available 24/7), or call 999 in an emergency. We will always respond to messages as quickly as we can during office hours.",
+      "If you or someone you know is in crisis, please call 911 in an emergency or contact Crisis Services Canada at 1-833-456-4566 (available 24/7). You can also text 45645. We will always respond to messages as quickly as we can during office hours.",
   },
 ];

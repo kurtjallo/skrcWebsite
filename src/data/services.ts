@@ -1,5 +1,7 @@
 import type { ServicePillar } from "@/types/services";
 
+// TODO: All testimonial quotes and names in service pillars are PLACEHOLDERS.
+// Leanne will provide real testimonials before launch.
 export const servicePillars: ServicePillar[] = [
   {
     id: "wellbeing",
@@ -25,7 +27,7 @@ export const servicePillars: ServicePillar[] = [
       quote:
         "Running a farm can be overwhelming, especially when everything feels like it depends on you. St Katharine Rural Connect gave us more than information -- they gave us support we could actually use, and people who understood the pressures we were under. It made us feel less alone.",
       name: "James",
-      identifier: "dairy farmer near Huntly",
+      identifier: "farmer",
     },
   },
   {
@@ -52,7 +54,7 @@ export const servicePillars: ServicePillar[] = [
       quote:
         "As the spouse of a rotational worker, I often felt like I was carrying things on my own. Through St Katharine Rural Connect, I found resources, encouragement, and people who truly understood the strain that comes with this kind of life.",
       name: "Sarah",
-      identifier: "farmer's wife, Aberdeenshire",
+      identifier: "farmer's wife",
     },
   },
   {
@@ -65,21 +67,20 @@ export const servicePillars: ServicePillar[] = [
     whoItsFor:
       "For offshore, rotational, and remote workers -- and the families who hold things together back home.",
     whatHappens:
-      "Working away can leave you feeling disconnected from everything that matters. We offer remote check-ins, peer connection for isolated workers, and support for families managing separation. Whether you're on a rig, at sea, or on rotation, we're here.",
+      "Working away from home comes with its own challenges. We offer remote check-ins, peer connection, and support for families. Whether you're on a rig, at sea, or working remotely, we're here.",
     howToGetStarted:
       "Reach out by phone, email, or online -- we work around your schedule.",
     services: [
       "Remote-access support and check-ins",
-      "Peer connection for isolated workers",
-      "Family support during separation",
-      "Reintegration support",
+      "Peer connection for workers away from home",
+      "Family support and resources",
     ],
     icon: "Anchor",
     testimonial: {
       quote:
         "When you work away for long periods, it can feel like you're disconnected from everything at home. Having access to support that understood our lifestyle made a real difference for me and my family. It reminded us that we still had a community behind us.",
       name: "Craig",
-      identifier: "offshore engineer, North Sea",
+      identifier: "rotational worker",
     },
   },
   {
@@ -99,7 +100,6 @@ export const servicePillars: ServicePillar[] = [
       "Local events and gatherings",
       "Volunteer engagement",
       "Workshops and skill-sharing",
-      "Intergenerational programmes",
       "Partnerships with local groups",
     ],
     icon: "Users",
@@ -107,7 +107,7 @@ export const servicePillars: ServicePillar[] = [
       quote:
         "The events and programs have created a stronger sense of connection in our area. People are meeting, talking, and supporting one another in ways that weren't happening before. It feels like something positive and lasting is being built.",
       name: "Margaret",
-      identifier: "community member, rural Aberdeenshire",
+      identifier: "community member",
     },
   },
 ];

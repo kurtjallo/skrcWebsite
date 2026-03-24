@@ -1,6 +1,6 @@
 // Event type definitions for /events pages
 
-export type EventAudience = "farmers" | "offshore" | "families" | "community";
+export type EventAudience = "farmers" | "offshore" | "families" | "community" | "women" | "seniors";
 export type EventType = "workshop" | "social" | "volunteer" | "support";
 export type EventFormat = "in-person" | "virtual" | "hybrid";
 
@@ -24,6 +24,8 @@ export const AUDIENCE_LABELS: Record<EventAudience, string> = {
   offshore: "Offshore Workers",
   families: "Families",
   community: "All Community",
+  women: "Women",
+  seniors: "Seniors",
 };
 
 export const TYPE_LABELS: Record<EventType, string> = {

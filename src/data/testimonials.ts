@@ -1,36 +1,39 @@
 import type { Testimonial } from "@/types";
 
+// TODO: All testimonials below (except Dave's) are PLACEHOLDERS with fictional names/quotes.
+// Leanne will provide real testimonials from community members before launch.
+// Do NOT launch with these fake testimonials.
 export const testimonials: Testimonial[] = [
   {
     id: "testi-farmer",
     quote:
       "Running a farm can be overwhelming, especially when everything feels like it depends on you. St Katharine Rural Connect gave us more than information -- they gave us support we could actually use, and people who understood the pressures we were under. It made us feel less alone.",
-    firstName: "James",
-    identifier: "dairy farmer near Huntly",
+    firstName: "Placeholder",
+    identifier: "farmer",
     segment: "farmer",
   },
   {
     id: "testi-offshore",
     quote:
       "When you work away for long periods, it can feel like you're disconnected from everything at home. Having access to support that understood our lifestyle made a real difference for me and my family. It reminded us that we still had a community behind us.",
-    firstName: "Craig",
-    identifier: "offshore engineer, North Sea",
+    firstName: "Placeholder",
+    identifier: "rotational worker",
     segment: "offshore-worker",
   },
   {
     id: "testi-community",
     quote:
       "The events and programs have created a stronger sense of connection in our area. People are meeting, talking, and supporting one another in ways that weren't happening before. It feels like something positive and lasting is being built.",
-    firstName: "Helen",
-    identifier: "community member, rural Aberdeenshire",
+    firstName: "Placeholder",
+    identifier: "community member",
     segment: "community",
   },
   {
     id: "testi-family",
     quote:
       "As the spouse of a rotational worker, I often felt like I was carrying things on my own. Through St Katharine Rural Connect, I found resources, encouragement, and people who truly understood the strain that comes with this kind of life.",
-    firstName: "Laura",
-    identifier: "spouse of an offshore worker",
+    firstName: "Placeholder",
+    identifier: "spouse of a rotational worker",
     segment: "family",
   },
   {

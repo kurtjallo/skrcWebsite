@@ -23,7 +23,7 @@ const FORMAT_ICONS: Record<
 export function EventCard({ event }: EventCardProps) {
   const eventDate = new Date(event.date + "T00:00:00");
   const monthAbbr = eventDate
-    .toLocaleDateString("en-GB", { month: "short" })
+    .toLocaleDateString("en-CA", { month: "short" })
     .toUpperCase();
   const day = eventDate.getDate();
 
