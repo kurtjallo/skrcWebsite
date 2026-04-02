@@ -39,11 +39,6 @@ export const NGO_SCHEMA: Record<string, unknown> = {
   sameAs: [],
 };
 
-/** @deprecated Use NGO_SCHEMA instead */
-export function ngoSchema(): Record<string, unknown> {
-  return NGO_SCHEMA;
-}
-
 /**
  * CommunityEvent schema for structured data on event detail pages.
  * Helps search engines surface events in rich results.

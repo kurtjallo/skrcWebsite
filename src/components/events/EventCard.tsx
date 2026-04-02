@@ -21,11 +21,11 @@ const FORMAT_ICONS: Record<
   hybrid: Wifi,
 };
 
+const monthFormatter = new Intl.DateTimeFormat(SITE_CONFIG.locale, { month: "short" });
+
 export function EventCard({ event }: EventCardProps) {
   const eventDate = new Date(event.date + "T00:00:00");
-  const monthAbbr = eventDate
-    .toLocaleDateString(SITE_CONFIG.locale, { month: "short" })
-    .toUpperCase();
+  const monthAbbr = monthFormatter.format(eventDate).toUpperCase();
   const day = eventDate.getDate();
 
   const FormatIcon = FORMAT_ICONS[event.format];
