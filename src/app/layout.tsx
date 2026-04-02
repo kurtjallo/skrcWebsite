@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { JsonLd, ngoSchema } from "@/components/shared/JsonLd";
+import { JsonLd, NGO_SCHEMA } from "@/components/shared/JsonLd";
 import { LazyMotionProvider } from "@/components/shared/LazyMotionProvider";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -29,9 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-CA" className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
+    <html lang={SITE_CONFIG.locale} className={`${cormorantGaramond.variable} ${dmSans.variable}`}>
       <body className="font-body text-base text-text-body bg-surface-page antialiased">
-        <JsonLd data={ngoSchema()} />
+        <JsonLd data={NGO_SCHEMA} />
         <LazyMotionProvider>
           <SkipLink />
           <Header />

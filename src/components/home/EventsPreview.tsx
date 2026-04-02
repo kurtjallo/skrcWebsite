@@ -4,7 +4,9 @@ import Link from "next/link";
 import { m, useReducedMotion } from "motion/react";
 import { Clock, MapPin, ArrowRight } from "lucide-react";
 import { events } from "@/data/events";
+import { FORMAT_LABELS } from "@/types/event";
 import type { EventFormat } from "@/types/event";
+import { SITE_CONFIG } from "@/lib/constants";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -24,29 +26,22 @@ const FORMAT_STYLES: Record<EventFormat, string> = {
   hybrid: "bg-stone-200 text-text-body",
 };
 
+const dayFormatter = new Intl.DateTimeFormat(SITE_CONFIG.locale, { day: "numeric" });
+const monthFormatter = new Intl.DateTimeFormat(SITE_CONFIG.locale, { month: "short" });
+
 function formatEventDate(dateStr: string) {
   const date = new Date(dateStr + "T00:00:00");
-  const day = new Intl.DateTimeFormat("en-CA", { day: "numeric" }).format(date);
-  const month = new Intl.DateTimeFormat("en-CA", { month: "short" }).format(date);
+  const day = dayFormatter.format(date);
+  const month = monthFormatter.format(date);
   return { day, month: month.toUpperCase() };
 }
 
-function formatLabel(format: EventFormat): string {
-  const labels: Record<EventFormat, string> = {
-    "in-person": "In Person",
-    virtual: "Virtual",
-    hybrid: "Hybrid",
-  };
-  return labels[format];
-}
+const upcomingEvents = [...events]
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  .slice(0, 3);
 
 export default function EventsPreview() {
   const shouldReduceMotion = useReducedMotion();
-
-  // Sort events by date ascending, take first 3
-  const upcomingEvents = [...events]
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 3);
 
   return (
     <section className="bg-stone-50 py-16 md:py-24" aria-label="Upcoming events">
@@ -99,7 +94,7 @@ export default function EventsPreview() {
                       <span
                         className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${FORMAT_STYLES[event.format]}`}
                       >
-                        {formatLabel(event.format)}
+                        {FORMAT_LABELS[event.format]}
                       </span>
 
                       <h3 className="mt-3 font-heading text-xl font-semibold text-text-primary">

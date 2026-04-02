@@ -18,27 +18,30 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
  * Used on every page via the root layout to help search engines
  * understand SKRC as a Canadian rural community support NGO.
  */
+export const NGO_SCHEMA: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  name: "St Katharine Rural Connect",
+  alternateName: "SKRC",
+  description: SITE_CONFIG.tagline,
+  url: SITE_CONFIG.url,
+  email: SITE_CONFIG.email,
+  areaServed: {
+    "@type": "Place",
+    name: "Norfolk County, Ontario, Canada",
+  },
+  serviceType: [
+    "Community Wellness and Mental Health",
+    "Agricultural Support and Resources",
+    "Offshore Worker Engagement and Support",
+    "Community Connection and Development",
+  ],
+  sameAs: [],
+};
+
+/** @deprecated Use NGO_SCHEMA instead */
 export function ngoSchema(): Record<string, unknown> {
-  return {
-    "@context": "https://schema.org",
-    "@type": "NGO",
-    name: "St Katharine Rural Connect",
-    alternateName: "SKRC",
-    description: SITE_CONFIG.tagline,
-    url: SITE_CONFIG.url,
-    email: SITE_CONFIG.email,
-    areaServed: {
-      "@type": "Place",
-      name: "Norfolk County, Ontario, Canada",
-    },
-    serviceType: [
-      "Community Wellness and Mental Health",
-      "Agricultural Support and Resources",
-      "Offshore Worker Engagement and Support",
-      "Community Connection and Development",
-    ],
-    sameAs: [],
-  };
+  return NGO_SCHEMA;
 }
 
 /**

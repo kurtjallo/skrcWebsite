@@ -6,6 +6,7 @@ import {
   TYPE_LABELS,
   FORMAT_LABELS,
 } from "@/types/event";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface EventCardProps {
   event: Event;
@@ -23,7 +24,7 @@ const FORMAT_ICONS: Record<
 export function EventCard({ event }: EventCardProps) {
   const eventDate = new Date(event.date + "T00:00:00");
   const monthAbbr = eventDate
-    .toLocaleDateString("en-CA", { month: "short" })
+    .toLocaleDateString(SITE_CONFIG.locale, { month: "short" })
     .toUpperCase();
   const day = eventDate.getDate();
 
